@@ -22,17 +22,64 @@
 ## Структура проекта
 
 ```
-pcmi/
-├── docs/                          # Документация
-│   ├── lab1_report.md             # Отчет ЛР №1 (исследование)
-│   ├── competitor_analysis.md     # Анализ конкурентов
-│   ├── user_profiles.md           # Профили пользователей
-│   ├── user_survey.md             # Опросник для исследования
-│   ├── personas.md                # Персонажи и сценарии
-│   ├── object_model.md            # Объектная модель
-│   └── business_processes.md      # Бизнес-процессы
-├── .gitignore                     # Git ignore файл
-└── README.md                      # Этот файл
+pcmi
+├── README.md
+└── docs
+    ├── lab1
+    │   ├── business_processes.md
+    │   ├── competitor_analysis.md
+    │   ├── lab1_report.md
+    │   ├── object_model.md
+    │   ├── personas.md
+    │   ├── user_profiles.md
+    │   └── user_survey.md
+    ├── lab2
+    │   ├── 01_problem_statement.md
+    │   ├── 02_design_strategy.md
+    │   ├── 03_group_profile.md
+    │   ├── 04_user_tasks_roles.md
+    │   ├── 05_object_model.md
+    │   ├── 06_information_architecture.md
+    │   ├── 07_conceptual_mockups.md
+    │   ├── 08_navigation_model.md
+    │   ├── 09_cjm_impact_map.md
+    │   ├── 10_interactive_storyboards.md
+    │   ├── 11_design_mockups.md
+    │   └── 13_execution_report.md
+    └── lab3
+        ├── 01_use_case.puml
+        ├── 02_activity_purchase.puml
+        ├── 03_activity_add_route.puml
+        ├── 04_class_diagram.puml
+        ├── 04_object_diagram.puml
+        ├── 05_seq_search.puml
+        ├── 06_seq_buy.puml
+        ├── 07_seq_login.puml
+        ├── 08_seq_admin_add_route.puml
+        ├── 09_seq_payment.puml
+        ├── 10_component.puml
+        ├── 11_package.puml
+        ├── 12_deployment.puml
+        ├── 13_erd.puml
+        ├── README.md
+        ├── c4_report.md
+        ├── c4model
+        │   ├── 01_context.puml
+        │   ├── 02_container.puml
+        │   └── 03_component.puml
+        ├── eventmodeling
+        │   └── 01_ticket_purchase.puml
+        ├── eventmodeling_report.md
+        ├── eventstorming
+        │   ├── 01_big_picture.puml
+        │   ├── 02_process_modeling.puml
+        │   └── 03_software_design.puml
+        ├── eventstorming_report.md
+        ├── includes
+        │   ├── C4_Custom.puml
+        │   ├── EventModeling.puml
+        │   └── EventStorming.puml
+        └── specification.md
 ```
 
 ---
