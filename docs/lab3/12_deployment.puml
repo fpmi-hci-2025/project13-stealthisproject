@@ -1,0 +1,20 @@
+@startuml
+node "Client Device" as client {
+  artifact "Web Browser" as browser
+  artifact "Mobile App" as mobile
+}
+
+node "Load Balancer (Nginx)" as lb
+
+node "Application Server" as app_server {
+  component "Backend API (Golang)" as api
+}
+
+node "Database Server" as db_server {
+  database "PostgreSQL" as db
+}
+
+client --> lb : HTTPS
+lb --> app_server : HTTP
+app_server --> db_server : TCP/5432
+@enduml

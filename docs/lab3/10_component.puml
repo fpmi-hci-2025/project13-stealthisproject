@@ -1,0 +1,34 @@
+@startuml
+package "Client Side" {
+  component [Web Application] as WebApp
+  component [Mobile App] as MobApp
+}
+
+package "Server Side" {
+  component [API Gateway] as Gateway
+  component [Auth Service] as AuthService
+  component [Booking Service] as BookingService
+  component [Search Service] as SearchService
+  component [Payment Service] as PaymentService
+  component [Notification Service] as NotifService
+}
+
+database "PostgreSQL" as DB
+database "Redis Cache" as Cache
+
+WebApp --> Gateway : HTTPS/JSON
+MobApp --> Gateway : HTTPS/JSON
+
+Gateway --> AuthService
+Gateway --> BookingService
+Gateway --> SearchService
+
+BookingService --> PaymentService
+BookingService --> NotifService
+
+BookingService ..> DB
+AuthService ..> DB
+SearchService ..> DB
+SearchService ..> Cache
+@enduml
+
