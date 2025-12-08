@@ -1,8 +1,3 @@
--- PostgreSQL Database Schema for Railway Ticket System
-
--- Enable UUID extension if needed (optional, using BIGSERIAL for simplicity as per diagram)
--- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 -- 1. Users Table
 CREATE TABLE users (
     id BIGSERIAL PRIMARY KEY,

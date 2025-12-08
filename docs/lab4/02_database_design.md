@@ -46,8 +46,6 @@
 
 Физическая модель спроектирована с учетом СУБД **PostgreSQL**.
 
-![Physical ER Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/qre/project13-stealthisproject/docs/docs/lab4/03_physical_erd.puml)
-
 *Исходный код диаграммы: [03_physical_erd.puml](./03_physical_erd.puml)*
 
 ### SQL Схема
