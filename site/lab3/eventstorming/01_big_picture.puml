@@ -1,0 +1,55 @@
+@startuml
+!include ../includes/EventStorming.puml
+
+' Big Picture: High level events flow
+
+title EventStorming: Big Picture (ЖД Система)
+
+' Admin Flow
+DomainEvent(RouteDefined, "Маршрут определен")
+DomainEvent(TrainScheduled, "Поезд назначен в расписание")
+DomainEvent(SeatsGenerated, "Места сгенерированы")
+
+RouteDefined --> TrainScheduled
+TrainScheduled --> SeatsGenerated
+
+' User Registration Flow
+DomainEvent(UserRegistered, "Пользователь зарегистрирован")
+DomainEvent(ProfileUpdated, "Профиль обновлен")
+
+' Purchasing Flow
+DomainEvent(SearchRequested, "Выполнен поиск рейсов")
+DomainEvent(SeatSelected, "Место выбрано")
+DomainEvent(OrderCreated, "Заказ создан (Pending)")
+DomainEvent(PaymentInitiated, "Оплата инициирована")
+DomainEvent(PaymentSucceeded, "Оплата прошла успешно")
+DomainEvent(PaymentFailed, "Оплата отклонена")
+DomainEvent(TicketIssued, "Билет выпущен")
+DomainEvent(SeatReserved, "Место зарезервировано")
+DomainEvent(EmailSent, "Письмо с билетом отправлено")
+
+SeatsGenerated --> SearchRequested
+SearchRequested --> SeatSelected
+SeatSelected --> OrderCreated
+OrderCreated --> PaymentInitiated
+
+PaymentInitiated --> PaymentSucceeded
+PaymentInitiated --> PaymentFailed
+
+PaymentSucceeded --> TicketIssued
+TicketIssued --> SeatReserved
+TicketIssued --> EmailSent
+
+' Refund Flow
+DomainEvent(RefundRequested, "Запрошен возврат")
+DomainEvent(TicketCancelled, "Билет аннулирован")
+DomainEvent(SeatReleased, "Место освобождено")
+DomainEvent(MoneyReturned, "Средства возвращены")
+
+TicketIssued --> RefundRequested
+RefundRequested --> TicketCancelled
+TicketCancelled --> SeatReleased
+TicketCancelled --> MoneyReturned
+
+@enduml
+

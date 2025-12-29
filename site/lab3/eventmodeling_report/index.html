@@ -1,0 +1,2437 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../c4_report/">
+      
+      
+        <link rel="next" href="../eventstorming_report/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Event Modeling - Railway Ticket System Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no3-3-event-modeling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Railway Ticket System Docs" class="md-header__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Railway Ticket System Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Event Modeling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Railway Ticket System Docs" class="md-nav__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Railway Ticket System Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Analysis & Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1: Analysis & Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/lab1_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/business_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/competitor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitor Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/user_profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/user_survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Interaction Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 2: Interaction Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/01_problem_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/02_design_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/03_group_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/04_user_tasks_roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tasks & Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/05_object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/06_information_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/07_conceptual_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptual Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/08_navigation_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/09_cjm_impact_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CJM & Impact Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/10_interactive_storyboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Storyboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/11_design_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/13_execution_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: System Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 3: System Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c4_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4 Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание модели
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Легенда
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма: Покупка билета
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eventstorming_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/01_use_case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/02_activity_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/03_activity_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/04_class_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/04_object_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/05_seq_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/06_seq_buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Buy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/07_seq_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Login
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/08_seq_admin_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Admin Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/09_seq_payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Payment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/10_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/11_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/12_deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/13_erd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERD Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/c4_01_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/c4_02_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/c4_03_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/em_01_ticket_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling: Ticket Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/es_01_big_picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/es_02_process_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Process Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/es_03_software_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Software Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: REST API Modeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 4: REST API Modeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/01_requirements_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/02_database_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/03_api_routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Routes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/04_api_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 5: Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/01_visual_language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/02_prototyping_and_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 6: Testing & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/01_usability_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usability Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/02_card_sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/03_expectation_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expectation Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/04_checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/05_goms_klm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOMS/KLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание модели
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Легенда
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма: Покупка билета
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no3-3-event-modeling">Лабораторная работа №3. Задание 3: Event Modeling</h1>
+<p><strong>Цель:</strong> Проектирование системы "ЖД Вокзал" с использованием метода Event Modeling.</p>
+<p>Этот метод фокусируется на том, как информация изменяется во времени через события, связывая интерфейс (Views), действия пользователя (Commands) и системные события (Events).</p>
+<hr />
+<h2 id="_1">Описание модели</h2>
+<p>Диаграмма описывает сквозной процесс покупки билета, показывая взаимодействие между:
+*   <strong>Пассажиром</strong> (пользователем)
+*   <strong>Интерфейсом</strong> (UI/Views)
+*   <strong>Бэкендом</strong> (Commands &amp; Events)
+*   <strong>Внешней системой</strong> (Платежный шлюз)</p>
+<h3 id="_2">Легенда</h3>
+<ul>
+<li><strong>View (Зеленый):</strong> То, что видит пользователь (Экран, Форма).</li>
+<li><strong>Command (Синий):</strong> Действие, меняющее состояние системы (Нажатие кнопки, API запрос).</li>
+<li><strong>Event (Оранжевый):</strong> Фактическое событие, произошедшее в системе (Состояние изменилось).</li>
+</ul>
+<hr />
+<h2 id="_3">Диаграмма: Покупка билета</h2>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="1473px" preserveAspectRatio="xMidYMid meet" style="width:797px;height:1473px;background:#FFFFFF;" version="1.1" viewBox="0 0 797 1473" width="797px" zoomAndPan="magnify" class="diagram"><title>Event Modeling: Система продажи ЖД билетов</title><defs/><g><g class="title" data-source-line="25"><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="383.6875" x="205.4827" y="32.9951">Event Modeling: Система продажи ЖД билетов</text></g><rect fill="none" height="20.9531" style="stroke:none;stroke-width:1;" width="764.6528" x="15" y="50.042"/><rect fill="#FAEBD7" height="1411.1406" style="stroke:#FAEBD7;stroke-width:1;" width="189.041" x="15" y="50.042"/><ellipse cx="110.5205" cy="85.9951" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:0.5;"/><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="122.1289" x="49.4561" y="115.9951"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69.5742" x="59.4561" y="137.1338">Открывает</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="129.0303" y="137.1338"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28.7402" x="132.8447" y="137.1338">сайт</text><rect fill="#FFA500" height="47.9375" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="179.041" x="21" y="223.9326"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.7324" x="50.4033" y="245.0713">Вводит</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="96.1357" y="245.0713"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="70.6875" x="99.9502" y="245.0713">параметры</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44.5254" x="31" y="259.04">(Минск</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="75.5254" y="259.04"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="14.3848" x="79.3398" y="259.04">-&gt;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="93.7246" y="259.04"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.6523" x="97.5391" y="259.04">Гомель,</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="147.1914" y="259.04"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39.0352" x="151.0059" y="259.04">12.12)</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="139.584" x="40.7285" y="291.8701"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65.7656" x="50.7285" y="313.0088">Нажимает</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="116.4941" y="313.0088"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50.0039" x="120.3086" y="313.0088">&quot;Найти&quot;</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="123.3125" x="48.8643" y="507.7451"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62.25" x="58.8643" y="528.8838">Выбирает</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="121.1143" y="528.8838"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37.248" x="124.9287" y="528.8838">поезд</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="142.5137" x="39.2637" y="669.6514"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62.25" x="49.2637" y="690.79">Выбирает</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="111.5137" y="690.79"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37.3652" x="115.3281" y="690.79">место</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="152.6934" y="690.79"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="15.2695" x="156.5078" y="690.79">12</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="145.9473" x="37.5469" y="723.6201"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65.7656" x="47.5469" y="744.7588">Нажимает</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="113.3125" y="744.7588"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56.3672" x="117.127" y="744.7588">&quot;Купить&quot;</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="160.2441" x="30.3984" y="1007.4326"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.7324" x="40.3984" y="1028.5713">Вводит</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="86.1309" y="1028.5713"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48.1992" x="89.9453" y="1028.5713">данные</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="138.1445" y="1028.5713"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.6836" x="141.959" y="1028.5713">карты</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="161.7852" x="29.6279" y="1061.4014"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65.7656" x="39.6279" y="1082.54">Нажимает</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="105.3936" y="1082.54"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72.2051" x="109.208" y="1082.54">&quot;Оплатить&quot;</text><line style="stroke:#000000;stroke-width:1.5;" x1="15" x2="15" y1="50.042" y2="1461.1826"/><rect fill="#ADD8E6" height="1411.1406" style="stroke:#ADD8E6;stroke-width:1;" width="185.5664" x="204.041" y="50.042"/><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="109.6953" x="242.9766" y="169.9639"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="41.6953" x="252.9766" y="191.1025">Форма</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="294.6719" y="191.1025"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44.1855" x="298.4863" y="191.1025">поиска</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="120.6875" x="237.4805" y="453.7764"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.2109" x="247.4805" y="474.915">Список</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="292.6914" y="474.915"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51.6621" x="296.5059" y="474.915">поездов</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="106.3555" x="244.6465" y="615.6826"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39.2695" x="254.6465" y="636.8213">Схема</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="293.916" y="636.8213"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.2715" x="297.7305" y="636.8213">вагона</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="112.1855" x="241.7314" y="953.4639"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="41.6953" x="251.7314" y="974.6025">Форма</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="293.4268" y="974.6025"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.6758" x="297.2412" y="974.6025">оплаты</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="175.5664" x="210.041" y="1385.2139"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0742" x="220.041" y="1406.3525">Билет</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="258.1152" y="1406.3525"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="7.7988" x="261.9297" y="1406.3525">и</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="269.7285" y="1406.3525"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="102.0645" x="273.543" y="1406.3525">подтверждение</text><ellipse cx="297.8242" cy="1450.1826" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:0.5;"/><ellipse cx="297.8242" cy="1450.1826" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1.5;" x1="204.041" x2="204.041" y1="50.042" y2="1461.1826"/><rect fill="#FFFFE0" height="1411.1406" style="stroke:#FFFFE0;stroke-width:1;" width="187.3301" x="389.6074" y="50.042"/><rect fill="#00BFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="105.6348" x="431.4551" y="345.8389"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0098" x="441.4551" y="366.9775">Поиск</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="479.4648" y="366.9775"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.8105" x="483.2793" y="366.9775">рейсов</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="125.5918" x="421.4766" y="399.8076"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.7793" x="431.4766" y="420.9463">Поезда</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="477.2559" y="420.9463"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="55.998" x="481.0703" y="420.9463">найдены</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="109.0039" x="429.7705" y="561.7139"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.4258" x="439.7705" y="582.8525">Поезд</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="478.1963" y="582.8525"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.7637" x="482.0107" y="582.8525">выбран</text><rect fill="#00BFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="110.3457" x="429.0996" y="777.5889"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51.8145" x="439.0996" y="798.7275">Создать</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="490.9141" y="798.7275"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="34.7168" x="494.7285" y="798.7275">заказ</text><rect fill="#FFA500" height="47.9375" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="123.8574" x="422.3438" y="831.5576"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36.0293" x="442.4424" y="852.6963">Заказ</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="478.4717" y="852.6963"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.8164" x="482.2861" y="852.6963">создан</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.9629" x="432.3438" y="866.665">(Status:</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="479.3066" y="866.665"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.0801" x="483.1211" y="866.665">Pending)</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="177.3301" x="395.6074" y="899.4951"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.666" x="405.6074" y="920.6338">Место</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="444.2734" y="920.6338"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="15.2695" x="448.0879" y="920.6338">12</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="463.3574" y="920.6338"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95.7656" x="467.1719" y="920.6338">заблокировано</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="159.9277" x="404.3086" y="1223.3076"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.2305" x="414.3086" y="1244.4463">Платеж</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="463.5391" y="1244.4463"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="86.8828" x="467.3535" y="1244.4463">подтвержден</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="119.9141" x="424.3154" y="1277.2764"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0742" x="434.3154" y="1298.415">Билет</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="472.3896" y="1298.415"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58.0254" x="476.2041" y="1298.415">выпущен</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="145.1621" x="411.6914" y="1331.2451"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.8867" x="421.6914" y="1352.3838">Письмо</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="468.5781" y="1352.3838"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74.4609" x="472.3926" y="1352.3838">отправлено</text><line style="stroke:#000000;stroke-width:1.5;" x1="389.6074" x2="389.6074" y1="50.042" y2="1461.1826"/><rect fill="#E6E6FA" height="1411.1406" style="stroke:#E6E6FA;stroke-width:1;" width="200.8545" x="576.9375" y="50.042"/><rect fill="#00BFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="146.832" x="604.9487" y="1115.3701"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74.9648" x="614.9487" y="1136.5088">Обработать</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="689.9136" y="1136.5088"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48.0527" x="693.728" y="1136.5088">платеж</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="157.9941" x="599.3677" y="1169.3389"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.6582" x="609.3677" y="1190.4775">Оплата</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="656.0259" y="1190.4775"> </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87.5215" x="659.8403" y="1190.4775">авторизована</text><line style="stroke:#000000;stroke-width:1.5;" x1="576.9375" x2="576.9375" y1="50.042" y2="1461.1826"/><line style="stroke:#000000;stroke-width:1.5;" x1="777.792" x2="777.792" y1="50.042" y2="1461.1826"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="95.9951" y2="115.9951"/><polygon fill="#181818" points="106.5205,105.9951,110.5205,115.9951,114.5205,105.9951,110.5205,109.9951" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="271.8701" y2="291.8701"/><polygon fill="#181818" points="106.5205,281.8701,110.5205,291.8701,114.5205,281.8701,110.5205,285.8701" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="703.6201" y2="723.6201"/><polygon fill="#181818" points="106.5205,713.6201,110.5205,723.6201,114.5205,713.6201,110.5205,717.6201" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="1041.4014" y2="1061.4014"/><polygon fill="#181818" points="106.5205,1051.4014,110.5205,1061.4014,114.5205,1051.4014,110.5205,1055.4014" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="1419.1826" y2="1439.1826"/><polygon fill="#181818" points="293.8242,1429.1826,297.8242,1439.1826,301.8242,1429.1826,297.8242,1433.1826" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="379.8076" y2="399.8076"/><polygon fill="#181818" points="480.2725,389.8076,484.2725,399.8076,488.2725,389.8076,484.2725,393.8076" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="811.5576" y2="831.5576"/><polygon fill="#181818" points="480.2725,821.5576,484.2725,831.5576,488.2725,821.5576,484.2725,825.5576" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="879.4951" y2="899.4951"/><polygon fill="#181818" points="480.2725,889.4951,484.2725,899.4951,488.2725,889.4951,484.2725,893.4951" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1257.2764" y2="1277.2764"/><polygon fill="#181818" points="480.2725,1267.2764,484.2725,1277.2764,488.2725,1267.2764,484.2725,1271.2764" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1311.2451" y2="1331.2451"/><polygon fill="#181818" points="480.2725,1321.2451,484.2725,1331.2451,488.2725,1321.2451,484.2725,1325.2451" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="678.3647" x2="678.3647" y1="1149.3389" y2="1169.3389"/><polygon fill="#181818" points="674.3647,1159.3389,678.3647,1169.3389,682.3647,1159.3389,678.3647,1163.3389" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="149.9639" y2="154.9639"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="297.8242" y1="154.9639" y2="154.9639"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="154.9639" y2="169.9639"/><polygon fill="#181818" points="293.8242,159.9639,297.8242,169.9639,301.8242,159.9639,297.8242,163.9639" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="203.9326" y2="208.9326"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="110.5205" y1="208.9326" y2="208.9326"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="208.9326" y2="223.9326"/><polygon fill="#181818" points="106.5205,213.9326,110.5205,223.9326,114.5205,213.9326,110.5205,217.9326" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="325.8389" y2="330.8389"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="484.2725" y1="330.8389" y2="330.8389"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="330.8389" y2="345.8389"/><polygon fill="#181818" points="480.2725,335.8389,484.2725,345.8389,488.2725,335.8389,484.2725,339.8389" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="433.7764" y2="438.7764"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="297.8242" y1="438.7764" y2="438.7764"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="438.7764" y2="453.7764"/><polygon fill="#181818" points="293.8242,443.7764,297.8242,453.7764,301.8242,443.7764,297.8242,447.7764" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="487.7451" y2="492.7451"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="110.5205" y1="492.7451" y2="492.7451"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="492.7451" y2="507.7451"/><polygon fill="#181818" points="106.5205,497.7451,110.5205,507.7451,114.5205,497.7451,110.5205,501.7451" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="541.7139" y2="546.7139"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="484.2725" y1="546.7139" y2="546.7139"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="546.7139" y2="561.7139"/><polygon fill="#181818" points="480.2725,551.7139,484.2725,561.7139,488.2725,551.7139,484.2725,555.7139" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="595.6826" y2="600.6826"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="297.8242" y1="600.6826" y2="600.6826"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="600.6826" y2="615.6826"/><polygon fill="#181818" points="293.8242,605.6826,297.8242,615.6826,301.8242,605.6826,297.8242,609.6826" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="649.6514" y2="654.6514"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="110.5205" y1="654.6514" y2="654.6514"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="654.6514" y2="669.6514"/><polygon fill="#181818" points="106.5205,659.6514,110.5205,669.6514,114.5205,659.6514,110.5205,663.6514" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="757.5889" y2="762.5889"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="484.2725" y1="762.5889" y2="762.5889"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="762.5889" y2="777.5889"/><polygon fill="#181818" points="480.2725,767.5889,484.2725,777.5889,488.2725,767.5889,484.2725,771.5889" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="933.4639" y2="938.4639"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="297.8242" y1="938.4639" y2="938.4639"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="938.4639" y2="953.4639"/><polygon fill="#181818" points="293.8242,943.4639,297.8242,953.4639,301.8242,943.4639,297.8242,947.4639" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="987.4326" y2="992.4326"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="110.5205" y1="992.4326" y2="992.4326"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="992.4326" y2="1007.4326"/><polygon fill="#181818" points="106.5205,997.4326,110.5205,1007.4326,114.5205,997.4326,110.5205,1001.4326" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="110.5205" y1="1095.3701" y2="1100.3701"/><line style="stroke:#181818;stroke-width:1;" x1="110.5205" x2="678.3647" y1="1100.3701" y2="1100.3701"/><line style="stroke:#181818;stroke-width:1;" x1="678.3647" x2="678.3647" y1="1100.3701" y2="1115.3701"/><polygon fill="#181818" points="674.3647,1105.3701,678.3647,1115.3701,682.3647,1105.3701,678.3647,1109.3701" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="678.3647" x2="678.3647" y1="1203.3076" y2="1208.3076"/><line style="stroke:#181818;stroke-width:1;" x1="678.3647" x2="484.2725" y1="1208.3076" y2="1208.3076"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1208.3076" y2="1223.3076"/><polygon fill="#181818" points="480.2725,1213.3076,484.2725,1223.3076,488.2725,1213.3076,484.2725,1217.3076" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1365.2139" y2="1370.2139"/><line style="stroke:#181818;stroke-width:1;" x1="484.2725" x2="297.8242" y1="1370.2139" y2="1370.2139"/><line style="stroke:#181818;stroke-width:1;" x1="297.8242" x2="297.8242" y1="1370.2139" y2="1385.2139"/><polygon fill="#181818" points="293.8242,1375.2139,297.8242,1385.2139,301.8242,1375.2139,297.8242,1379.2139" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="94.7285" x="62.1563" y="66.75">Пассажир</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="144.5273" x="224.5605" y="66.75">Интерфейс (UI)</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="125.8506" x="420.3472" y="66.75">Backend (API)</text><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="190.8545" x="581.9375" y="66.75">Платежная система</text></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="1473px" preserveAspectRatio="xMidYMid meet" style="width:797px;height:1473px;background:#1B1B1B;" version="1.1" viewBox="0 0 797 1473" width="797px" zoomAndPan="magnify" class="diagram"><title>Event Modeling: Система продажи ЖД билетов</title><defs/><g><rect fill="#1B1B1B" height="1473" style="stroke:none;stroke-width:1;" width="797" x="0" y="0"/><g class="title" data-source-line="25"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="383.6875" x="205.4827" y="32.9951">Event Modeling: Система продажи ЖД билетов</text></g><rect fill="none" height="20.9531" style="stroke:none;stroke-width:1;" width="764.6528" x="15" y="50.042"/><rect fill="#FAEBD7" height="1411.1406" style="stroke:#FAEBD7;stroke-width:1;" width="189.041" x="15" y="50.042"/><ellipse cx="110.5205" cy="85.9951" fill="#DDDDDD" rx="10" ry="10" style="stroke:#DDDDDD;stroke-width:0.5;"/><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="122.1289" x="49.4561" y="115.9951"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69.5742" x="59.4561" y="137.1338">Открывает</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="129.0303" y="137.1338"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28.7402" x="132.8447" y="137.1338">сайт</text><rect fill="#FFA500" height="47.9375" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="179.041" x="21" y="223.9326"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.7324" x="50.4033" y="245.0713">Вводит</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="96.1357" y="245.0713"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="70.6875" x="99.9502" y="245.0713">параметры</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44.5254" x="31" y="259.04">(Минск</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="75.5254" y="259.04"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="14.3848" x="79.3398" y="259.04">-&gt;</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="93.7246" y="259.04"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.6523" x="97.5391" y="259.04">Гомель,</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="147.1914" y="259.04"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39.0352" x="151.0059" y="259.04">12.12)</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="139.584" x="40.7285" y="291.8701"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65.7656" x="50.7285" y="313.0088">Нажимает</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="116.4941" y="313.0088"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50.0039" x="120.3086" y="313.0088">&quot;Найти&quot;</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="123.3125" x="48.8643" y="507.7451"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62.25" x="58.8643" y="528.8838">Выбирает</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="121.1143" y="528.8838"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37.248" x="124.9287" y="528.8838">поезд</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="142.5137" x="39.2637" y="669.6514"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62.25" x="49.2637" y="690.79">Выбирает</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="111.5137" y="690.79"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37.3652" x="115.3281" y="690.79">место</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="152.6934" y="690.79"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="15.2695" x="156.5078" y="690.79">12</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="145.9473" x="37.5469" y="723.6201"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65.7656" x="47.5469" y="744.7588">Нажимает</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="113.3125" y="744.7588"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56.3672" x="117.127" y="744.7588">&quot;Купить&quot;</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="160.2441" x="30.3984" y="1007.4326"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.7324" x="40.3984" y="1028.5713">Вводит</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="86.1309" y="1028.5713"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48.1992" x="89.9453" y="1028.5713">данные</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="138.1445" y="1028.5713"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.6836" x="141.959" y="1028.5713">карты</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="161.7852" x="29.6279" y="1061.4014"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65.7656" x="39.6279" y="1082.54">Нажимает</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="105.3936" y="1082.54"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72.2051" x="109.208" y="1082.54">&quot;Оплатить&quot;</text><line style="stroke:#FFFFFF;stroke-width:1.5;" x1="15" x2="15" y1="50.042" y2="1461.1826"/><rect fill="#ADD8E6" height="1411.1406" style="stroke:#ADD8E6;stroke-width:1;" width="185.5664" x="204.041" y="50.042"/><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="109.6953" x="242.9766" y="169.9639"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="41.6953" x="252.9766" y="191.1025">Форма</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="294.6719" y="191.1025"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44.1855" x="298.4863" y="191.1025">поиска</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="120.6875" x="237.4805" y="453.7764"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.2109" x="247.4805" y="474.915">Список</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="292.6914" y="474.915"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51.6621" x="296.5059" y="474.915">поездов</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="106.3555" x="244.6465" y="615.6826"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39.2695" x="254.6465" y="636.8213">Схема</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="293.916" y="636.8213"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.2715" x="297.7305" y="636.8213">вагона</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="112.1855" x="241.7314" y="953.4639"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="41.6953" x="251.7314" y="974.6025">Форма</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="293.4268" y="974.6025"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.6758" x="297.2412" y="974.6025">оплаты</text><rect fill="#90EE90" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="175.5664" x="210.041" y="1385.2139"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0742" x="220.041" y="1406.3525">Билет</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="258.1152" y="1406.3525"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="7.7988" x="261.9297" y="1406.3525">и</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="269.7285" y="1406.3525"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="102.0645" x="273.543" y="1406.3525">подтверждение</text><ellipse cx="297.8242" cy="1450.1826" fill="none" rx="11" ry="11" style="stroke:#DDDDDD;stroke-width:0.5;"/><ellipse cx="297.8242" cy="1450.1826" fill="#DDDDDD" rx="6" ry="6" style="stroke:#DDDDDD;stroke-width:1;"/><line style="stroke:#FFFFFF;stroke-width:1.5;" x1="204.041" x2="204.041" y1="50.042" y2="1461.1826"/><rect fill="#FFFFE0" height="1411.1406" style="stroke:#FFFFE0;stroke-width:1;" width="187.3301" x="389.6074" y="50.042"/><rect fill="#00BFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="105.6348" x="431.4551" y="345.8389"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0098" x="441.4551" y="366.9775">Поиск</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="479.4648" y="366.9775"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.8105" x="483.2793" y="366.9775">рейсов</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="125.5918" x="421.4766" y="399.8076"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.7793" x="431.4766" y="420.9463">Поезда</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="477.2559" y="420.9463"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="55.998" x="481.0703" y="420.9463">найдены</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="109.0039" x="429.7705" y="561.7139"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.4258" x="439.7705" y="582.8525">Поезд</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="478.1963" y="582.8525"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.7637" x="482.0107" y="582.8525">выбран</text><rect fill="#00BFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="110.3457" x="429.0996" y="777.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51.8145" x="439.0996" y="798.7275">Создать</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="490.9141" y="798.7275"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="34.7168" x="494.7285" y="798.7275">заказ</text><rect fill="#FFA500" height="47.9375" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="123.8574" x="422.3438" y="831.5576"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36.0293" x="442.4424" y="852.6963">Заказ</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="478.4717" y="852.6963"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.8164" x="482.2861" y="852.6963">создан</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.9629" x="432.3438" y="866.665">(Status:</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="479.3066" y="866.665"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.0801" x="483.1211" y="866.665">Pending)</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="177.3301" x="395.6074" y="899.4951"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.666" x="405.6074" y="920.6338">Место</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="444.2734" y="920.6338"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="15.2695" x="448.0879" y="920.6338">12</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="463.3574" y="920.6338"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95.7656" x="467.1719" y="920.6338">заблокировано</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="159.9277" x="404.3086" y="1223.3076"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.2305" x="414.3086" y="1244.4463">Платеж</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="463.5391" y="1244.4463"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="86.8828" x="467.3535" y="1244.4463">подтвержден</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="119.9141" x="424.3154" y="1277.2764"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0742" x="434.3154" y="1298.415">Билет</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="472.3896" y="1298.415"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58.0254" x="476.2041" y="1298.415">выпущен</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="145.1621" x="411.6914" y="1331.2451"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.8867" x="421.6914" y="1352.3838">Письмо</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="468.5781" y="1352.3838"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74.4609" x="472.3926" y="1352.3838">отправлено</text><line style="stroke:#FFFFFF;stroke-width:1.5;" x1="389.6074" x2="389.6074" y1="50.042" y2="1461.1826"/><rect fill="#E6E6FA" height="1411.1406" style="stroke:#E6E6FA;stroke-width:1;" width="200.8545" x="576.9375" y="50.042"/><rect fill="#00BFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="146.832" x="604.9487" y="1115.3701"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74.9648" x="614.9487" y="1136.5088">Обработать</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="689.9136" y="1136.5088"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48.0527" x="693.728" y="1136.5088">платеж</text><rect fill="#FFA500" height="33.9688" rx="12.5" ry="12.5" style="stroke:#B25000;stroke-width:0.5;" width="157.9941" x="599.3677" y="1169.3389"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.6582" x="609.3677" y="1190.4775">Оплата</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.8145" x="656.0259" y="1190.4775"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87.5215" x="659.8403" y="1190.4775">авторизована</text><line style="stroke:#FFFFFF;stroke-width:1.5;" x1="576.9375" x2="576.9375" y1="50.042" y2="1461.1826"/><line style="stroke:#FFFFFF;stroke-width:1.5;" x1="777.792" x2="777.792" y1="50.042" y2="1461.1826"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="95.9951" y2="115.9951"/><polygon fill="#E7E7E7" points="106.5205,105.9951,110.5205,115.9951,114.5205,105.9951,110.5205,109.9951" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="271.8701" y2="291.8701"/><polygon fill="#E7E7E7" points="106.5205,281.8701,110.5205,291.8701,114.5205,281.8701,110.5205,285.8701" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="703.6201" y2="723.6201"/><polygon fill="#E7E7E7" points="106.5205,713.6201,110.5205,723.6201,114.5205,713.6201,110.5205,717.6201" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="1041.4014" y2="1061.4014"/><polygon fill="#E7E7E7" points="106.5205,1051.4014,110.5205,1061.4014,114.5205,1051.4014,110.5205,1055.4014" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="1419.1826" y2="1439.1826"/><polygon fill="#E7E7E7" points="293.8242,1429.1826,297.8242,1439.1826,301.8242,1429.1826,297.8242,1433.1826" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="379.8076" y2="399.8076"/><polygon fill="#E7E7E7" points="480.2725,389.8076,484.2725,399.8076,488.2725,389.8076,484.2725,393.8076" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="811.5576" y2="831.5576"/><polygon fill="#E7E7E7" points="480.2725,821.5576,484.2725,831.5576,488.2725,821.5576,484.2725,825.5576" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="879.4951" y2="899.4951"/><polygon fill="#E7E7E7" points="480.2725,889.4951,484.2725,899.4951,488.2725,889.4951,484.2725,893.4951" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1257.2764" y2="1277.2764"/><polygon fill="#E7E7E7" points="480.2725,1267.2764,484.2725,1277.2764,488.2725,1267.2764,484.2725,1271.2764" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1311.2451" y2="1331.2451"/><polygon fill="#E7E7E7" points="480.2725,1321.2451,484.2725,1331.2451,488.2725,1321.2451,484.2725,1325.2451" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="678.3647" x2="678.3647" y1="1149.3389" y2="1169.3389"/><polygon fill="#E7E7E7" points="674.3647,1159.3389,678.3647,1169.3389,682.3647,1159.3389,678.3647,1163.3389" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="149.9639" y2="154.9639"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="297.8242" y1="154.9639" y2="154.9639"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="154.9639" y2="169.9639"/><polygon fill="#E7E7E7" points="293.8242,159.9639,297.8242,169.9639,301.8242,159.9639,297.8242,163.9639" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="203.9326" y2="208.9326"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="110.5205" y1="208.9326" y2="208.9326"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="208.9326" y2="223.9326"/><polygon fill="#E7E7E7" points="106.5205,213.9326,110.5205,223.9326,114.5205,213.9326,110.5205,217.9326" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="325.8389" y2="330.8389"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="484.2725" y1="330.8389" y2="330.8389"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="330.8389" y2="345.8389"/><polygon fill="#E7E7E7" points="480.2725,335.8389,484.2725,345.8389,488.2725,335.8389,484.2725,339.8389" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="433.7764" y2="438.7764"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="297.8242" y1="438.7764" y2="438.7764"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="438.7764" y2="453.7764"/><polygon fill="#E7E7E7" points="293.8242,443.7764,297.8242,453.7764,301.8242,443.7764,297.8242,447.7764" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="487.7451" y2="492.7451"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="110.5205" y1="492.7451" y2="492.7451"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="492.7451" y2="507.7451"/><polygon fill="#E7E7E7" points="106.5205,497.7451,110.5205,507.7451,114.5205,497.7451,110.5205,501.7451" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="541.7139" y2="546.7139"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="484.2725" y1="546.7139" y2="546.7139"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="546.7139" y2="561.7139"/><polygon fill="#E7E7E7" points="480.2725,551.7139,484.2725,561.7139,488.2725,551.7139,484.2725,555.7139" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="595.6826" y2="600.6826"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="297.8242" y1="600.6826" y2="600.6826"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="600.6826" y2="615.6826"/><polygon fill="#E7E7E7" points="293.8242,605.6826,297.8242,615.6826,301.8242,605.6826,297.8242,609.6826" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="649.6514" y2="654.6514"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="110.5205" y1="654.6514" y2="654.6514"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="654.6514" y2="669.6514"/><polygon fill="#E7E7E7" points="106.5205,659.6514,110.5205,669.6514,114.5205,659.6514,110.5205,663.6514" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="757.5889" y2="762.5889"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="484.2725" y1="762.5889" y2="762.5889"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="762.5889" y2="777.5889"/><polygon fill="#E7E7E7" points="480.2725,767.5889,484.2725,777.5889,488.2725,767.5889,484.2725,771.5889" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="933.4639" y2="938.4639"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="297.8242" y1="938.4639" y2="938.4639"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="938.4639" y2="953.4639"/><polygon fill="#E7E7E7" points="293.8242,943.4639,297.8242,953.4639,301.8242,943.4639,297.8242,947.4639" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="987.4326" y2="992.4326"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="110.5205" y1="992.4326" y2="992.4326"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="992.4326" y2="1007.4326"/><polygon fill="#E7E7E7" points="106.5205,997.4326,110.5205,1007.4326,114.5205,997.4326,110.5205,1001.4326" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="110.5205" y1="1095.3701" y2="1100.3701"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="110.5205" x2="678.3647" y1="1100.3701" y2="1100.3701"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="678.3647" x2="678.3647" y1="1100.3701" y2="1115.3701"/><polygon fill="#E7E7E7" points="674.3647,1105.3701,678.3647,1115.3701,682.3647,1105.3701,678.3647,1109.3701" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="678.3647" x2="678.3647" y1="1203.3076" y2="1208.3076"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="678.3647" x2="484.2725" y1="1208.3076" y2="1208.3076"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1208.3076" y2="1223.3076"/><polygon fill="#E7E7E7" points="480.2725,1213.3076,484.2725,1223.3076,488.2725,1213.3076,484.2725,1217.3076" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="484.2725" y1="1365.2139" y2="1370.2139"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="484.2725" x2="297.8242" y1="1370.2139" y2="1370.2139"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="297.8242" x2="297.8242" y1="1370.2139" y2="1385.2139"/><polygon fill="#E7E7E7" points="293.8242,1375.2139,297.8242,1385.2139,301.8242,1375.2139,297.8242,1379.2139" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="94.7285" x="62.1563" y="66.75">Пассажир</text><text fill="#FFFFFF" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="144.5273" x="224.5605" y="66.75">Интерфейс (UI)</text><text fill="#FFFFFF" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="125.8506" x="420.3472" y="66.75">Backend (API)</text><text fill="#FFFFFF" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="190.8545" x="581.9375" y="66.75">Платежная система</text></g></svg></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

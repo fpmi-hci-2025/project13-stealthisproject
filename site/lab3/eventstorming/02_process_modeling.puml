@@ -1,0 +1,70 @@
+@startuml
+!include ../includes/EventStorming.puml
+
+title EventStorming: Process Modeling (Покупка билета)
+
+' Actors
+Actor(Passenger, "Пассажир")
+Actor(PaymentSystem, "Платежный шлюз")
+
+' Commands and Events flow
+
+' --- Search Phase ---
+Command(SearchTrains, "Поиск поездов")
+System(SearchEngine, "Поисковый движок")
+DomainEvent(TrainsFound, "Поезда найдены")
+ReadModel(TrainSchedule, "Расписание и цены")
+
+Passenger --> SearchTrains
+SearchTrains --> SearchEngine
+SearchEngine --> TrainsFound
+TrainsFound ..> TrainSchedule : updates view
+
+' --- Selection Phase ---
+Command(SelectSeat, "Выбрать место")
+Aggregate(BookingInfo, "Бронирование")
+DomainEvent(SeatLocked, "Место временно заблокировано")
+Policy(SeatLockTimer, "Таймер блокировки (15 мин)")
+
+Passenger --> SelectSeat
+SelectSeat --> BookingInfo
+BookingInfo --> SeatLocked
+SeatLocked --> SeatLockTimer
+
+' --- Order Phase ---
+Command(CreateOrder, "Оформить заказ")
+Aggregate(Order, "Заказ")
+DomainEvent(OrderCreated, "Заказ создан")
+
+Passenger --> CreateOrder
+CreateOrder --> Order
+Order --> OrderCreated
+
+' --- Payment Phase ---
+Command(PayForOrder, "Оплатить заказ")
+System(PaymentGateway, "Банковский шлюз")
+DomainEvent(PaymentAuthorized, "Оплата авторизована")
+DomainEvent(PaymentDeclined, "Оплата отклонена")
+
+Passenger --> PayForOrder
+PayForOrder --> PaymentGateway
+PaymentGateway --> PaymentAuthorized
+PaymentGateway --> PaymentDeclined
+
+' --- Fulfillment Phase ---
+Policy(IssueTicketPolicy, "При успешной оплате -> Выпустить билет")
+Command(GenerateTicket, "Сгенерировать билет")
+Aggregate(TicketAgg, "Билет")
+DomainEvent(TicketGenerated, "Билет сгенерирован")
+System(EmailService, "Почтовый сервис")
+DomainEvent(EmailSent, "Email отправлен")
+
+PaymentAuthorized --> IssueTicketPolicy
+IssueTicketPolicy --> GenerateTicket
+GenerateTicket --> TicketAgg
+TicketAgg --> TicketGenerated
+TicketGenerated --> EmailService
+EmailService --> EmailSent
+
+@enduml
+

@@ -8,7 +8,7 @@
 
 Диаграмма описывает основные функциональные возможности системы и взаимодействия с действующими лицами (акторами).
 
-```plantuml
+```puml
 @startuml 01
 left to right direction
 actor "Пассажир" as Passenger
@@ -125,7 +125,7 @@ UC11 ..> UC7 : <<include>>
 ### 2.1. Процесс покупки билета
 Диаграмма детализирует алгоритм покупки билета пользователем, включая ветвления при ошибках или отсутствии мест.
 
-```plantuml
+```puml
 @startuml
 start
 :Пользователь открывает сайт/приложение;
@@ -160,7 +160,7 @@ endif
 ### 2.2. Процесс добавления маршрута
 Диаграмма описывает последовательность действий администратора при вводе нового рейса в систему.
 
-```plantuml
+```puml
 @startuml
 |Администратор|
 start
@@ -189,7 +189,7 @@ stop
 
 Отображает статическую структуру системы, основные сущности (User, Ticket, Train, Route) и связи между ними (ассоциации, композиции).
 
-```plantuml
+```puml
 @startuml
 class User {
   +id: Long
@@ -267,7 +267,7 @@ Route "*" -- "2..*" Station : connects >
 ### 3.1. Диаграмма объектов
 Показывает пример конкретного экземпляра выполнения системы (снапшот): пользователь Анна оформила заказ №5001 с одним билетом.
 
-```plantuml
+```puml
 @startuml
 object "user1: User" as u1 {
   id = 101
@@ -321,7 +321,7 @@ t1 -- tr1 : valid for
 ### 4.1. Поиск рейса
 Показывает взаимодействие UI, Сервиса поиска и Репозитория маршрутов.
 
-```plantuml
+```puml
 @startuml
 actor User
 participant "SearchUI" as UI
@@ -356,7 +356,7 @@ deactivate UI
 ### 4.2. Покупка билета
 Детальный поток обмена сообщениями между UI, Сервисом заказов, Платежным шлюзом и Сервисом уведомлений.
 
-```plantuml
+```puml
 @startuml
 actor Passenger
 participant "BookingUI" as UI
@@ -397,7 +397,7 @@ deactivate UI
 ### 4.3. Авторизация
 Процесс входа пользователя в систему.
 
-```plantuml
+```puml
 @startuml
 actor User
 participant "LoginUI" as UI
@@ -430,7 +430,7 @@ deactivate UI
 ### 4.4. Добавление рейса (Админ)
 Взаимодействие администратора с панелью управления и базой данных.
 
-```plantuml
+```puml
 @startuml
 actor Admin
 participant "AdminPanel" as UI
@@ -456,7 +456,7 @@ deactivate UI
 ### 4.5. Обработка платежа
 Интеграция с внешней банковской системой.
 
-```plantuml
+```puml
 @startuml
 actor Passenger
 participant "PaymentGateway" as GW
@@ -487,7 +487,7 @@ deactivate GW
 
 Показывает разделение системы на физические и логические компоненты (Веб-приложение, API, Микросервисы, БД).
 
-```plantuml
+```puml
 @startuml
 package "Client Side" {
   component [Web Application] as WebApp
@@ -529,7 +529,7 @@ SearchService ..> Cache
 
 Организация исходного кода системы по слоям (Presentation, Business Logic, Data Access).
 
-```plantuml
+```puml
 @startuml
 package "Presentation Layer" {
   [Web Controllers]
@@ -569,7 +569,7 @@ package "Infrastructure" {
 
 Схема размещения программных компонентов на аппаратных узлах (Клиент, Сервер приложений, Сервер БД, Балансировщик).
 
-```plantuml
+```puml
 @startuml
 node "Client Device" as client {
   artifact "Web Browser" as browser
@@ -598,7 +598,7 @@ app_server --> db_server : TCP/5432
 
 Диаграмма сущность-связь, описывающая таблицы базы данных и отношения внешних ключей.
 
-```plantuml
+```puml
 @startuml
 entity "User" {
   *id : number <<generated>>

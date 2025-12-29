@@ -23,7 +23,7 @@
 
 ## Диаграмма: Покупка билета
 
-```plantuml
+```puml
 @startuml
 ' --- Event Modeling Notation via Activity Diagram ---
 !define EM_EVENT_COLOR #Orange

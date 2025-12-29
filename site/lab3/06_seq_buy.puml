@@ -1,0 +1,36 @@
+@startuml
+actor Passenger
+participant "BookingUI" as UI
+participant "OrderService" as OrderSvc
+participant "PaymentService" as PaySvc
+participant "NotificationService" as Notify
+
+Passenger -> UI : Нажимает "Купить"
+activate UI
+UI -> OrderSvc : createOrder(userId, tripDetails)
+activate OrderSvc
+OrderSvc -> OrderSvc : validateAvailability()
+OrderSvc -> OrderSvc : reserveSeats()
+OrderSvc --> UI : orderId, amount
+deactivate OrderSvc
+
+UI -> PaySvc : processPayment(orderId, cardData)
+activate PaySvc
+PaySvc -> PaySvc : contactBankAPI()
+PaySvc --> UI : paymentSuccess
+deactivate PaySvc
+
+UI -> OrderSvc : confirmOrder(orderId)
+activate OrderSvc
+OrderSvc -> OrderSvc : generateTickets()
+OrderSvc -> Notify : sendEmail(userId, tickets)
+activate Notify
+Notify --> OrderSvc : sent
+deactivate Notify
+OrderSvc --> UI : orderConfirmed
+deactivate OrderSvc
+
+UI --> Passenger : Отображение билета
+deactivate UI
+@enduml
+

@@ -1,0 +1,3743 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../competitor_analysis/">
+      
+      
+        <link rel="next" href="../personas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Object Model - Railway Ticket System Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Railway Ticket System Docs" class="md-header__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Railway Ticket System Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Object Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Railway Ticket System Docs" class="md-nav__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Railway Ticket System Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Analysis & Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1: Analysis & Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competitor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitor Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Введение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма классов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание основных классов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание основных классов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. User (Пользователь)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-passenger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Passenger (Пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Station (Станция)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Route (Маршрут)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-intermediatestop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. IntermediateStop (Промежуточная остановка)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Train (Поезд)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-carriage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Carriage (Вагон)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-seat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Seat (Место)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Order (Заказ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Ticket (Билет)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Payment (Платеж)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-searchquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. SearchQuery (Поисковый запрос)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перечисления (Enums)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Перечисления (Enums)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#userrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UserRole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trainstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrainStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carriagetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CarriageType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seattype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SeatType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OrderStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticketstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TicketStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymentmethod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PaymentMethod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymentstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PaymentStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Соответствие объектов персонажам
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Соответствие объектов персонажам">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Анна Петрова (Частый пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Владимир Иванович (Редкий пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ольга Сергеевна (Кассир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дмитрий Александрович (Администратор вокзала)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Бизнес-правила
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Бизнес-правила">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Бронирование мест
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Возврат билетов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цены
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поиск
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выводы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Interaction Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 2: Interaction Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/01_problem_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/02_design_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/03_group_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/04_user_tasks_roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tasks & Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/05_object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/06_information_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/07_conceptual_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptual Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/08_navigation_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/09_cjm_impact_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CJM & Impact Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/10_interactive_storyboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Storyboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/11_design_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/13_execution_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: System Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 3: System Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/c4_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4 Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/eventmodeling_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/eventstorming_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/01_use_case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/02_activity_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/03_activity_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/04_class_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/04_object_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/05_seq_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/06_seq_buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Buy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/07_seq_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Login
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/08_seq_admin_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Admin Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/09_seq_payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Payment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/10_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/11_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/12_deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/13_erd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERD Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_01_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_02_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_03_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/em_01_ticket_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling: Ticket Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_01_big_picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_02_process_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Process Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_03_software_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Software Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: REST API Modeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 4: REST API Modeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/01_requirements_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/02_database_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/03_api_routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Routes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/04_api_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 5: Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/01_visual_language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/02_prototyping_and_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 6: Testing & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/01_usability_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usability Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/02_card_sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/03_expectation_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expectation Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/04_checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/05_goms_klm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOMS/KLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Введение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма классов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание основных классов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание основных классов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. User (Пользователь)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-passenger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Passenger (Пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Station (Станция)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Route (Маршрут)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-intermediatestop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. IntermediateStop (Промежуточная остановка)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Train (Поезд)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-carriage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Carriage (Вагон)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-seat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Seat (Место)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Order (Заказ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Ticket (Билет)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Payment (Платеж)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-searchquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. SearchQuery (Поисковый запрос)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перечисления (Enums)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Перечисления (Enums)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#userrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UserRole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trainstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrainStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carriagetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CarriageType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seattype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SeatType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OrderStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticketstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TicketStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymentmethod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PaymentMethod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymentstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PaymentStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Соответствие объектов персонажам
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Соответствие объектов персонажам">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Анна Петрова (Частый пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Владимир Иванович (Редкий пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ольга Сергеевна (Кассир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дмитрий Александрович (Администратор вокзала)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Бизнес-правила
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Бизнес-правила">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Бронирование мест
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Возврат билетов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цены
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поиск
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выводы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Объектная модель системы</h1>
+<h2 id="_2">Введение</h2>
+<p>Объектная модель описывает основные сущности системы электронных билетов для ЖД-вокзала, их атрибуты, методы и взаимосвязи. Модель разработана на основе анализа требований, профилей пользователей и контекстных сценариев.</p>
+<h2 id="_3">Диаграмма классов</h2>
+<pre class="mermaid"><code>classDiagram
+    class User {
+        +int id
+        +string email
+        +string password_hash
+        +string phone
+        +string first_name
+        +string last_name
+        +datetime created_at
+        +datetime last_login
+        +UserRole role
+        +register()
+        +login()
+        +logout()
+        +updateProfile()
+        +resetPassword()
+    }
+
+    class Passenger {
+        +int id
+        +int user_id
+        +string passport_series
+        +string passport_number
+        +string first_name
+        +string last_name
+        +string middle_name
+        +date birth_date
+        +string citizenship
+        +addPassenger()
+        +updatePassenger()
+        +deletePassenger()
+        +getPassengerInfo()
+    }
+
+    class Route {
+        +int id
+        +string route_number
+        +Station departure_station
+        +Station arrival_station
+        +time departure_time
+        +time arrival_time
+        +int duration_minutes
+        +bool is_active
+        +addRoute()
+        +updateRoute()
+        +deleteRoute()
+        +getRouteInfo()
+        +getIntermediateStops()
+    }
+
+    class Station {
+        +int id
+        +string name
+        +string code
+        +string city
+        +string address
+        +float latitude
+        +float longitude
+        +addStation()
+        +updateStation()
+        +getStationInfo()
+    }
+
+    class IntermediateStop {
+        +int id
+        +int route_id
+        +int station_id
+        +int stop_order
+        +time arrival_time
+        +time departure_time
+        +int stop_duration_minutes
+        +addStop()
+        +updateStop()
+        +deleteStop()
+    }
+
+    class Train {
+        +int id
+        +string train_number
+        +string train_type
+        +int route_id
+        +date travel_date
+        +TrainStatus status
+        +addTrain()
+        +updateTrain()
+        +cancelTrain()
+        +getTrainInfo()
+        +getAvailableSeats()
+    }
+
+    class Carriage {
+        +int id
+        +int train_id
+        +int carriage_number
+        +CarriageType type
+        +int total_seats
+        +int available_seats
+        +addCarriage()
+        +updateCarriage()
+        +getSeats()
+        +getAvailableSeats()
+    }
+
+    class Seat {
+        +int id
+        +int carriage_id
+        +int seat_number
+        +SeatType type
+        +bool is_available
+        +float price
+        +reserveSeat()
+        +releaseSeat()
+        +getSeatInfo()
+    }
+
+    class Order {
+        +int id
+        +int user_id
+        +datetime created_at
+        +OrderStatus status
+        +float total_price
+        +PaymentMethod payment_method
+        +datetime payment_date
+        +createOrder()
+        +updateStatus()
+        +cancelOrder()
+        +processPayment()
+        +getOrderDetails()
+    }
+
+    class Ticket {
+        +int id
+        +int order_id
+        +int passenger_id
+        +int train_id
+        +int seat_id
+        +float price
+        +string ticket_number
+        +string qr_code
+        +TicketStatus status
+        +generateTicket()
+        +cancelTicket()
+        +refundTicket()
+        +getTicketInfo()
+        +downloadPDF()
+    }
+
+    class Payment {
+        +int id
+        +int order_id
+        +float amount
+        +PaymentMethod method
+        +PaymentStatus status
+        +datetime payment_date
+        +string transaction_id
+        +processPayment()
+        +refundPayment()
+        +getPaymentInfo()
+    }
+
+    class SearchQuery {
+        +Station from_station
+        +Station to_station
+        +date travel_date
+        +int passengers_count
+        +CarriageType preferred_type
+        +search()
+        +applyFilters()
+        +sortResults()
+    }
+
+    User "1" --&gt; "*" Passenger : has
+    User "1" --&gt; "*" Order : creates
+    Route "1" --&gt; "1" Station : departure
+    Route "1" --&gt; "1" Station : arrival
+    Route "1" --&gt; "*" IntermediateStop : has
+    IntermediateStop "*" --&gt; "1" Station : stops at
+    Train "*" --&gt; "1" Route : follows
+    Train "1" --&gt; "*" Carriage : has
+    Carriage "1" --&gt; "*" Seat : contains
+    Order "1" --&gt; "*" Ticket : includes
+    Ticket "*" --&gt; "1" Passenger : for
+    Ticket "*" --&gt; "1" Train : on
+    Ticket "*" --&gt; "1" Seat : reserves
+    Order "1" --&gt; "1" Payment : has</code></pre>
+<h2 id="_4">Описание основных классов</h2>
+<h3 id="1-user">1. User (Пользователь)</h3>
+<p><strong>Описание:</strong> Базовый класс для всех пользователей системы.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>email</code> - электронная почта (логин)
+- <code>password_hash</code> - хэш пароля
+- <code>phone</code> - номер телефона
+- <code>first_name</code> - имя
+- <code>last_name</code> - фамилия
+- <code>created_at</code> - дата регистрации
+- <code>last_login</code> - последний вход
+- <code>role</code> - роль (пассажир, кассир, администратор)</p>
+<p><strong>Методы:</strong>
+- <code>register()</code> - регистрация нового пользователя
+- <code>login()</code> - вход в систему
+- <code>logout()</code> - выход из системы
+- <code>updateProfile()</code> - обновление профиля
+- <code>resetPassword()</code> - сброс пароля</p>
+<p><strong>Связи:</strong>
+- Один пользователь может иметь несколько сохраненных пассажиров
+- Один пользователь может создавать множество заказов</p>
+<hr />
+<h3 id="2-passenger">2. Passenger (Пассажир)</h3>
+<p><strong>Описание:</strong> Информация о пассажире для оформления билета.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>user_id</code> - ссылка на пользователя
+- <code>passport_series</code> - серия паспорта
+- <code>passport_number</code> - номер паспорта
+- <code>first_name</code> - имя
+- <code>last_name</code> - фамилия
+- <code>middle_name</code> - отчество
+- <code>birth_date</code> - дата рождения
+- <code>citizenship</code> - гражданство</p>
+<p><strong>Методы:</strong>
+- <code>addPassenger()</code> - добавление пассажира
+- <code>updatePassenger()</code> - обновление данных
+- <code>deletePassenger()</code> - удаление пассажира
+- <code>getPassengerInfo()</code> - получение информации</p>
+<p><strong>Связи:</strong>
+- Принадлежит одному пользователю
+- Может иметь множество билетов</p>
+<hr />
+<h3 id="3-station">3. Station (Станция)</h3>
+<p><strong>Описание:</strong> Железнодорожная станция.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>name</code> - название станции
+- <code>code</code> - код станции
+- <code>city</code> - город
+- <code>address</code> - адрес
+- <code>latitude</code> - широта
+- <code>longitude</code> - долгота</p>
+<p><strong>Методы:</strong>
+- <code>addStation()</code> - добавление станции
+- <code>updateStation()</code> - обновление информации
+- <code>getStationInfo()</code> - получение информации</p>
+<p><strong>Связи:</strong>
+- Является начальной или конечной точкой маршрута
+- Может быть промежуточной остановкой</p>
+<hr />
+<h3 id="4-route">4. Route (Маршрут)</h3>
+<p><strong>Описание:</strong> Маршрут следования поезда.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>route_number</code> - номер маршрута
+- <code>departure_station</code> - станция отправления
+- <code>arrival_station</code> - станция прибытия
+- <code>departure_time</code> - время отправления
+- <code>arrival_time</code> - время прибытия
+- <code>duration_minutes</code> - длительность в минутах
+- <code>is_active</code> - активен ли маршрут</p>
+<p><strong>Методы:</strong>
+- <code>addRoute()</code> - добавление маршрута
+- <code>updateRoute()</code> - обновление маршрута
+- <code>deleteRoute()</code> - удаление маршрута
+- <code>getRouteInfo()</code> - получение информации
+- <code>getIntermediateStops()</code> - получение промежуточных остановок</p>
+<p><strong>Связи:</strong>
+- Имеет станцию отправления и прибытия
+- Может иметь промежуточные остановки
+- По маршруту следуют поезда</p>
+<hr />
+<h3 id="5-intermediatestop">5. IntermediateStop (Промежуточная остановка)</h3>
+<p><strong>Описание:</strong> Остановка на маршруте между начальной и конечной станциями.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>route_id</code> - ссылка на маршрут
+- <code>station_id</code> - ссылка на станцию
+- <code>stop_order</code> - порядковый номер остановки
+- <code>arrival_time</code> - время прибытия
+- <code>departure_time</code> - время отправления
+- <code>stop_duration_minutes</code> - длительность остановки</p>
+<p><strong>Методы:</strong>
+- <code>addStop()</code> - добавление остановки
+- <code>updateStop()</code> - обновление остановки
+- <code>deleteStop()</code> - удаление остановки</p>
+<p><strong>Связи:</strong>
+- Принадлежит маршруту
+- Связана со станцией</p>
+<hr />
+<h3 id="6-train">6. Train (Поезд)</h3>
+<p><strong>Описание:</strong> Конкретный поезд на определенную дату.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>train_number</code> - номер поезда
+- <code>train_type</code> - тип поезда (скорый, пассажирский, экспресс)
+- <code>route_id</code> - ссылка на маршрут
+- <code>travel_date</code> - дата отправления
+- <code>status</code> - статус (запланирован, отправлен, прибыл, отменен)</p>
+<p><strong>Методы:</strong>
+- <code>addTrain()</code> - добавление поезда
+- <code>updateTrain()</code> - обновление информации
+- <code>cancelTrain()</code> - отмена поезда
+- <code>getTrainInfo()</code> - получение информации
+- <code>getAvailableSeats()</code> - получение свободных мест</p>
+<p><strong>Связи:</strong>
+- Следует по маршруту
+- Имеет вагоны</p>
+<hr />
+<h3 id="7-carriage">7. Carriage (Вагон)</h3>
+<p><strong>Описание:</strong> Вагон в составе поезда.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>train_id</code> - ссылка на поезд
+- <code>carriage_number</code> - номер вагона
+- <code>type</code> - тип вагона (СВ, купе, плацкарт, общий)
+- <code>total_seats</code> - всего мест
+- <code>available_seats</code> - свободных мест</p>
+<p><strong>Методы:</strong>
+- <code>addCarriage()</code> - добавление вагона
+- <code>updateCarriage()</code> - обновление информации
+- <code>getSeats()</code> - получение всех мест
+- <code>getAvailableSeats()</code> - получение свободных мест</p>
+<p><strong>Связи:</strong>
+- Принадлежит поезду
+- Содержит места</p>
+<hr />
+<h3 id="8-seat">8. Seat (Место)</h3>
+<p><strong>Описание:</strong> Место в вагоне.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>carriage_id</code> - ссылка на вагон
+- <code>seat_number</code> - номер места
+- <code>type</code> - тип места (верхнее, нижнее, боковое, у окна)
+- <code>is_available</code> - доступно ли место
+- <code>price</code> - цена</p>
+<p><strong>Методы:</strong>
+- <code>reserveSeat()</code> - бронирование места
+- <code>releaseSeat()</code> - освобождение места
+- <code>getSeatInfo()</code> - получение информации</p>
+<p><strong>Связи:</strong>
+- Принадлежит вагону
+- Может быть забронировано билетом</p>
+<hr />
+<h3 id="9-order">9. Order (Заказ)</h3>
+<p><strong>Описание:</strong> Заказ пользователя, может включать несколько билетов.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>user_id</code> - ссылка на пользователя
+- <code>created_at</code> - дата создания
+- <code>status</code> - статус (новый, оплачен, отменен, возвращен)
+- <code>total_price</code> - общая стоимость
+- <code>payment_method</code> - способ оплаты
+- <code>payment_date</code> - дата оплаты</p>
+<p><strong>Методы:</strong>
+- <code>createOrder()</code> - создание заказа
+- <code>updateStatus()</code> - обновление статуса
+- <code>cancelOrder()</code> - отмена заказа
+- <code>processPayment()</code> - обработка оплаты
+- <code>getOrderDetails()</code> - получение деталей заказа</p>
+<p><strong>Связи:</strong>
+- Создается пользователем
+- Включает билеты
+- Имеет платеж</p>
+<hr />
+<h3 id="10-ticket">10. Ticket (Билет)</h3>
+<p><strong>Описание:</strong> Электронный билет на поезд.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>order_id</code> - ссылка на заказ
+- <code>passenger_id</code> - ссылка на пассажира
+- <code>train_id</code> - ссылка на поезд
+- <code>seat_id</code> - ссылка на место
+- <code>price</code> - цена билета
+- <code>ticket_number</code> - номер билета
+- <code>qr_code</code> - QR-код для проверки
+- <code>status</code> - статус (активен, использован, отменен, возвращен)</p>
+<p><strong>Методы:</strong>
+- <code>generateTicket()</code> - генерация билета
+- <code>cancelTicket()</code> - отмена билета
+- <code>refundTicket()</code> - возврат билета
+- <code>getTicketInfo()</code> - получение информации
+- <code>downloadPDF()</code> - скачивание PDF</p>
+<p><strong>Связи:</strong>
+- Принадлежит заказу
+- Оформлен на пассажира
+- Резервирует место в поезде</p>
+<hr />
+<h3 id="11-payment">11. Payment (Платеж)</h3>
+<p><strong>Описание:</strong> Платеж за заказ.</p>
+<p><strong>Атрибуты:</strong>
+- <code>id</code> - уникальный идентификатор
+- <code>order_id</code> - ссылка на заказ
+- <code>amount</code> - сумма
+- <code>method</code> - способ оплаты (карта, ЕРИП, наличные)
+- <code>status</code> - статус (ожидает, успешно, отклонен, возвращен)
+- <code>payment_date</code> - дата платежа
+- <code>transaction_id</code> - ID транзакции</p>
+<p><strong>Методы:</strong>
+- <code>processPayment()</code> - обработка платежа
+- <code>refundPayment()</code> - возврат платежа
+- <code>getPaymentInfo()</code> - получение информации</p>
+<p><strong>Связи:</strong>
+- Связан с заказом</p>
+<hr />
+<h3 id="12-searchquery">12. SearchQuery (Поисковый запрос)</h3>
+<p><strong>Описание:</strong> Объект для поиска рейсов.</p>
+<p><strong>Атрибуты:</strong>
+- <code>from_station</code> - станция отправления
+- <code>to_station</code> - станция прибытия
+- <code>travel_date</code> - дата поездки
+- <code>passengers_count</code> - количество пассажиров
+- <code>preferred_type</code> - предпочитаемый тип вагона</p>
+<p><strong>Методы:</strong>
+- <code>search()</code> - выполнение поиска
+- <code>applyFilters()</code> - применение фильтров
+- <code>sortResults()</code> - сортировка результатов</p>
+<hr />
+<h2 id="enums">Перечисления (Enums)</h2>
+<h3 id="userrole">UserRole</h3>
+<ul>
+<li><code>PASSENGER</code> - пассажир</li>
+<li><code>CASHIER</code> - кассир</li>
+<li><code>STATION_ADMIN</code> - администратор вокзала</li>
+<li><code>SYSTEM_ADMIN</code> - системный администратор</li>
+</ul>
+<h3 id="trainstatus">TrainStatus</h3>
+<ul>
+<li><code>SCHEDULED</code> - запланирован</li>
+<li><code>DEPARTED</code> - отправлен</li>
+<li><code>ARRIVED</code> - прибыл</li>
+<li><code>CANCELLED</code> - отменен</li>
+<li><code>DELAYED</code> - задержан</li>
+</ul>
+<h3 id="carriagetype">CarriageType</h3>
+<ul>
+<li><code>LUXURY</code> - СВ (спальный вагон)</li>
+<li><code>COMPARTMENT</code> - купе</li>
+<li><code>RESERVED</code> - плацкарт</li>
+<li><code>GENERAL</code> - общий</li>
+</ul>
+<h3 id="seattype">SeatType</h3>
+<ul>
+<li><code>LOWER</code> - нижнее</li>
+<li><code>UPPER</code> - верхнее</li>
+<li><code>SIDE_LOWER</code> - боковое нижнее</li>
+<li><code>SIDE_UPPER</code> - боковое верхнее</li>
+</ul>
+<h3 id="orderstatus">OrderStatus</h3>
+<ul>
+<li><code>NEW</code> - новый</li>
+<li><code>PAID</code> - оплачен</li>
+<li><code>CANCELLED</code> - отменен</li>
+<li><code>REFUNDED</code> - возвращен</li>
+</ul>
+<h3 id="ticketstatus">TicketStatus</h3>
+<ul>
+<li><code>ACTIVE</code> - активен</li>
+<li><code>USED</code> - использован</li>
+<li><code>CANCELLED</code> - отменен</li>
+<li><code>REFUNDED</code> - возвращен</li>
+</ul>
+<h3 id="paymentmethod">PaymentMethod</h3>
+<ul>
+<li><code>CARD</code> - банковская карта</li>
+<li><code>ERIP</code> - ЕРИП</li>
+<li><code>CASH</code> - наличные</li>
+<li><code>APPLE_PAY</code> - Apple Pay</li>
+<li><code>GOOGLE_PAY</code> - Google Pay</li>
+</ul>
+<h3 id="paymentstatus">PaymentStatus</h3>
+<ul>
+<li><code>PENDING</code> - ожидает</li>
+<li><code>SUCCESS</code> - успешно</li>
+<li><code>FAILED</code> - отклонен</li>
+<li><code>REFUNDED</code> - возвращен</li>
+</ul>
+<h2 id="_5">Соответствие объектов персонажам</h2>
+<h3 id="_6">Анна Петрова (Частый пассажир)</h3>
+<p><strong>Основные объекты:</strong>
+- <code>User</code> - ее учетная запись
+- <code>Passenger</code> - сохраненные данные (она сама)
+- <code>SearchQuery</code> - поиск любимого маршрута
+- <code>Order</code> - заказы билетов
+- <code>Ticket</code> - электронные билеты
+- <code>Payment</code> - оплата картой</p>
+<p><strong>Сценарий использования:</strong>
+1. Открывает приложение → работает с <code>User</code>
+2. Выбирает сохраненный маршрут → <code>SearchQuery</code>
+3. Видит список поездов → <code>Train</code>, <code>Route</code>
+4. Выбирает место → <code>Carriage</code>, <code>Seat</code>
+5. Данные подставляются автоматически → <code>Passenger</code>
+6. Оплачивает → <code>Order</code>, <code>Payment</code>
+7. Получает билет → <code>Ticket</code></p>
+<hr />
+<h3 id="_7">Владимир Иванович (Редкий пассажир)</h3>
+<p><strong>Основные объекты:</strong>
+- <code>User</code> - учетная запись
+- <code>Station</code> - выбор станций
+- <code>SearchQuery</code> - поиск рейса
+- <code>Train</code> - просмотр информации о поезде
+- <code>Passenger</code> - ввод данных паспорта
+- <code>Order</code> - оформление заказа
+- <code>Ticket</code> - получение билета</p>
+<p><strong>Сценарий использования:</strong>
+1. Регистрируется → <code>User.register()</code>
+2. Ищет рейс → <code>SearchQuery.search()</code>
+3. Выбирает поезд → <code>Train</code>
+4. Выбирает место → <code>Seat</code>
+5. Вводит данные → <code>Passenger.addPassenger()</code>
+6. Оплачивает → <code>Payment.processPayment()</code>
+7. Получает и печатает билет → <code>Ticket.downloadPDF()</code></p>
+<hr />
+<h3 id="_8">Ольга Сергеевна (Кассир)</h3>
+<p><strong>Основные объекты:</strong>
+- <code>User</code> - рабочая учетная запись (роль CASHIER)
+- <code>SearchQuery</code> - поиск рейсов для клиентов
+- <code>Train</code> - информация о поездах
+- <code>Seat</code> - проверка и бронирование мест
+- <code>Passenger</code> - ввод данных клиентов
+- <code>Order</code> - создание заказов
+- <code>Payment</code> - прием оплаты
+- <code>Ticket</code> - печать билетов</p>
+<p><strong>Сценарий использования:</strong>
+1. Входит в систему → <code>User.login()</code>
+2. Принимает запрос клиента → <code>SearchQuery</code>
+3. Показывает варианты → <code>Train.getAvailableSeats()</code>
+4. Выбирает место → <code>Seat.reserveSeat()</code>
+5. Вводит данные клиента → <code>Passenger</code>
+6. Создает заказ → <code>Order.createOrder()</code>
+7. Принимает оплату → <code>Payment.processPayment()</code>
+8. Печатает билет → <code>Ticket.generateTicket()</code></p>
+<hr />
+<h3 id="_9">Дмитрий Александрович (Администратор вокзала)</h3>
+<p><strong>Основные объекты:</strong>
+- <code>User</code> - учетная запись (роль STATION_ADMIN)
+- <code>Station</code> - управление станциями
+- <code>Route</code> - управление маршрутами
+- <code>IntermediateStop</code> - добавление остановок
+- <code>Train</code> - добавление поездов
+- <code>Carriage</code> - управление составом
+- <code>Order</code> - просмотр статистики заказов</p>
+<p><strong>Сценарий использования:</strong>
+1. Входит в админ-панель → <code>User.login()</code>
+2. Добавляет новый маршрут → <code>Route.addRoute()</code>
+3. Добавляет остановки → <code>IntermediateStop.addStop()</code>
+4. Создает поезд → <code>Train.addTrain()</code>
+5. Добавляет вагоны → <code>Carriage.addCarriage()</code>
+6. Просматривает статистику → <code>Order.getOrderDetails()</code></p>
+<hr />
+<h2 id="-">Бизнес-правила</h2>
+<h3 id="_10">Бронирование мест</h3>
+<ol>
+<li>Место может быть забронировано только если <code>Seat.is_available = true</code></li>
+<li>После бронирования <code>Seat.is_available</code> становится <code>false</code></li>
+<li>Если заказ не оплачен в течение 15 минут, бронь снимается</li>
+</ol>
+<h3 id="_11">Возврат билетов</h3>
+<ol>
+<li>Возврат возможен не позднее чем за 1 час до отправления</li>
+<li>При возврате удерживается комиссия 10%</li>
+<li>Возврат за 24+ часа - без комиссии</li>
+<li>После возврата место освобождается: <code>Seat.is_available = true</code></li>
+</ol>
+<h3 id="_12">Цены</h3>
+<ol>
+<li>Цена зависит от типа вагона и маршрута</li>
+<li>Детям до 5 лет - бесплатно (без места)</li>
+<li>Детям 5-10 лет - скидка 50%</li>
+<li>Студентам - скидка 25% (по предъявлению студенческого)</li>
+</ol>
+<h3 id="_13">Поиск</h3>
+<ol>
+<li>Поиск показывает поезда на ±3 дня от выбранной даты</li>
+<li>Результаты сортируются по времени отправления</li>
+<li>Показываются только поезда со свободными местами</li>
+</ol>
+<h2 id="_14">Выводы</h2>
+<p>Объектная модель:
+1. <strong>Покрывает все сценарии</strong> из требований
+2. <strong>Соответствует персонажам</strong> - каждый персонаж работает с определенным набором объектов
+3. <strong>Масштабируема</strong> - легко добавить новые типы вагонов, способы оплаты и т.д.
+4. <strong>Понятна</strong> - четкие связи между объектами
+5. <strong>Реализуема</strong> - может быть реализована в реляционной БД или NoSQL</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

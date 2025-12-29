@@ -13,7 +13,7 @@
 2.  **Покупка:** Поиск -> Выбор -> Бронь -> Оплата -> Билет.
 3.  **Возврат:** Отмена билета -> Возврат денег.
 
-```plantuml
+```puml
 @startuml
 !define ES_EVENT_COLOR #Orange
 !define ES_COMMAND_COLOR #DeepSkyBlue
@@ -131,7 +131,7 @@ TicketCancelled --> MoneyReturned
 
 **Ключевой процесс: Покупка билета**
 
-```plantuml
+```puml
 @startuml
 !define ES_EVENT_COLOR #Orange
 !define ES_COMMAND_COLOR #DeepSkyBlue
@@ -269,7 +269,7 @@ EmailService --> EmailSent
 4.  **Payment Context:** Обработка транзакций.
 5.  **Notification Context:** Рассылка уведомлений.
 
-```plantuml
+```puml
 @startuml
 !define ES_EVENT_COLOR #Orange
 !define ES_COMMAND_COLOR #DeepSkyBlue

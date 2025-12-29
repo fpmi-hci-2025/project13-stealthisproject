@@ -1,0 +1,2438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../eventmodeling_report/">
+      
+      
+        <link rel="next" href="../specification/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Event Storming - Railway Ticket System Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no3-2-eventstorming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Railway Ticket System Docs" class="md-header__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Railway Ticket System Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Event Storming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Railway Ticket System Docs" class="md-nav__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Railway Ticket System Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Analysis & Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1: Analysis & Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/lab1_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/business_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/competitor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitor Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/user_profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab1/user_survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Interaction Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 2: Interaction Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/01_problem_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/02_design_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/03_group_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/04_user_tasks_roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tasks & Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/05_object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/06_information_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/07_conceptual_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptual Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/08_navigation_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/09_cjm_impact_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CJM & Impact Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/10_interactive_storyboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Storyboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/11_design_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/13_execution_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: System Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 3: System Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c4_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4 Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eventmodeling_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Big Picture (Крупномасштабное исследование)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-process-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Process Modeling (Моделирование процесса)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-software-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Software Design (Проектирование архитектуры)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/01_use_case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/02_activity_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/03_activity_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/04_class_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/04_object_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/05_seq_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/06_seq_buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Buy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/07_seq_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Login
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/08_seq_admin_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Admin Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/09_seq_payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Payment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/10_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/11_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/12_deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/13_erd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERD Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/c4_01_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/c4_02_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/c4_03_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/em_01_ticket_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling: Ticket Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/es_01_big_picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/es_02_process_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Process Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/es_03_software_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Software Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: REST API Modeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 4: REST API Modeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/01_requirements_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/02_database_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/03_api_routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Routes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/04_api_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 5: Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/01_visual_language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/02_prototyping_and_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 6: Testing & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/01_usability_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usability Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/02_card_sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/03_expectation_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expectation Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/04_checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/05_goms_klm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOMS/KLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Big Picture (Крупномасштабное исследование)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-process-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Process Modeling (Моделирование процесса)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-software-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Software Design (Проектирование архитектуры)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no3-2-eventstorming">Лабораторная работа №3. Задание 2: EventStorming</h1>
+<p><strong>Цель:</strong> Проектирование системы "ЖД Вокзал" с использованием метода EventStorming (Исследование событий).</p>
+<hr />
+<h2 id="1-big-picture">1. Big Picture (Крупномасштабное исследование)</h2>
+<p>На этом уровне мы исследуем предметную область, выстраивая хронологическую цепочку событий (Domain Events). Мы определяем, "что происходит" в системе, не углубляясь в детали реализации.</p>
+<p><strong>Основные потоки событий:</strong>
+1.  <strong>Администрирование:</strong> Создание маршрутов и расписаний.
+2.  <strong>Покупка:</strong> Поиск -&gt; Выбор -&gt; Бронь -&gt; Оплата -&gt; Билет.
+3.  <strong>Возврат:</strong> Отмена билета -&gt; Возврат денег.</p>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="1362px" preserveAspectRatio="xMidYMid meet" style="width:561px;height:1362px;background:#FFFFFF;" version="1.1" viewBox="0 0 561 1362" width="561px" zoomAndPan="magnify" class="diagram"><title>EventStorming: Big Picture</title><defs/><g><g class="title" data-source-line="59"><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="214.7715" x="166.3947" y="22.9951">EventStorming: Big Picture</text></g><g class="entity" data-qualified-name="RouteDefined" data-source-line="62" id="ent0002"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="172.3594" x="200.76" y="52.4469"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1272" y="73.5855">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6826" x="210.76" y="89.4107">Маршрут</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="278.4426" y="89.4107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.2266" x="282.8928" y="89.4107">определен</text></g><g class="entity" data-qualified-name="TrainScheduled" data-source-line="63" id="ent0003"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="150.9287" x="211.47" y="170.8569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1219" y="191.9955">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.8301" x="221.47" y="207.8207">Поезд</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="266.3001" y="207.8207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68.9473" x="270.7503" y="207.8207">назначен</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="339.6975" y="207.8207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8.251" x="344.1477" y="207.8207">в</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.5566" x="243.656" y="224.1176">расписание</text></g><g class="entity" data-qualified-name="SeatsGenerated" data-source-line="64" id="ent0004"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="183.4814" x="195.2" y="297.4269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1282" y="318.5655">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.124" x="205.2" y="334.3907">Места</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="250.324" y="334.3907"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113.9072" x="254.7742" y="334.3907">сгенерированы</text></g><g class="entity" data-qualified-name="UserRegistered" data-source-line="70" id="ent0007"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="147.251" x="408.31" y="44.2969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="434.123" y="65.4355">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="430.3857" y="81.2607">Пользователь</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.251" x="418.31" y="97.5576">зарегистрирован</text></g><g class="entity" data-qualified-name="SearchRequested" data-source-line="73" id="ent0008"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="197.2285" x="188.32" y="407.6869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1218" y="428.8255">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74.2451" x="198.32" y="444.6507">Выполнен</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="272.5651" y="444.6507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.9707" x="277.0153" y="444.6507">поиск</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="319.986" y="444.6507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1123" x="324.4362" y="444.6507">рейсов</text></g><g class="entity" data-qualified-name="SeatSelected" data-source-line="74" id="ent0009"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="132.6836" x="220.6" y="517.9569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1293" y="539.0955">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.1104" x="230.6" y="554.9207">Место</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="275.7104" y="554.9207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63.123" x="280.1605" y="554.9207">выбрано</text></g><g class="entity" data-qualified-name="OrderCreated" data-source-line="75" id="ent0010"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="189.4424" x="192.22" y="628.2169"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1287" y="649.3555">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="202.22" y="665.1807">Заказ</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="244.2542" y="665.1807"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="248.7044" y="665.1807">создан</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="299.8235" y="665.1807"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.3887" x="304.2737" y="665.1807">(Pending)</text></g><g class="entity" data-qualified-name="PaymentInitiated" data-source-line="76" id="ent0011"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="185.9766" x="193.95" y="738.4869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1258" y="759.6255">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="203.95" y="775.4507">Оплата</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="258.3846" y="775.4507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.0918" x="262.8348" y="775.4507">инициирована</text></g><g class="entity" data-qualified-name="PaymentSucceeded" data-source-line="77" id="ent0012"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="204.5566" x="76.66" y="848.7469"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="131.1258" y="869.8855">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="86.66" y="885.7107">Оплата</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="141.0946" y="885.7107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56.9434" x="145.5448" y="885.7107">прошла</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="202.4881" y="885.7107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64.2783" x="206.9383" y="885.7107">успешно</text></g><g class="entity" data-qualified-name="PaymentFailed" data-source-line="78" id="ent0013"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="157.0742" x="316.4" y="848.7469"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="347.1246" y="869.8855">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="326.4" y="885.7107">Оплата</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="380.8346" y="885.7107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.1895" x="385.2848" y="885.7107">отклонена</text></g><g class="entity" data-qualified-name="TicketIssued" data-source-line="79" id="ent0014"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="136.5664" x="110.65" y="959.0169"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="131.1207" y="980.1555">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="120.65" y="995.9807">Билет</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="165.0699" y="995.9807"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6963" x="169.5201" y="995.9807">выпущен</text></g><g class="entity" data-qualified-name="EmailSent" data-source-line="80" id="ent0015"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="153.875" x="7" y="1069.2869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="36.125" y="1090.4255">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.7012" x="17" y="1106.2507">Письмо</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="71.7012" y="1106.2507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="7.6973" x="76.1514" y="1106.2507">с</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="83.8486" y="1106.2507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.5762" x="88.2988" y="1106.2507">билетом</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.8711" x="40.502" y="1122.5476">отправлено</text></g><g class="entity" data-qualified-name="RefundRequested" data-source-line="94" id="ent0024"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="157.3203" x="196.28" y="1077.4269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="227.1277" y="1098.5655">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74.7373" x="206.28" y="1114.3907">Запрошен</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="281.0173" y="1114.3907"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58.1328" x="285.4675" y="1114.3907">возврат</text></g><g class="entity" data-qualified-name="TicketCancelled" data-source-line="95" id="ent0025"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="165.5234" x="192.18" y="1195.8469"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="227.1292" y="1216.9855">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="202.18" y="1232.8107">Билет</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="246.5999" y="1232.8107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96.6533" x="251.0501" y="1232.8107">аннулирован</text></g><g class="entity" data-qualified-name="MoneyReturned" data-source-line="96" id="ent0026"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="186.0723" x="181.9" y="1306.1069"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="227.1236" y="1327.2455">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.6377" x="191.9" y="1343.0707">Средства</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="261.5377" y="1343.0707"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91.9844" x="265.9879" y="1343.0707">возвращены</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0003" data-link-type="dependency" data-source-line="66" id="lnk5"><path d="M286.94,103.1869 C286.94,122.4769 286.94,143.4769 286.94,164.5569" fill="none" id="RouteDefined-to-TrainScheduled" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="286.94,170.5569,290.94,161.5569,286.94,165.5569,282.94,161.5569,286.94,170.5569" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0004" data-link-type="dependency" data-source-line="67" id="lnk6"><path d="M286.94,237.8769 C286.94,256.7069 286.94,273.9669 286.94,291.1869" fill="none" id="TrainScheduled-to-SeatsGenerated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="286.94,297.1869,290.94,288.1869,286.94,292.1869,282.94,288.1869,286.94,297.1869" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0008" data-link-type="dependency" data-source-line="82" id="lnk16"><path d="M286.94,348.1269 C286.94,365.8369 286.94,383.6569 286.94,401.3569" fill="none" id="SeatsGenerated-to-SearchRequested" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="286.94,407.3569,290.94,398.3569,286.94,402.3569,282.94,398.3569,286.94,407.3569" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0008" data-entity-2="ent0009" data-link-type="dependency" data-source-line="83" id="lnk17"><path d="M286.94,458.3869 C286.94,476.1069 286.94,493.9169 286.94,511.6169" fill="none" id="SearchRequested-to-SeatSelected" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="286.94,517.6169,290.94,508.6169,286.94,512.6169,282.94,508.6169,286.94,517.6169" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0009" data-entity-2="ent0010" data-link-type="dependency" data-source-line="84" id="lnk18"><path d="M286.94,568.6569 C286.94,586.3769 286.94,604.1869 286.94,621.8869" fill="none" id="SeatSelected-to-OrderCreated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="286.94,627.8869,290.94,618.8869,286.94,622.8869,282.94,618.8869,286.94,627.8869" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0010" data-entity-2="ent0011" data-link-type="dependency" data-source-line="85" id="lnk19"><path d="M286.94,678.9169 C286.94,696.6369 286.94,714.4569 286.94,732.1469" fill="none" id="OrderCreated-to-PaymentInitiated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="286.94,738.1469,290.94,729.1469,286.94,733.1469,282.94,729.1469,286.94,738.1469" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0012" data-link-type="dependency" data-source-line="87" id="lnk20"><path d="M262.43,789.1869 C244.76,806.9069 225.2366,826.4682 207.5866,844.1682" fill="none" id="PaymentInitiated-to-PaymentSucceeded" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="203.35,848.4169,212.5374,844.8683,206.8805,844.8763,206.8725,839.2195,203.35,848.4169" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0013" data-link-type="dependency" data-source-line="88" id="lnk21"><path d="M311.44,789.1869 C329.12,806.9069 348.6434,826.4682 366.2934,844.1682" fill="none" id="PaymentInitiated-to-PaymentFailed" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="370.53,848.4169,367.0075,839.2195,366.9995,844.8763,361.3426,844.8683,370.53,848.4169" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0012" data-entity-2="ent0014" data-link-type="dependency" data-source-line="90" id="lnk22"><path d="M178.94,899.4469 C178.94,917.1669 178.94,934.9869 178.94,952.6769" fill="none" id="PaymentSucceeded-to-TicketIssued" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="178.94,958.6769,182.94,949.6769,178.94,953.6769,174.94,949.6769,178.94,958.6769" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0015" data-link-type="dependency" data-source-line="91" id="lnk23"><path d="M159.02,1009.5569 C144.99,1026.7569 129.8235,1045.3383 114.4735,1064.1483" fill="none" id="TicketIssued-to-EmailSent" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="110.68,1068.7969,119.4693,1064.353,113.8413,1064.9231,113.2712,1059.295,110.68,1068.7969" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0024" data-link-type="dependency" data-source-line="98" id="lnk27"><path d="M199.06,1009.5569 C215.45,1029.4269 234.6423,1052.7081 251.0223,1072.5681" fill="none" id="TicketIssued-to-RefundRequested" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="254.84,1077.1969,252.1993,1067.7086,251.6586,1073.3396,246.0277,1072.7989,254.84,1077.1969" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0024" data-entity-2="ent0025" data-link-type="dependency" data-source-line="99" id="lnk28"><path d="M274.94,1127.9669 C274.94,1147.8369 274.94,1169.7469 274.94,1189.6069" fill="none" id="RefundRequested-to-TicketCancelled" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="274.94,1195.6069,278.94,1186.6069,274.94,1190.6069,270.94,1186.6069,274.94,1195.6069" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0025" data-entity-2="ent0026" data-link-type="dependency" data-source-line="100" id="lnk29"><path d="M274.94,1246.5469 C274.94,1264.2669 274.94,1282.0769 274.94,1299.7769" fill="none" id="TicketCancelled-to-MoneyReturned" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="274.94,1305.7769,278.94,1296.7769,274.94,1300.7769,270.94,1296.7769,274.94,1305.7769" style="stroke:#181818;stroke-width:1;"/></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="1362px" preserveAspectRatio="xMidYMid meet" style="width:561px;height:1362px;background:#1B1B1B;" version="1.1" viewBox="0 0 561 1362" width="561px" zoomAndPan="magnify" class="diagram"><title>EventStorming: Big Picture</title><defs/><g><rect fill="#1B1B1B" height="1362" style="stroke:none;stroke-width:1;" width="561" x="0" y="0"/><g class="title" data-source-line="59"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="214.7715" x="166.3947" y="22.9951">EventStorming: Big Picture</text></g><g class="entity" data-qualified-name="RouteDefined" data-source-line="62" id="ent0002"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="172.3594" x="200.76" y="52.4469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1272" y="73.5855">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6826" x="210.76" y="89.4107">Маршрут</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="278.4426" y="89.4107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.2266" x="282.8928" y="89.4107">определен</text></g><g class="entity" data-qualified-name="TrainScheduled" data-source-line="63" id="ent0003"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="150.9287" x="211.47" y="170.8569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1219" y="191.9955">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.8301" x="221.47" y="207.8207">Поезд</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="266.3001" y="207.8207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68.9473" x="270.7503" y="207.8207">назначен</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="339.6975" y="207.8207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8.251" x="344.1477" y="207.8207">в</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.5566" x="243.656" y="224.1176">расписание</text></g><g class="entity" data-qualified-name="SeatsGenerated" data-source-line="64" id="ent0004"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="183.4814" x="195.2" y="297.4269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1282" y="318.5655">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.124" x="205.2" y="334.3907">Места</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="250.324" y="334.3907"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113.9072" x="254.7742" y="334.3907">сгенерированы</text></g><g class="entity" data-qualified-name="UserRegistered" data-source-line="70" id="ent0007"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="147.251" x="408.31" y="44.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="434.123" y="65.4355">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="430.3857" y="81.2607">Пользователь</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.251" x="418.31" y="97.5576">зарегистрирован</text></g><g class="entity" data-qualified-name="SearchRequested" data-source-line="73" id="ent0008"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="197.2285" x="188.32" y="407.6869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1218" y="428.8255">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74.2451" x="198.32" y="444.6507">Выполнен</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="272.5651" y="444.6507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.9707" x="277.0153" y="444.6507">поиск</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="319.986" y="444.6507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1123" x="324.4362" y="444.6507">рейсов</text></g><g class="entity" data-qualified-name="SeatSelected" data-source-line="74" id="ent0009"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="132.6836" x="220.6" y="517.9569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1293" y="539.0955">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.1104" x="230.6" y="554.9207">Место</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="275.7104" y="554.9207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63.123" x="280.1605" y="554.9207">выбрано</text></g><g class="entity" data-qualified-name="OrderCreated" data-source-line="75" id="ent0010"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="189.4424" x="192.22" y="628.2169"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1287" y="649.3555">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="202.22" y="665.1807">Заказ</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="244.2542" y="665.1807"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="248.7044" y="665.1807">создан</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="299.8235" y="665.1807"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.3887" x="304.2737" y="665.1807">(Pending)</text></g><g class="entity" data-qualified-name="PaymentInitiated" data-source-line="76" id="ent0011"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="185.9766" x="193.95" y="738.4869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="239.1258" y="759.6255">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="203.95" y="775.4507">Оплата</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="258.3846" y="775.4507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.0918" x="262.8348" y="775.4507">инициирована</text></g><g class="entity" data-qualified-name="PaymentSucceeded" data-source-line="77" id="ent0012"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="204.5566" x="76.66" y="848.7469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="131.1258" y="869.8855">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="86.66" y="885.7107">Оплата</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="141.0946" y="885.7107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56.9434" x="145.5448" y="885.7107">прошла</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="202.4881" y="885.7107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64.2783" x="206.9383" y="885.7107">успешно</text></g><g class="entity" data-qualified-name="PaymentFailed" data-source-line="78" id="ent0013"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="157.0742" x="316.4" y="848.7469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="347.1246" y="869.8855">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="326.4" y="885.7107">Оплата</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="380.8346" y="885.7107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.1895" x="385.2848" y="885.7107">отклонена</text></g><g class="entity" data-qualified-name="TicketIssued" data-source-line="79" id="ent0014"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="136.5664" x="110.65" y="959.0169"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="131.1207" y="980.1555">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="120.65" y="995.9807">Билет</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="165.0699" y="995.9807"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6963" x="169.5201" y="995.9807">выпущен</text></g><g class="entity" data-qualified-name="EmailSent" data-source-line="80" id="ent0015"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="153.875" x="7" y="1069.2869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="36.125" y="1090.4255">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.7012" x="17" y="1106.2507">Письмо</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="71.7012" y="1106.2507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="7.6973" x="76.1514" y="1106.2507">с</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="83.8486" y="1106.2507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.5762" x="88.2988" y="1106.2507">билетом</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.8711" x="40.502" y="1122.5476">отправлено</text></g><g class="entity" data-qualified-name="RefundRequested" data-source-line="94" id="ent0024"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="157.3203" x="196.28" y="1077.4269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="227.1277" y="1098.5655">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74.7373" x="206.28" y="1114.3907">Запрошен</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="281.0173" y="1114.3907"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58.1328" x="285.4675" y="1114.3907">возврат</text></g><g class="entity" data-qualified-name="TicketCancelled" data-source-line="95" id="ent0025"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="165.5234" x="192.18" y="1195.8469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="227.1292" y="1216.9855">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="202.18" y="1232.8107">Билет</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="246.5999" y="1232.8107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96.6533" x="251.0501" y="1232.8107">аннулирован</text></g><g class="entity" data-qualified-name="MoneyReturned" data-source-line="96" id="ent0026"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="186.0723" x="181.9" y="1306.1069"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="227.1236" y="1327.2455">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.6377" x="191.9" y="1343.0707">Средства</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="261.5377" y="1343.0707"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91.9844" x="265.9879" y="1343.0707">возвращены</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0003" data-link-type="dependency" data-source-line="66" id="lnk5"><path d="M286.94,103.1869 C286.94,122.4769 286.94,143.4769 286.94,164.5569" fill="none" id="RouteDefined-to-TrainScheduled" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="286.94,170.5569,290.94,161.5569,286.94,165.5569,282.94,161.5569,286.94,170.5569" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0004" data-link-type="dependency" data-source-line="67" id="lnk6"><path d="M286.94,237.8769 C286.94,256.7069 286.94,273.9669 286.94,291.1869" fill="none" id="TrainScheduled-to-SeatsGenerated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="286.94,297.1869,290.94,288.1869,286.94,292.1869,282.94,288.1869,286.94,297.1869" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0008" data-link-type="dependency" data-source-line="82" id="lnk16"><path d="M286.94,348.1269 C286.94,365.8369 286.94,383.6569 286.94,401.3569" fill="none" id="SeatsGenerated-to-SearchRequested" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="286.94,407.3569,290.94,398.3569,286.94,402.3569,282.94,398.3569,286.94,407.3569" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0008" data-entity-2="ent0009" data-link-type="dependency" data-source-line="83" id="lnk17"><path d="M286.94,458.3869 C286.94,476.1069 286.94,493.9169 286.94,511.6169" fill="none" id="SearchRequested-to-SeatSelected" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="286.94,517.6169,290.94,508.6169,286.94,512.6169,282.94,508.6169,286.94,517.6169" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0009" data-entity-2="ent0010" data-link-type="dependency" data-source-line="84" id="lnk18"><path d="M286.94,568.6569 C286.94,586.3769 286.94,604.1869 286.94,621.8869" fill="none" id="SeatSelected-to-OrderCreated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="286.94,627.8869,290.94,618.8869,286.94,622.8869,282.94,618.8869,286.94,627.8869" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0010" data-entity-2="ent0011" data-link-type="dependency" data-source-line="85" id="lnk19"><path d="M286.94,678.9169 C286.94,696.6369 286.94,714.4569 286.94,732.1469" fill="none" id="OrderCreated-to-PaymentInitiated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="286.94,738.1469,290.94,729.1469,286.94,733.1469,282.94,729.1469,286.94,738.1469" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0012" data-link-type="dependency" data-source-line="87" id="lnk20"><path d="M262.43,789.1869 C244.76,806.9069 225.2366,826.4682 207.5866,844.1682" fill="none" id="PaymentInitiated-to-PaymentSucceeded" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="203.35,848.4169,212.5374,844.8683,206.8805,844.8763,206.8725,839.2195,203.35,848.4169" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0013" data-link-type="dependency" data-source-line="88" id="lnk21"><path d="M311.44,789.1869 C329.12,806.9069 348.6434,826.4682 366.2934,844.1682" fill="none" id="PaymentInitiated-to-PaymentFailed" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="370.53,848.4169,367.0075,839.2195,366.9995,844.8763,361.3426,844.8683,370.53,848.4169" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0012" data-entity-2="ent0014" data-link-type="dependency" data-source-line="90" id="lnk22"><path d="M178.94,899.4469 C178.94,917.1669 178.94,934.9869 178.94,952.6769" fill="none" id="PaymentSucceeded-to-TicketIssued" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="178.94,958.6769,182.94,949.6769,178.94,953.6769,174.94,949.6769,178.94,958.6769" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0015" data-link-type="dependency" data-source-line="91" id="lnk23"><path d="M159.02,1009.5569 C144.99,1026.7569 129.8235,1045.3383 114.4735,1064.1483" fill="none" id="TicketIssued-to-EmailSent" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="110.68,1068.7969,119.4693,1064.353,113.8413,1064.9231,113.2712,1059.295,110.68,1068.7969" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0024" data-link-type="dependency" data-source-line="98" id="lnk27"><path d="M199.06,1009.5569 C215.45,1029.4269 234.6423,1052.7081 251.0223,1072.5681" fill="none" id="TicketIssued-to-RefundRequested" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="254.84,1077.1969,252.1993,1067.7086,251.6586,1073.3396,246.0277,1072.7989,254.84,1077.1969" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0024" data-entity-2="ent0025" data-link-type="dependency" data-source-line="99" id="lnk28"><path d="M274.94,1127.9669 C274.94,1147.8369 274.94,1169.7469 274.94,1189.6069" fill="none" id="RefundRequested-to-TicketCancelled" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="274.94,1195.6069,278.94,1186.6069,274.94,1190.6069,270.94,1186.6069,274.94,1195.6069" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0025" data-entity-2="ent0026" data-link-type="dependency" data-source-line="100" id="lnk29"><path d="M274.94,1246.5469 C274.94,1264.2669 274.94,1282.0769 274.94,1299.7769" fill="none" id="TicketCancelled-to-MoneyReturned" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="274.94,1305.7769,278.94,1296.7769,274.94,1300.7769,270.94,1296.7769,274.94,1305.7769" style="stroke:#E7E7E7;stroke-width:1;"/></g></g></svg></div></div>
+
+<hr />
+<h2 id="2-process-modeling">2. Process Modeling (Моделирование процесса)</h2>
+<p>На этом этапе мы детализируем бизнес-процессы, добавляя:
+*   <strong>Команды (Commands):</strong> Действия, инициируемые пользователем или системой.
+*   <strong>Акторы (Actors):</strong> Кто выполняет команды.
+*   <strong>Системы (Systems):</strong> Внешние сервисы или внутренние модули.
+*   <strong>Политики (Policies):</strong> Бизнес-правила (реакция на события).
+*   <strong>Модели чтения (Read Models):</strong> Данные, необходимые для принятия решений.</p>
+<p><strong>Ключевой процесс: Покупка билета</strong></p>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="1175px" preserveAspectRatio="xMidYMid meet" style="width:936px;height:1175px;background:#FFFFFF;" version="1.1" viewBox="0 0 936 1175" width="936px" zoomAndPan="magnify" class="diagram"><title>EventStorming: Process Modeling (Покупка билета)</title><defs/><g><g class="title" data-source-line="59"><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="414.7842" x="253.99" y="22.9951">EventStorming: Process Modeling (Покупка билета)</text></g><g class="entity" data-qualified-name="Passenger" data-source-line="62" id="ent0002"><ellipse cx="348.2289" cy="51.2969" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M348.2289,59.2969 L348.2289,86.2969 M335.2289,67.2969 L361.2289,67.2969 M348.2289,86.2969 L335.2289,101.2969 M348.2289,86.2969 L361.2289,101.2969" fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73.6777" x="311.39" y="115.792">Пассажир</text></g><g class="entity" data-qualified-name="SearchTrains" data-source-line="67" id="ent0003"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="129.0674" x="64.7" y="180.0969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="91.054" y="201.2355">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.3447" x="74.7" y="217.0607">Поиск</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="119.0447" y="217.0607"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60.2725" x="123.4949" y="217.0607">поездов</text></g><g class="entity" data-qualified-name="SearchEngine" data-source-line="68" id="ent0004"><rect fill="#FFC0CB" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B03060;stroke-width:0.5;" width="162.4268" x="36.02" y="291.3569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59.4316" x="87.5176" y="312.4955">«System»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81.3135" x="46.02" y="328.3207">Поисковый</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="127.3335" y="328.3207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56.6631" x="131.7837" y="328.3207">движок</text></g><g class="entity" data-qualified-name="TrainsFound" data-source-line="69" id="ent0005"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="143.1904" x="33.64" y="410.7769"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="57.4227" y="431.9155">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53.4092" x="43.64" y="447.7407">Поезда</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="97.0492" y="447.7407"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65.3311" x="101.4994" y="447.7407">найдены</text></g><g class="entity" data-qualified-name="TrainSchedule" data-source-line="70" id="ent0006"><rect fill="#90EE90" height="50.2656" rx="2.5" ry="2.5" style="stroke:#307020;stroke-width:0.5;" width="162.4609" x="7" y="554.3369"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="81.4043" x="47.5283" y="575.4755">«ReadModel»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.1123" x="17" y="591.3007">Расписание</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="103.1123" y="591.3007"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9.0986" x="107.5625" y="591.3007">и</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="116.6611" y="591.3007"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.3496" x="121.1113" y="591.3007">цены</text></g><g class="entity" data-qualified-name="SelectSeat" data-source-line="78" id="ent0011"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="131.207" x="230.63" y="180.0969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="258.0538" y="201.2355">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63.1641" x="240.63" y="217.0607">Выбрать</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="303.7941" y="217.0607"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43.5928" x="308.2443" y="217.0607">место</text></g><g class="entity" data-qualified-name="BookingInfo" data-source-line="79" id="ent0012"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="126.4561" x="235" y="291.3569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="259.4771" y="312.4955">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106.4561" x="245" y="328.3207">Бронирование</text></g><g class="entity" data-qualified-name="SeatLocked" data-source-line="80" id="ent0013"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="141.3584" x="228.55" y="402.6269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="251.4167" y="423.7655">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.1104" x="238.55" y="439.5907">Место</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="283.6604" y="439.5907"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.7979" x="288.1105" y="439.5907">временно</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111.7266" x="243.3659" y="455.8876">заблокировано</text></g><g class="entity" data-qualified-name="SeatLockTimer" data-source-line="81" id="ent0014"><rect fill="#DDA0DD" height="66.5625" rx="2.5" ry="2.5" style="stroke:#602070;stroke-width:0.5;" width="193.4277" x="204.52" y="546.1869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49.6289" x="276.4194" y="567.3255">«Policy»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.291" x="214.52" y="583.1507">Таймер</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="268.811" y="583.1507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.96" x="273.2612" y="583.1507">блокировки</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="360.2212" y="583.1507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23.2764" x="364.6714" y="583.1507">(15</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.2754" x="284.0962" y="599.4476">мин)</text></g><g class="entity" data-qualified-name="CreateOrder" data-source-line="89" id="ent0019"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="141.4609" x="396.5" y="180.0969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="429.0508" y="201.2355">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76.5078" x="406.5" y="217.0607">Оформить</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="483.0078" y="217.0607"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40.5029" x="487.458" y="217.0607">заказ</text></g><g class="entity" data-qualified-name="Order" data-source-line="90" id="ent0020"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="415.48" y="291.3569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="426.48" y="312.4955">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="444.2139" y="328.3207">Заказ</text></g><g class="entity" data-qualified-name="OrderCreated" data-source-line="91" id="ent0021"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="117.625" x="405.42" y="410.7769"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="416.42" y="431.9155">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="415.4307" y="447.7407">Заказ</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="457.4649" y="447.7407"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="461.9151" y="447.7407">создан</text></g><g class="entity" data-qualified-name="PayForOrder" data-source-line="98" id="ent0025"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="136.3135" x="574.07" y="180.0969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="604.0471" y="201.2355">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.3604" x="584.07" y="217.0607">Оплатить</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="655.4304" y="217.0607"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40.5029" x="659.8805" y="217.0607">заказ</text></g><g class="entity" data-qualified-name="PaymentGateway" data-source-line="99" id="ent0026"><rect fill="#FFC0CB" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B03060;stroke-width:0.5;" width="152.3984" x="572.03" y="291.3569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59.4316" x="618.5134" y="312.4955">«System»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.96" x="582.03" y="328.3207">Банковский</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="668.99" y="328.3207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40.9883" x="673.4402" y="328.3207">шлюз</text></g><g class="entity" data-qualified-name="PaymentAuthorized" data-source-line="100" id="ent0027"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="180.9932" x="557.73" y="410.7769"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="600.4141" y="431.9155">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="567.73" y="447.7407">Оплата</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="622.1646" y="447.7407"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102.1084" x="626.6148" y="447.7407">авторизована</text></g><g class="entity" data-qualified-name="PaymentDeclined" data-source-line="101" id="ent0028"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="157.0742" x="773.69" y="410.7769"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="804.4146" y="431.9155">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="783.69" y="447.7407">Оплата</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="838.1246" y="447.7407"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.1895" x="842.5748" y="447.7407">отклонена</text></g><g class="entity" data-qualified-name="IssueTicketPolicy" data-source-line="109" id="ent0033"><rect fill="#DDA0DD" height="66.5625" rx="2.5" ry="2.5" style="stroke:#602070;stroke-width:0.5;" width="204.0371" x="546.21" y="546.1869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49.6289" x="623.4141" y="567.3255">«Policy»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28.5127" x="556.21" y="583.1507">При</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="584.7227" y="583.1507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73.377" x="589.1729" y="583.1507">успешной</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="662.5498" y="583.1507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52.0146" x="667" y="583.1507">оплате</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="719.0147" y="583.1507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16.7822" x="723.4649" y="583.1507">-&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79.4541" x="584.5518" y="599.4476">Выпустить</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="664.0059" y="599.4476"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43.4492" x="668.4561" y="599.4476">билет</text></g><g class="entity" data-qualified-name="GenerateTicket" data-source-line="110" id="ent0034"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="180.084" x="558.19" y="673.7469"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="610.0523" y="694.8855">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.1846" x="568.19" y="710.7107">Сгенерировать</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="680.3746" y="710.7107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43.4492" x="684.8248" y="710.7107">билет</text></g><g class="entity" data-qualified-name="TicketAgg" data-source-line="111" id="ent0035"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="598.48" y="785.0169"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="609.48" y="806.1555">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="626.021" y="821.9807">Билет</text></g><g class="entity" data-qualified-name="TicketGenerated" data-source-line="112" id="ent0036"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="171.7236" x="562.37" y="896.2769"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="600.4193" y="917.4155">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="572.37" y="933.2407">Билет</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="616.7899" y="933.2407"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102.8535" x="621.2401" y="933.2407">сгенерирован</text></g><g class="entity" data-qualified-name="EmailService" data-source-line="113" id="ent0037"><rect fill="#FFC0CB" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B03060;stroke-width:0.5;" width="147.1826" x="574.64" y="1007.5469"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59.4316" x="618.5155" y="1028.6855">«System»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.4883" x="584.64" y="1044.5107">Почтовый</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="657.1283" y="1044.5107"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50.2441" x="661.5785" y="1044.5107">сервис</text></g><g class="entity" data-qualified-name="EmailSent" data-source-line="114" id="ent0038"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="141.5977" x="577.43" y="1118.8069"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="600.4163" y="1139.9455">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.8418" x="587.43" y="1155.7707">Email</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="626.2718" y="1155.7707"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.3057" x="630.722" y="1155.7707">отправлен</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0003" data-link-type="dependency" data-source-line="72" id="lnk7"><path d="M311.08,102.6869 C272.88,124.0169 218.669,154.2924 178.219,176.8724" fill="none" id="Passenger-to-SearchTrains" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="172.98,179.7969,182.7882,178.9028,177.3458,177.3598,178.8888,171.9174,172.98,179.7969" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0004" data-link-type="dependency" data-source-line="73" id="lnk8"><path d="M126.54,230.7469 C124.56,248.7369 122.5471,267.113 120.5671,285.083" fill="none" id="SearchTrains-to-SearchEngine" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="119.91,291.0469,124.8716,282.5391,120.4576,286.077,116.9197,281.6629,119.91,291.0469" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0005" data-link-type="dependency" data-source-line="74" id="lnk9"><path d="M114.71,342.1069 C112.67,362.1469 110.4009,384.3281 108.3509,404.3581" fill="none" id="SearchEngine-to-TrainsFound" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="107.74,410.3269,112.6355,401.7809,108.2491,405.3529,104.6771,400.9664,107.74,410.3269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0005" data-entity-2="ent0006" data-link-type="dependency" data-source-line="75" id="lnk10"><path d="M102.31,461.2369 C99.19,487.1669 95.0051,522.0296 91.8851,548.0196" fill="none" id="TrainsFound-to-TrainSchedule" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="91.17,553.9769,96.2142,545.5178,91.766,549.0125,88.2712,544.5643,91.17,553.9769" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52.5776" x="99.23" y="512.2538">updates</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="151.8076" y="512.2538"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29.9355" x="155.94" y="512.2538">view</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0011" data-link-type="dependency" data-source-line="83" id="lnk15"><path d="M332.35,119.2969 C323.98,138.9669 316.3177,156.9953 308.9577,174.3053" fill="none" id="Passenger-to-SelectSeat" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="306.61,179.8269,313.8127,173.1096,308.5664,175.2255,306.4505,169.9793,306.61,179.8269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0012" data-link-type="dependency" data-source-line="84" id="lnk16"><path d="M296.68,230.7469 C297.01,248.7369 297.3398,267.0779 297.6698,285.0479" fill="none" id="SelectSeat-to-BookingInfo" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="297.78,291.0469,301.6141,281.9749,297.6882,286.0477,293.6154,282.1218,297.78,291.0469" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0012" data-entity-2="ent0013" data-link-type="dependency" data-source-line="85" id="lnk17"><path d="M298.44,342.1069 C298.59,359.5869 298.7396,377.2471 298.8996,396.2971" fill="none" id="BookingInfo-to-SeatLocked" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="298.95,402.2969,302.8743,393.2636,298.908,397.2971,294.8746,393.3308,298.95,402.2969" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0013" data-entity-2="ent0014" data-link-type="dependency" data-source-line="86" id="lnk18"><path d="M299.69,469.3869 C300.01,492.3969 300.3665,517.1575 300.6865,540.1375" fill="none" id="SeatLocked-to-SeatLockTimer" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="300.77,546.1369,304.6443,537.0821,300.7004,541.1374,296.6451,537.1934,300.77,546.1369" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0019" data-link-type="dependency" data-source-line="93" id="lnk22"><path d="M384.58,119.2969 C403.72,138.9669 422.4549,158.2175 439.3049,175.5275" fill="none" id="Passenger-to-CreateOrder" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="443.49,179.8269,440.0786,170.5877,440.0024,176.2441,434.3461,176.1679,443.49,179.8269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0019" data-entity-2="ent0020" data-link-type="dependency" data-source-line="94" id="lnk23"><path d="M466.78,230.7469 C466.45,248.7369 466.1202,267.0779 465.7902,285.0479" fill="none" id="CreateOrder-to-Order" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="465.68,291.0469,469.8446,282.1218,465.7718,286.0477,461.8459,281.9749,465.68,291.0469" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0020" data-entity-2="ent0021" data-link-type="dependency" data-source-line="95" id="lnk24"><path d="M465.02,342.1069 C464.85,362.1469 464.6609,384.2971 464.4909,404.3271" fill="none" id="Order-to-OrderCreated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="464.44,410.3269,468.5162,401.3611,464.4824,405.3271,460.5165,401.2933,464.44,410.3269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0025" data-link-type="dependency" data-source-line="103" id="lnk29"><path d="M385.47,97.4269 C435.3,118.1569 518.68,152.843 577.69,177.383" fill="none" id="Passenger-to-PayForOrder" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="583.23,179.6869,576.4559,172.5377,578.6133,177.767,573.384,179.9244,583.23,179.6869" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0025" data-entity-2="ent0026" data-link-type="dependency" data-source-line="104" id="lnk30"><path d="M643.58,230.7469 C644.57,248.7369 645.5699,267.086 646.5599,285.056" fill="none" id="PayForOrder-to-PaymentGateway" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="646.89,291.0469,650.3889,281.8405,646.615,286.0544,642.401,282.2805,646.89,291.0469" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0026" data-entity-2="ent0027" data-link-type="dependency" data-source-line="105" id="lnk31"><path d="M648.23,342.1069 C648.23,362.1469 648.23,384.2969 648.23,404.3269" fill="none" id="PaymentGateway-to-PaymentAuthorized" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,410.3269,652.23,401.3269,648.23,405.3269,644.23,401.3269,648.23,410.3269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0026" data-entity-2="ent0028" data-link-type="dependency" data-source-line="106" id="lnk32"><path d="M691,342.1069 C725.81,362.1469 769.5199,387.3038 804.3199,407.3338" fill="none" id="PaymentGateway-to-PaymentDeclined" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="809.52,410.3269,803.7152,402.3705,805.1865,407.8326,799.7244,409.304,809.52,410.3269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0027" data-entity-2="ent0033" data-link-type="dependency" data-source-line="116" id="lnk39"><path d="M648.23,461.2369 C648.23,484.5569 648.23,513.9269 648.23,539.7069" fill="none" id="PaymentAuthorized-to-IssueTicketPolicy" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,545.7069,652.23,536.7069,648.23,540.7069,644.23,536.7069,648.23,545.7069" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0033" data-entity-2="ent0034" data-link-type="dependency" data-source-line="117" id="lnk40"><path d="M648.23,613.1769 C648.23,632.3069 648.23,650.0669 648.23,667.5469" fill="none" id="IssueTicketPolicy-to-GenerateTicket" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,673.5469,652.23,664.5469,648.23,668.5469,644.23,664.5469,648.23,673.5469" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0034" data-entity-2="ent0035" data-link-type="dependency" data-source-line="118" id="lnk41"><path d="M648.23,724.4069 C648.23,742.3969 648.23,760.7269 648.23,778.7069" fill="none" id="GenerateTicket-to-TicketAgg" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,784.7069,652.23,775.7069,648.23,779.7069,644.23,775.7069,648.23,784.7069" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0035" data-entity-2="ent0036" data-link-type="dependency" data-source-line="119" id="lnk42"><path d="M648.23,835.6669 C648.23,853.6669 648.23,871.9969 648.23,889.9769" fill="none" id="TicketAgg-to-TicketGenerated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,895.9769,652.23,886.9769,648.23,890.9769,644.23,886.9769,648.23,895.9769" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0036" data-entity-2="ent0037" data-link-type="dependency" data-source-line="120" id="lnk43"><path d="M648.23,946.9369 C648.23,964.9269 648.23,983.2669 648.23,1001.2369" fill="none" id="TicketGenerated-to-EmailService" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,1007.2369,652.23,998.2369,648.23,1002.2369,644.23,998.2369,648.23,1007.2369" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0037" data-entity-2="ent0038" data-link-type="dependency" data-source-line="121" id="lnk44"><path d="M648.23,1058.1969 C648.23,1076.1969 648.23,1094.5269 648.23,1112.5069" fill="none" id="EmailService-to-EmailSent" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="648.23,1118.5069,652.23,1109.5069,648.23,1113.5069,644.23,1109.5069,648.23,1118.5069" style="stroke:#181818;stroke-width:1;"/></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="1175px" preserveAspectRatio="xMidYMid meet" style="width:936px;height:1175px;background:#1B1B1B;" version="1.1" viewBox="0 0 936 1175" width="936px" zoomAndPan="magnify" class="diagram"><title>EventStorming: Process Modeling (Покупка билета)</title><defs/><g><rect fill="#1B1B1B" height="1175" style="stroke:none;stroke-width:1;" width="936" x="0" y="0"/><g class="title" data-source-line="59"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="414.7842" x="253.99" y="22.9951">EventStorming: Process Modeling (Покупка билета)</text></g><g class="entity" data-qualified-name="Passenger" data-source-line="62" id="ent0002"><ellipse cx="348.2289" cy="51.2969" fill="#313139" rx="8" ry="8" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M348.2289,59.2969 L348.2289,86.2969 M335.2289,67.2969 L361.2289,67.2969 M348.2289,86.2969 L335.2289,101.2969 M348.2289,86.2969 L361.2289,101.2969" fill="none" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73.6777" x="311.39" y="115.792">Пассажир</text></g><g class="entity" data-qualified-name="SearchTrains" data-source-line="67" id="ent0003"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="129.0674" x="64.7" y="180.0969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="91.054" y="201.2355">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.3447" x="74.7" y="217.0607">Поиск</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="119.0447" y="217.0607"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60.2725" x="123.4949" y="217.0607">поездов</text></g><g class="entity" data-qualified-name="SearchEngine" data-source-line="68" id="ent0004"><rect fill="#FFC0CB" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B03060;stroke-width:0.5;" width="162.4268" x="36.02" y="291.3569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59.4316" x="87.5176" y="312.4955">«System»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81.3135" x="46.02" y="328.3207">Поисковый</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="127.3335" y="328.3207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56.6631" x="131.7837" y="328.3207">движок</text></g><g class="entity" data-qualified-name="TrainsFound" data-source-line="69" id="ent0005"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="143.1904" x="33.64" y="410.7769"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="57.4227" y="431.9155">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53.4092" x="43.64" y="447.7407">Поезда</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="97.0492" y="447.7407"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65.3311" x="101.4994" y="447.7407">найдены</text></g><g class="entity" data-qualified-name="TrainSchedule" data-source-line="70" id="ent0006"><rect fill="#90EE90" height="50.2656" rx="2.5" ry="2.5" style="stroke:#307020;stroke-width:0.5;" width="162.4609" x="7" y="554.3369"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="81.4043" x="47.5283" y="575.4755">«ReadModel»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.1123" x="17" y="591.3007">Расписание</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="103.1123" y="591.3007"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9.0986" x="107.5625" y="591.3007">и</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="116.6611" y="591.3007"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.3496" x="121.1113" y="591.3007">цены</text></g><g class="entity" data-qualified-name="SelectSeat" data-source-line="78" id="ent0011"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="131.207" x="230.63" y="180.0969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="258.0538" y="201.2355">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63.1641" x="240.63" y="217.0607">Выбрать</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="303.7941" y="217.0607"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43.5928" x="308.2443" y="217.0607">место</text></g><g class="entity" data-qualified-name="BookingInfo" data-source-line="79" id="ent0012"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="126.4561" x="235" y="291.3569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="259.4771" y="312.4955">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106.4561" x="245" y="328.3207">Бронирование</text></g><g class="entity" data-qualified-name="SeatLocked" data-source-line="80" id="ent0013"><rect fill="#FFA500" height="66.5625" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="141.3584" x="228.55" y="402.6269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="251.4167" y="423.7655">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.1104" x="238.55" y="439.5907">Место</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="283.6604" y="439.5907"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.7979" x="288.1105" y="439.5907">временно</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111.7266" x="243.3659" y="455.8876">заблокировано</text></g><g class="entity" data-qualified-name="SeatLockTimer" data-source-line="81" id="ent0014"><rect fill="#DDA0DD" height="66.5625" rx="2.5" ry="2.5" style="stroke:#602070;stroke-width:0.5;" width="193.4277" x="204.52" y="546.1869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49.6289" x="276.4194" y="567.3255">«Policy»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.291" x="214.52" y="583.1507">Таймер</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="268.811" y="583.1507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.96" x="273.2612" y="583.1507">блокировки</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="360.2212" y="583.1507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23.2764" x="364.6714" y="583.1507">(15</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34.2754" x="284.0962" y="599.4476">мин)</text></g><g class="entity" data-qualified-name="CreateOrder" data-source-line="89" id="ent0019"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="141.4609" x="396.5" y="180.0969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="429.0508" y="201.2355">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76.5078" x="406.5" y="217.0607">Оформить</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="483.0078" y="217.0607"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40.5029" x="487.458" y="217.0607">заказ</text></g><g class="entity" data-qualified-name="Order" data-source-line="90" id="ent0020"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="415.48" y="291.3569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="426.48" y="312.4955">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="444.2139" y="328.3207">Заказ</text></g><g class="entity" data-qualified-name="OrderCreated" data-source-line="91" id="ent0021"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="117.625" x="405.42" y="410.7769"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="416.42" y="431.9155">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="415.4307" y="447.7407">Заказ</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="457.4649" y="447.7407"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="461.9151" y="447.7407">создан</text></g><g class="entity" data-qualified-name="PayForOrder" data-source-line="98" id="ent0025"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="136.3135" x="574.07" y="180.0969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="604.0471" y="201.2355">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.3604" x="584.07" y="217.0607">Оплатить</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="655.4304" y="217.0607"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40.5029" x="659.8805" y="217.0607">заказ</text></g><g class="entity" data-qualified-name="PaymentGateway" data-source-line="99" id="ent0026"><rect fill="#FFC0CB" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B03060;stroke-width:0.5;" width="152.3984" x="572.03" y="291.3569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59.4316" x="618.5134" y="312.4955">«System»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86.96" x="582.03" y="328.3207">Банковский</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="668.99" y="328.3207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40.9883" x="673.4402" y="328.3207">шлюз</text></g><g class="entity" data-qualified-name="PaymentAuthorized" data-source-line="100" id="ent0027"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="180.9932" x="557.73" y="410.7769"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="600.4141" y="431.9155">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="567.73" y="447.7407">Оплата</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="622.1646" y="447.7407"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102.1084" x="626.6148" y="447.7407">авторизована</text></g><g class="entity" data-qualified-name="PaymentDeclined" data-source-line="101" id="ent0028"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="157.0742" x="773.69" y="410.7769"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="804.4146" y="431.9155">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54.4346" x="783.69" y="447.7407">Оплата</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="838.1246" y="447.7407"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.1895" x="842.5748" y="447.7407">отклонена</text></g><g class="entity" data-qualified-name="IssueTicketPolicy" data-source-line="109" id="ent0033"><rect fill="#DDA0DD" height="66.5625" rx="2.5" ry="2.5" style="stroke:#602070;stroke-width:0.5;" width="204.0371" x="546.21" y="546.1869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49.6289" x="623.4141" y="567.3255">«Policy»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28.5127" x="556.21" y="583.1507">При</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="584.7227" y="583.1507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73.377" x="589.1729" y="583.1507">успешной</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="662.5498" y="583.1507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52.0146" x="667" y="583.1507">оплате</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="719.0147" y="583.1507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16.7822" x="723.4649" y="583.1507">-&gt;</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79.4541" x="584.5518" y="599.4476">Выпустить</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="664.0059" y="599.4476"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43.4492" x="668.4561" y="599.4476">билет</text></g><g class="entity" data-qualified-name="GenerateTicket" data-source-line="110" id="ent0034"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="180.084" x="558.19" y="673.7469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="610.0523" y="694.8855">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.1846" x="568.19" y="710.7107">Сгенерировать</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="680.3746" y="710.7107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43.4492" x="684.8248" y="710.7107">билет</text></g><g class="entity" data-qualified-name="TicketAgg" data-source-line="111" id="ent0035"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="598.48" y="785.0169"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="609.48" y="806.1555">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="626.021" y="821.9807">Билет</text></g><g class="entity" data-qualified-name="TicketGenerated" data-source-line="112" id="ent0036"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="171.7236" x="562.37" y="896.2769"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="600.4193" y="917.4155">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.4199" x="572.37" y="933.2407">Билет</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="616.7899" y="933.2407"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102.8535" x="621.2401" y="933.2407">сгенерирован</text></g><g class="entity" data-qualified-name="EmailService" data-source-line="113" id="ent0037"><rect fill="#FFC0CB" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B03060;stroke-width:0.5;" width="147.1826" x="574.64" y="1007.5469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59.4316" x="618.5155" y="1028.6855">«System»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.4883" x="584.64" y="1044.5107">Почтовый</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="657.1283" y="1044.5107"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50.2441" x="661.5785" y="1044.5107">сервис</text></g><g class="entity" data-qualified-name="EmailSent" data-source-line="114" id="ent0038"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="141.5977" x="577.43" y="1118.8069"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="600.4163" y="1139.9455">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.8418" x="587.43" y="1155.7707">Email</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="626.2718" y="1155.7707"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78.3057" x="630.722" y="1155.7707">отправлен</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0003" data-link-type="dependency" data-source-line="72" id="lnk7"><path d="M311.08,102.6869 C272.88,124.0169 218.669,154.2924 178.219,176.8724" fill="none" id="Passenger-to-SearchTrains" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="172.98,179.7969,182.7882,178.9028,177.3458,177.3598,178.8888,171.9174,172.98,179.7969" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0004" data-link-type="dependency" data-source-line="73" id="lnk8"><path d="M126.54,230.7469 C124.56,248.7369 122.5471,267.113 120.5671,285.083" fill="none" id="SearchTrains-to-SearchEngine" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="119.91,291.0469,124.8716,282.5391,120.4576,286.077,116.9197,281.6629,119.91,291.0469" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0005" data-link-type="dependency" data-source-line="74" id="lnk9"><path d="M114.71,342.1069 C112.67,362.1469 110.4009,384.3281 108.3509,404.3581" fill="none" id="SearchEngine-to-TrainsFound" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="107.74,410.3269,112.6355,401.7809,108.2491,405.3529,104.6771,400.9664,107.74,410.3269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0005" data-entity-2="ent0006" data-link-type="dependency" data-source-line="75" id="lnk10"><path d="M102.31,461.2369 C99.19,487.1669 95.0051,522.0296 91.8851,548.0196" fill="none" id="TrainsFound-to-TrainSchedule" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="91.17,553.9769,96.2142,545.5178,91.766,549.0125,88.2712,544.5643,91.17,553.9769" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52.5776" x="99.23" y="512.2538">updates</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="151.8076" y="512.2538"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29.9355" x="155.94" y="512.2538">view</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0011" data-link-type="dependency" data-source-line="83" id="lnk15"><path d="M332.35,119.2969 C323.98,138.9669 316.3177,156.9953 308.9577,174.3053" fill="none" id="Passenger-to-SelectSeat" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="306.61,179.8269,313.8127,173.1096,308.5664,175.2255,306.4505,169.9793,306.61,179.8269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0012" data-link-type="dependency" data-source-line="84" id="lnk16"><path d="M296.68,230.7469 C297.01,248.7369 297.3398,267.0779 297.6698,285.0479" fill="none" id="SelectSeat-to-BookingInfo" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="297.78,291.0469,301.6141,281.9749,297.6882,286.0477,293.6154,282.1218,297.78,291.0469" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0012" data-entity-2="ent0013" data-link-type="dependency" data-source-line="85" id="lnk17"><path d="M298.44,342.1069 C298.59,359.5869 298.7396,377.2471 298.8996,396.2971" fill="none" id="BookingInfo-to-SeatLocked" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="298.95,402.2969,302.8743,393.2636,298.908,397.2971,294.8746,393.3308,298.95,402.2969" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0013" data-entity-2="ent0014" data-link-type="dependency" data-source-line="86" id="lnk18"><path d="M299.69,469.3869 C300.01,492.3969 300.3665,517.1575 300.6865,540.1375" fill="none" id="SeatLocked-to-SeatLockTimer" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="300.77,546.1369,304.6443,537.0821,300.7004,541.1374,296.6451,537.1934,300.77,546.1369" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0019" data-link-type="dependency" data-source-line="93" id="lnk22"><path d="M384.58,119.2969 C403.72,138.9669 422.4549,158.2175 439.3049,175.5275" fill="none" id="Passenger-to-CreateOrder" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="443.49,179.8269,440.0786,170.5877,440.0024,176.2441,434.3461,176.1679,443.49,179.8269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0019" data-entity-2="ent0020" data-link-type="dependency" data-source-line="94" id="lnk23"><path d="M466.78,230.7469 C466.45,248.7369 466.1202,267.0779 465.7902,285.0479" fill="none" id="CreateOrder-to-Order" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="465.68,291.0469,469.8446,282.1218,465.7718,286.0477,461.8459,281.9749,465.68,291.0469" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0020" data-entity-2="ent0021" data-link-type="dependency" data-source-line="95" id="lnk24"><path d="M465.02,342.1069 C464.85,362.1469 464.6609,384.2971 464.4909,404.3271" fill="none" id="Order-to-OrderCreated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="464.44,410.3269,468.5162,401.3611,464.4824,405.3271,460.5165,401.2933,464.44,410.3269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0025" data-link-type="dependency" data-source-line="103" id="lnk29"><path d="M385.47,97.4269 C435.3,118.1569 518.68,152.843 577.69,177.383" fill="none" id="Passenger-to-PayForOrder" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="583.23,179.6869,576.4559,172.5377,578.6133,177.767,573.384,179.9244,583.23,179.6869" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0025" data-entity-2="ent0026" data-link-type="dependency" data-source-line="104" id="lnk30"><path d="M643.58,230.7469 C644.57,248.7369 645.5699,267.086 646.5599,285.056" fill="none" id="PayForOrder-to-PaymentGateway" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="646.89,291.0469,650.3889,281.8405,646.615,286.0544,642.401,282.2805,646.89,291.0469" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0026" data-entity-2="ent0027" data-link-type="dependency" data-source-line="105" id="lnk31"><path d="M648.23,342.1069 C648.23,362.1469 648.23,384.2969 648.23,404.3269" fill="none" id="PaymentGateway-to-PaymentAuthorized" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,410.3269,652.23,401.3269,648.23,405.3269,644.23,401.3269,648.23,410.3269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0026" data-entity-2="ent0028" data-link-type="dependency" data-source-line="106" id="lnk32"><path d="M691,342.1069 C725.81,362.1469 769.5199,387.3038 804.3199,407.3338" fill="none" id="PaymentGateway-to-PaymentDeclined" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="809.52,410.3269,803.7152,402.3705,805.1865,407.8326,799.7244,409.304,809.52,410.3269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0027" data-entity-2="ent0033" data-link-type="dependency" data-source-line="116" id="lnk39"><path d="M648.23,461.2369 C648.23,484.5569 648.23,513.9269 648.23,539.7069" fill="none" id="PaymentAuthorized-to-IssueTicketPolicy" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,545.7069,652.23,536.7069,648.23,540.7069,644.23,536.7069,648.23,545.7069" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0033" data-entity-2="ent0034" data-link-type="dependency" data-source-line="117" id="lnk40"><path d="M648.23,613.1769 C648.23,632.3069 648.23,650.0669 648.23,667.5469" fill="none" id="IssueTicketPolicy-to-GenerateTicket" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,673.5469,652.23,664.5469,648.23,668.5469,644.23,664.5469,648.23,673.5469" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0034" data-entity-2="ent0035" data-link-type="dependency" data-source-line="118" id="lnk41"><path d="M648.23,724.4069 C648.23,742.3969 648.23,760.7269 648.23,778.7069" fill="none" id="GenerateTicket-to-TicketAgg" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,784.7069,652.23,775.7069,648.23,779.7069,644.23,775.7069,648.23,784.7069" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0035" data-entity-2="ent0036" data-link-type="dependency" data-source-line="119" id="lnk42"><path d="M648.23,835.6669 C648.23,853.6669 648.23,871.9969 648.23,889.9769" fill="none" id="TicketAgg-to-TicketGenerated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,895.9769,652.23,886.9769,648.23,890.9769,644.23,886.9769,648.23,895.9769" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0036" data-entity-2="ent0037" data-link-type="dependency" data-source-line="120" id="lnk43"><path d="M648.23,946.9369 C648.23,964.9269 648.23,983.2669 648.23,1001.2369" fill="none" id="TicketGenerated-to-EmailService" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,1007.2369,652.23,998.2369,648.23,1002.2369,644.23,998.2369,648.23,1007.2369" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0037" data-entity-2="ent0038" data-link-type="dependency" data-source-line="121" id="lnk44"><path d="M648.23,1058.1969 C648.23,1076.1969 648.23,1094.5269 648.23,1112.5069" fill="none" id="EmailService-to-EmailSent" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="648.23,1118.5069,652.23,1109.5069,648.23,1113.5069,644.23,1109.5069,648.23,1118.5069" style="stroke:#E7E7E7;stroke-width:1;"/></g></g></svg></div></div>
+
+<hr />
+<h2 id="3-software-design">3. Software Design (Проектирование архитектуры)</h2>
+<p>Группировка агрегатов и событий в Ограниченные Контексты (Bounded Contexts) для построения микросервисной архитектуры.</p>
+<p><strong>Выделенные контексты:</strong>
+1.  <strong>Catalog Context:</strong> Управление расписанием, поездами, маршрутами.
+2.  <strong>Booking Context:</strong> Управление заказами, резервация мест.
+3.  <strong>Identity Context:</strong> Пользователи, профили пассажиров.
+4.  <strong>Payment Context:</strong> Обработка транзакций.
+5.  <strong>Notification Context:</strong> Рассылка уведомлений.</p>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="1175px" preserveAspectRatio="xMidYMid meet" style="width:905px;height:1175px;background:#FFFFFF;" version="1.1" viewBox="0 0 905 1175" width="905px" zoomAndPan="magnify" class="diagram"><title>Software Design (Aggregates &amp; Bounded Contexts)</title><defs/><g><g class="title" data-source-line="59"><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="406.0068" x="242.645" y="22.9951">Software Design (Aggregates &amp; Bounded Contexts)</text></g><g class="cluster" data-qualified-name="Catalog Context" data-source-line="61" id="ent0002"><rect fill="none" height="212.53" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;" width="350" x="33" y="44.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="126.9434" x="144.5283" y="59.292">Catalog Context</text></g><g class="cluster" data-qualified-name="Booking Context" data-source-line="71" id="ent0009"><rect fill="none" height="639.33" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;" width="200" x="209" y="289.8269"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130.6484" x="243.6758" y="304.822">Booking Context</text></g><g class="cluster" data-qualified-name="Identity Context" data-source-line="85" id="ent0019"><rect fill="none" height="346.8" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;" width="353" x="433" y="44.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="128.6455" x="545.1772" y="59.292">Identity Context</text></g><g class="cluster" data-qualified-name="Payment Context" data-source-line="96" id="ent0026"><rect fill="none" height="341.8" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;" width="178" x="7" y="827.8869"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="136.2197" x="27.8901" y="842.882">Payment Context</text></g><g class="cluster" data-qualified-name="Notification Context" data-source-line="105" id="ent0032"><rect fill="none" height="101.26" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;" width="303" x="433" y="693.6269"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="159.1816" x="504.9092" y="708.622">Notification Context</text></g><g class="entity" data-qualified-name="Catalog Context.Route" data-source-line="62" id="ent0003"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="71.25" y="79.2969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="82.25" y="100.4355">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6826" x="87.1597" y="116.2607">Маршрут</text></g><g class="entity" data-qualified-name="Catalog Context.Train" data-source-line="63" id="ent0004"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="247.25" y="79.2969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="258.25" y="100.4355">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.8301" x="274.5859" y="116.2607">Поезд</text></g><g class="entity" data-qualified-name="Catalog Context.RouteCreated" data-source-line="64" id="ent0005"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="143.252" x="49.37" y="190.5569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="73.1835" y="211.6955">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6826" x="59.37" y="227.5207">Маршрут</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="127.0526" y="227.5207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="131.5028" y="227.5207">создан</text></g><g class="entity" data-qualified-name="Catalog Context.TrainAdded" data-source-line="65" id="ent0006"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="139.7041" x="227.15" y="190.5569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="249.1896" y="211.6955">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.8301" x="237.15" y="227.5207">Поезд</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="281.9801" y="227.5207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.4238" x="286.4303" y="227.5207">добавлен</text></g><g class="entity" data-qualified-name="Booking Context.Order" data-source-line="72" id="ent0010"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="272.25" y="469.0969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="283.25" y="490.2355">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="300.9839" y="506.0607">Заказ</text></g><g class="entity" data-qualified-name="Booking Context.SeatInventory" data-source-line="73" id="ent0011"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="138.9932" x="230.5" y="728.6269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="261.2456" y="749.7655">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79.5156" x="240.5" y="765.5907">Инвентарь</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="320.0156" y="765.5907"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35.0273" x="324.4658" y="765.5907">мест</text></g><g class="entity" data-qualified-name="Booking Context.BookSeat" data-source-line="75" id="ent0012"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="132.5811" x="255.71" y="324.8269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="283.8208" y="345.9655">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.5811" x="265.71" y="361.7907">Забронировать</text></g><g class="entity" data-qualified-name="Booking Context.SeatReserved" data-source-line="76" id="ent0013"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="119.8799" x="228.06" y="862.8869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="240.1874" y="884.0255">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.1104" x="238.06" y="899.8507">Место</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="283.1704" y="899.8507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50.3193" x="287.6205" y="899.8507">занято</text></g><g class="entity" data-qualified-name="Booking Context.OrderConfirmed" data-source-line="77" id="ent0014"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="167.8477" x="225.08" y="580.3569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="261.1913" y="601.4955">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="235.08" y="617.3207">Заказ</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="277.1142" y="617.3207"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.3633" x="281.5644" y="617.3207">подтвержден</text></g><g class="entity" data-qualified-name="Identity Context.User" data-source-line="86" id="ent0020"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="123.0996" x="624.45" y="190.5569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="647.2488" y="211.6955">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="634.45" y="227.5207">Пользователь</text></g><g class="entity" data-qualified-name="Identity Context.PassengerProfile" data-source-line="87" id="ent0021"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="171.5801" x="449.21" y="79.2969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="496.2491" y="100.4355">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66.2471" x="459.21" y="116.2607">Профиль</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="525.4571" y="116.2607"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.8828" x="529.9073" y="116.2607">пассажира</text></g><g class="entity" data-qualified-name="Identity Context.Register" data-source-line="89" id="ent0022"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="113.8779" x="656.06" y="79.2969"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="674.8193" y="100.4355">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93.8779" x="666.06" y="116.2607">Регистрация</text></g><g class="entity" data-qualified-name="Identity Context.UserCreated" data-source-line="90" id="ent0023"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="178.6689" x="490.67" y="324.8269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="532.192" y="345.9655">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="500.67" y="361.7907">Пользователь</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="603.7696" y="361.7907"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="608.2198" y="361.7907">создан</text></g><g class="entity" data-qualified-name="Payment Context.Payment" data-source-line="97" id="ent0027"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="60.25" y="992.1569"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="71.25" y="1013.2955">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57.4355" x="81.2832" y="1029.1207">Платеж</text></g><g class="entity" data-qualified-name="Payment Context.ProcessPayment" data-source-line="98" id="ent0028"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="145.9316" x="23.03" y="862.8869"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="57.8161" y="884.0255">«Command»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.7949" x="33.03" y="899.8507">Провести</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="102.8249" y="899.8507"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.6865" x="107.2751" y="899.8507">оплату</text></g><g class="entity" data-qualified-name="Payment Context.Paid" data-source-line="99" id="ent0029"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="117.625" x="51.19" y="1103.4169"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="62.19" y="1124.5555">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.3037" x="73.8506" y="1140.3807">Оплачено</text></g><g class="entity" data-qualified-name="Notification Context.Notification" data-source-line="106" id="ent0033"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="118.6289" x="448.69" y="728.6269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="469.2535" y="749.7655">«Aggregate»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98.6289" x="458.69" y="765.5907">Уведомление</text></g><g class="entity" data-qualified-name="Notification Context.Sent" data-source-line="107" id="ent0034"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="117.625" x="602.19" y="728.6269"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="613.19" y="749.7655">«DomainEvent»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.3252" x="616.3399" y="765.5907">Отправлено</text></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0005" data-link-type="dependency" data-source-line="67" id="lnk7"><path d="M121,129.9469 C121,147.9469 121,166.2769 121,184.2569" fill="none" id="Route-to-RouteCreated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="121,190.2569,125,181.2569,121,185.2569,117,181.2569,121,190.2569" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0006" data-link-type="dependency" data-source-line="68" id="lnk8"><path d="M297,129.9469 C297,147.9469 297,166.2769 297,184.2569" fill="none" id="Train-to-TrainAdded" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="297,190.2569,301,181.2569,297,185.2569,293,181.2569,297,190.2569" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0012" data-entity-2="ent0010" data-link-type="dependency" data-source-line="79" id="lnk15"><path d="M322,375.4169 C322,401.4769 322,436.4969 322,462.6169" fill="none" id="BookSeat-to-Order" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="322,468.6169,326,459.6169,322,463.6169,318,459.6169,322,468.6169" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0010" data-entity-2="ent0014" data-link-type="dependency" data-source-line="80" id="lnk16"><path d="M319.08,519.7469 C316.94,537.7469 314.7591,556.1189 312.6191,574.0989" fill="none" id="Order-to-OrderConfirmed" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="311.91,580.0569,316.9456,571.5927,312.5009,575.0919,309.0017,570.6472,311.91,580.0569" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0011" data-link-type="dependency" data-source-line="81" id="lnk17"><path d="M307.49,630.9769 C305.83,657.9769 303.5378,695.1782 301.8778,722.2082" fill="none" id="OrderConfirmed-to-SeatInventory" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="301.51,728.1969,306.0542,719.459,301.8165,723.2063,298.0692,718.9686,301.51,728.1969" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0013" data-link-type="dependency" data-source-line="82" id="lnk18"><path d="M297.77,779.3269 C295.62,803.0869 292.9119,832.9014 290.7619,856.6114" fill="none" id="SeatInventory-to-SeatReserved" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="290.22,862.5869,295.0164,853.9849,290.6715,857.6073,287.0491,853.2624,290.22,862.5869" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0022" data-entity-2="ent0020" data-link-type="dependency" data-source-line="92" id="lnk24"><path d="M706.94,129.9469 C702.49,147.9469 697.9184,166.4519 693.4784,184.4319" fill="none" id="Register-to-User" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="692.04,190.2569,698.081,182.4783,693.2387,185.4027,690.3143,180.5604,692.04,190.2569" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0020" data-entity-2="ent0023" data-link-type="dependency" data-source-line="93" id="lnk25"><path d="M666.31,241.2669 C647.27,265.0169 622.3423,296.1249 603.3323,319.8449" fill="none" id="User-to-UserCreated" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="599.58,324.5269,608.3297,320.0055,602.7069,320.6253,602.0871,315.0025,599.58,324.5269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0028" data-entity-2="ent0027" data-link-type="dependency" data-source-line="101" id="lnk30"><path d="M98.7,913.5569 C101.18,936.0969 104.1729,963.353 106.6529,985.863" fill="none" id="ProcessPayment-to-Payment" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="107.31,991.8269,110.3003,982.443,106.7624,986.8569,102.3485,983.319,107.31,991.8269" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0027" data-entity-2="ent0029" data-link-type="dependency" data-source-line="102" id="lnk31"><path d="M110,1042.8069 C110,1060.8069 110,1079.1369 110,1097.1169" fill="none" id="Payment-to-Paid" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="110,1103.1169,114,1094.1169,110,1098.1169,106,1094.1169,110,1103.1169" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0023" data-entity-2="ent0010" data-link-type="dependency" data-source-line="111" id="lnk35"><path d="M535.35,375.5769 C488.05,401.6669 419.0441,439.7096 371.7841,465.7696" fill="none" id="UserCreated-to-Order" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="366.53,468.6669,376.3427,467.8238,370.9085,466.2525,372.4797,460.8183,366.53,468.6669" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94.4404" x="475" y="420.1638">Используется</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="569.4404" y="420.1638"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25.2002" x="573.5728" y="420.1638">при</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45.6079" x="514.0825" y="435.2966">заказе</text></g><g class="link" data-entity-1="ent0013" data-entity-2="ent0027" data-link-type="dependency" data-source-line="112" id="lnk36"><path d="M253.68,913.5569 C222.16,936.0969 180.5811,965.8277 149.0911,988.3377" fill="none" id="SeatReserved-to-Payment" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="144.21,991.8269,153.8578,989.8472,148.2776,988.9192,149.2056,983.339,144.21,991.8269" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83.9351" x="206" y="958.2238">Инициирует</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="289.9351" y="958.2238"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47.9946" x="294.0674" y="958.2238">оплату</text></g><g class="link" data-entity-1="ent0029" data-entity-2="ent0014" data-link-type="dependency" data-source-line="113" id="lnk37"><path d="M169.13,1124.0069 C331.63,1113.4569 773,1079.2069 773,1018.2869 C773,752.7569 773,752.7569 773,752.7569 C773,718.6869 763.63,705.5669 736,685.6269 C682.35,646.9069 507.5519,624.6671 399.1719,614.1371" fill="none" id="Paid-to-OrderConfirmed" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="393.2,613.5569,401.771,618.4085,398.1766,614.0404,402.5446,610.4459,393.2,613.5569" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74.0645" x="774" y="892.5938">Обновляет</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="848.0645" y="892.5938"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45.1001" x="852.1968" y="892.5938">статус</text></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0033" data-link-type="dependency" data-source-line="114" id="lnk38"><path d="M342.31,630.9769 C379.04,657.9769 432.9757,697.6131 469.7457,724.6431" fill="none" id="OrderConfirmed-to-Notification" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="474.58,728.1969,469.6977,719.6433,470.5514,725.2354,464.9593,726.0891,474.58,728.1969" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70.5732" x="403" y="673.6938">Триггерит</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="473.5732" y="673.6938"> </text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49.5181" x="477.7056" y="673.6938">письмо</text></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="1175px" preserveAspectRatio="xMidYMid meet" style="width:905px;height:1175px;background:#1B1B1B;" version="1.1" viewBox="0 0 905 1175" width="905px" zoomAndPan="magnify" class="diagram"><title>Software Design (Aggregates &amp; Bounded Contexts)</title><defs/><g><rect fill="#1B1B1B" height="1175" style="stroke:none;stroke-width:1;" width="905" x="0" y="0"/><g class="title" data-source-line="59"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="406.0068" x="242.645" y="22.9951">Software Design (Aggregates &amp; Bounded Contexts)</text></g><g class="cluster" data-qualified-name="Catalog Context" data-source-line="61" id="ent0002"><rect fill="none" height="212.53" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;" width="350" x="33" y="44.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="126.9434" x="144.5283" y="59.292">Catalog Context</text></g><g class="cluster" data-qualified-name="Booking Context" data-source-line="71" id="ent0009"><rect fill="none" height="639.33" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;" width="200" x="209" y="289.8269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130.6484" x="243.6758" y="304.822">Booking Context</text></g><g class="cluster" data-qualified-name="Identity Context" data-source-line="85" id="ent0019"><rect fill="none" height="346.8" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;" width="353" x="433" y="44.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="128.6455" x="545.1772" y="59.292">Identity Context</text></g><g class="cluster" data-qualified-name="Payment Context" data-source-line="96" id="ent0026"><rect fill="none" height="341.8" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;" width="178" x="7" y="827.8869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="136.2197" x="27.8901" y="842.882">Payment Context</text></g><g class="cluster" data-qualified-name="Notification Context" data-source-line="105" id="ent0032"><rect fill="none" height="101.26" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;" width="303" x="433" y="693.6269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="159.1816" x="504.9092" y="708.622">Notification Context</text></g><g class="entity" data-qualified-name="Catalog Context.Route" data-source-line="62" id="ent0003"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="71.25" y="79.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="82.25" y="100.4355">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6826" x="87.1597" y="116.2607">Маршрут</text></g><g class="entity" data-qualified-name="Catalog Context.Train" data-source-line="63" id="ent0004"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="247.25" y="79.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="258.25" y="100.4355">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.8301" x="274.5859" y="116.2607">Поезд</text></g><g class="entity" data-qualified-name="Catalog Context.RouteCreated" data-source-line="64" id="ent0005"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="143.252" x="49.37" y="190.5569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="73.1835" y="211.6955">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67.6826" x="59.37" y="227.5207">Маршрут</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="127.0526" y="227.5207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="131.5028" y="227.5207">создан</text></g><g class="entity" data-qualified-name="Catalog Context.TrainAdded" data-source-line="65" id="ent0006"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="139.7041" x="227.15" y="190.5569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="249.1896" y="211.6955">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44.8301" x="237.15" y="227.5207">Поезд</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="281.9801" y="227.5207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.4238" x="286.4303" y="227.5207">добавлен</text></g><g class="entity" data-qualified-name="Booking Context.Order" data-source-line="72" id="ent0010"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="272.25" y="469.0969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="283.25" y="490.2355">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="300.9839" y="506.0607">Заказ</text></g><g class="entity" data-qualified-name="Booking Context.SeatInventory" data-source-line="73" id="ent0011"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="138.9932" x="230.5" y="728.6269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="261.2456" y="749.7655">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79.5156" x="240.5" y="765.5907">Инвентарь</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="320.0156" y="765.5907"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35.0273" x="324.4658" y="765.5907">мест</text></g><g class="entity" data-qualified-name="Booking Context.BookSeat" data-source-line="75" id="ent0012"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="132.5811" x="255.71" y="324.8269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="283.8208" y="345.9655">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112.5811" x="265.71" y="361.7907">Забронировать</text></g><g class="entity" data-qualified-name="Booking Context.SeatReserved" data-source-line="76" id="ent0013"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="119.8799" x="228.06" y="862.8869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="240.1874" y="884.0255">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.1104" x="238.06" y="899.8507">Место</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="283.1704" y="899.8507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50.3193" x="287.6205" y="899.8507">занято</text></g><g class="entity" data-qualified-name="Booking Context.OrderConfirmed" data-source-line="77" id="ent0014"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="167.8477" x="225.08" y="580.3569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="261.1913" y="601.4955">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42.0342" x="235.08" y="617.3207">Заказ</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="277.1142" y="617.3207"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.3633" x="281.5644" y="617.3207">подтвержден</text></g><g class="entity" data-qualified-name="Identity Context.User" data-source-line="86" id="ent0020"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="123.0996" x="624.45" y="190.5569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="647.2488" y="211.6955">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="634.45" y="227.5207">Пользователь</text></g><g class="entity" data-qualified-name="Identity Context.PassengerProfile" data-source-line="87" id="ent0021"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="171.5801" x="449.21" y="79.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="496.2491" y="100.4355">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66.2471" x="459.21" y="116.2607">Профиль</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="525.4571" y="116.2607"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80.8828" x="529.9073" y="116.2607">пассажира</text></g><g class="entity" data-qualified-name="Identity Context.Register" data-source-line="89" id="ent0022"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="113.8779" x="656.06" y="79.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="674.8193" y="100.4355">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93.8779" x="666.06" y="116.2607">Регистрация</text></g><g class="entity" data-qualified-name="Identity Context.UserCreated" data-source-line="90" id="ent0023"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="178.6689" x="490.67" y="324.8269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="532.192" y="345.9655">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103.0996" x="500.67" y="361.7907">Пользователь</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="603.7696" y="361.7907"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.1191" x="608.2198" y="361.7907">создан</text></g><g class="entity" data-qualified-name="Payment Context.Payment" data-source-line="97" id="ent0027"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="99.502" x="60.25" y="992.1569"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="71.25" y="1013.2955">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57.4355" x="81.2832" y="1029.1207">Платеж</text></g><g class="entity" data-qualified-name="Payment Context.ProcessPayment" data-source-line="98" id="ent0028"><rect fill="#00BFFF" height="50.2656" rx="2.5" ry="2.5" style="stroke:#005090;stroke-width:0.5;" width="145.9316" x="23.03" y="862.8869"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="76.3594" x="57.8161" y="884.0255">«Command»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.7949" x="33.03" y="899.8507">Провести</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="102.8249" y="899.8507"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.6865" x="107.2751" y="899.8507">оплату</text></g><g class="entity" data-qualified-name="Payment Context.Paid" data-source-line="99" id="ent0029"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="117.625" x="51.19" y="1103.4169"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="62.19" y="1124.5555">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.3037" x="73.8506" y="1140.3807">Оплачено</text></g><g class="entity" data-qualified-name="Notification Context.Notification" data-source-line="106" id="ent0033"><rect fill="#FFFF00" height="50.2656" rx="2.5" ry="2.5" style="stroke:#A08000;stroke-width:0.5;" width="118.6289" x="448.69" y="728.6269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77.502" x="469.2535" y="749.7655">«Aggregate»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98.6289" x="458.69" y="765.5907">Уведомление</text></g><g class="entity" data-qualified-name="Notification Context.Sent" data-source-line="107" id="ent0034"><rect fill="#FFA500" height="50.2656" rx="2.5" ry="2.5" style="stroke:#B25000;stroke-width:0.5;" width="117.625" x="602.19" y="728.6269"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95.625" x="613.19" y="749.7655">«DomainEvent»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.3252" x="616.3399" y="765.5907">Отправлено</text></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0005" data-link-type="dependency" data-source-line="67" id="lnk7"><path d="M121,129.9469 C121,147.9469 121,166.2769 121,184.2569" fill="none" id="Route-to-RouteCreated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="121,190.2569,125,181.2569,121,185.2569,117,181.2569,121,190.2569" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0006" data-link-type="dependency" data-source-line="68" id="lnk8"><path d="M297,129.9469 C297,147.9469 297,166.2769 297,184.2569" fill="none" id="Train-to-TrainAdded" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="297,190.2569,301,181.2569,297,185.2569,293,181.2569,297,190.2569" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0012" data-entity-2="ent0010" data-link-type="dependency" data-source-line="79" id="lnk15"><path d="M322,375.4169 C322,401.4769 322,436.4969 322,462.6169" fill="none" id="BookSeat-to-Order" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="322,468.6169,326,459.6169,322,463.6169,318,459.6169,322,468.6169" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0010" data-entity-2="ent0014" data-link-type="dependency" data-source-line="80" id="lnk16"><path d="M319.08,519.7469 C316.94,537.7469 314.7591,556.1189 312.6191,574.0989" fill="none" id="Order-to-OrderConfirmed" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="311.91,580.0569,316.9456,571.5927,312.5009,575.0919,309.0017,570.6472,311.91,580.0569" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0011" data-link-type="dependency" data-source-line="81" id="lnk17"><path d="M307.49,630.9769 C305.83,657.9769 303.5378,695.1782 301.8778,722.2082" fill="none" id="OrderConfirmed-to-SeatInventory" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="301.51,728.1969,306.0542,719.459,301.8165,723.2063,298.0692,718.9686,301.51,728.1969" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0013" data-link-type="dependency" data-source-line="82" id="lnk18"><path d="M297.77,779.3269 C295.62,803.0869 292.9119,832.9014 290.7619,856.6114" fill="none" id="SeatInventory-to-SeatReserved" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="290.22,862.5869,295.0164,853.9849,290.6715,857.6073,287.0491,853.2624,290.22,862.5869" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0022" data-entity-2="ent0020" data-link-type="dependency" data-source-line="92" id="lnk24"><path d="M706.94,129.9469 C702.49,147.9469 697.9184,166.4519 693.4784,184.4319" fill="none" id="Register-to-User" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="692.04,190.2569,698.081,182.4783,693.2387,185.4027,690.3143,180.5604,692.04,190.2569" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0020" data-entity-2="ent0023" data-link-type="dependency" data-source-line="93" id="lnk25"><path d="M666.31,241.2669 C647.27,265.0169 622.3423,296.1249 603.3323,319.8449" fill="none" id="User-to-UserCreated" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="599.58,324.5269,608.3297,320.0055,602.7069,320.6253,602.0871,315.0025,599.58,324.5269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0028" data-entity-2="ent0027" data-link-type="dependency" data-source-line="101" id="lnk30"><path d="M98.7,913.5569 C101.18,936.0969 104.1729,963.353 106.6529,985.863" fill="none" id="ProcessPayment-to-Payment" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="107.31,991.8269,110.3003,982.443,106.7624,986.8569,102.3485,983.319,107.31,991.8269" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0027" data-entity-2="ent0029" data-link-type="dependency" data-source-line="102" id="lnk31"><path d="M110,1042.8069 C110,1060.8069 110,1079.1369 110,1097.1169" fill="none" id="Payment-to-Paid" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="110,1103.1169,114,1094.1169,110,1098.1169,106,1094.1169,110,1103.1169" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0023" data-entity-2="ent0010" data-link-type="dependency" data-source-line="111" id="lnk35"><path d="M535.35,375.5769 C488.05,401.6669 419.0441,439.7096 371.7841,465.7696" fill="none" id="UserCreated-to-Order" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="366.53,468.6669,376.3427,467.8238,370.9085,466.2525,372.4797,460.8183,366.53,468.6669" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94.4404" x="475" y="420.1638">Используется</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="569.4404" y="420.1638"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25.2002" x="573.5728" y="420.1638">при</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45.6079" x="514.0825" y="435.2966">заказе</text></g><g class="link" data-entity-1="ent0013" data-entity-2="ent0027" data-link-type="dependency" data-source-line="112" id="lnk36"><path d="M253.68,913.5569 C222.16,936.0969 180.5811,965.8277 149.0911,988.3377" fill="none" id="SeatReserved-to-Payment" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="144.21,991.8269,153.8578,989.8472,148.2776,988.9192,149.2056,983.339,144.21,991.8269" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83.9351" x="206" y="958.2238">Инициирует</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="289.9351" y="958.2238"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47.9946" x="294.0674" y="958.2238">оплату</text></g><g class="link" data-entity-1="ent0029" data-entity-2="ent0014" data-link-type="dependency" data-source-line="113" id="lnk37"><path d="M169.13,1124.0069 C331.63,1113.4569 773,1079.2069 773,1018.2869 C773,752.7569 773,752.7569 773,752.7569 C773,718.6869 763.63,705.5669 736,685.6269 C682.35,646.9069 507.5519,624.6671 399.1719,614.1371" fill="none" id="Paid-to-OrderConfirmed" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="393.2,613.5569,401.771,618.4085,398.1766,614.0404,402.5446,610.4459,393.2,613.5569" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74.0645" x="774" y="892.5938">Обновляет</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="848.0645" y="892.5938"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45.1001" x="852.1968" y="892.5938">статус</text></g><g class="link" data-entity-1="ent0014" data-entity-2="ent0033" data-link-type="dependency" data-source-line="114" id="lnk38"><path d="M342.31,630.9769 C379.04,657.9769 432.9757,697.6131 469.7457,724.6431" fill="none" id="OrderConfirmed-to-Notification" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="474.58,728.1969,469.6977,719.6433,470.5514,725.2354,464.9593,726.0891,474.58,728.1969" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70.5732" x="403" y="673.6938">Триггерит</text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1323" x="473.5732" y="673.6938"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49.5181" x="477.7056" y="673.6938">письмо</text></g></g></svg></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

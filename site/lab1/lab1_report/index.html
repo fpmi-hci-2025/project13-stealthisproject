@@ -1,0 +1,4415 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../business_processes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Overview - Railway Ticket System Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Railway Ticket System Docs" class="md-header__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Railway Ticket System Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Railway Ticket System Docs" class="md-nav__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Railway Ticket System Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Analysis & Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1: Analysis & Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исследование пользователей и предметной области
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Цели и задачи лабораторной работы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Цели и задачи лабораторной работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задачи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обязательные сценарии
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительная функциональность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Анализ конкурентов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Анализ конкурентов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые конкуренты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные выводы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекомендации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Профили пользователей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Профили пользователей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выделенные профили
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выделенные профили">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Частый пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Редкий пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Кассир вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Администратор вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Системный администратор
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Персонажи и контекстные сценарии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Персонажи и контекстные сценарии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные персонажи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные персонажи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-32-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Анна Петрова (32 года) - Частый пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-58-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Владимир Иванович (58 лет) - Редкий пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-42-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Ольга Сергеевна (42 года) - Кассир вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-45-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Дмитрий Александрович (45 лет) - Администратор вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Профили задач
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Профили задач">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задачи пассажиров
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задачи администраторов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Профиль среды
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Профиль среды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Физическая среда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Технологическая среда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Социальная среда
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Профили групп
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Профили групп">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Группа 1: Пассажиры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Группа 2: Сотрудники вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Объектная модель
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Объектная модель">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные сущности
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые связи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Бизнес-процессы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Бизнес-процессы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные процессы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Стратегия дизайна
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Стратегия дизайна">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общая концепция
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дизайн для разных персонажей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Дизайн для разных персонажей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Анны (частый пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Владимира Ивановича (редкий пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Ольги Сергеевны (кассир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Дмитрия Александровича (администратор)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Визуальный язык
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Принципы взаимодействия
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Требования к системе
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Требования к системе">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Функциональные требования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Нефункциональные требования
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Общие выводы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Общие выводы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные результаты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые инсайты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Следующие шаги
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Приложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение А: Ссылки на документы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение Б: Использованные источники
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competitor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitor Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Interaction Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 2: Interaction Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/01_problem_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/02_design_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/03_group_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/04_user_tasks_roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tasks & Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/05_object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/06_information_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/07_conceptual_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptual Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/08_navigation_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/09_cjm_impact_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CJM & Impact Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/10_interactive_storyboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Storyboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/11_design_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/13_execution_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: System Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 3: System Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/c4_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4 Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/eventmodeling_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/eventstorming_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/01_use_case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/02_activity_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/03_activity_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/04_class_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/04_object_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/05_seq_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/06_seq_buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Buy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/07_seq_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Login
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/08_seq_admin_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Admin Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/09_seq_payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Payment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/10_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/11_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/12_deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/13_erd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERD Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_01_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_02_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_03_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/em_01_ticket_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling: Ticket Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_01_big_picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_02_process_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Process Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_03_software_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Software Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: REST API Modeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 4: REST API Modeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/01_requirements_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/02_database_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/03_api_routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Routes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/04_api_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 5: Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/01_visual_language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/02_prototyping_and_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 6: Testing & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/01_usability_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usability Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/02_card_sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/03_expectation_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expectation Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/04_checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/05_goms_klm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOMS/KLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исследование пользователей и предметной области
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Цели и задачи лабораторной работы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Цели и задачи лабораторной работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задачи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Постановка задачи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Постановка задачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обязательные сценарии
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительная функциональность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Анализ конкурентов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Анализ конкурентов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые конкуренты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные выводы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекомендации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Профили пользователей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Профили пользователей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выделенные профили
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выделенные профили">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Частый пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Редкий пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Кассир вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Администратор вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Системный администратор
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Персонажи и контекстные сценарии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Персонажи и контекстные сценарии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные персонажи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные персонажи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-32-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Анна Петрова (32 года) - Частый пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-58-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Владимир Иванович (58 лет) - Редкий пассажир
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-42-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Ольга Сергеевна (42 года) - Кассир вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-45-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Дмитрий Александрович (45 лет) - Администратор вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Профили задач
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Профили задач">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задачи пассажиров
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Задачи администраторов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Профиль среды
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Профиль среды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Физическая среда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Технологическая среда
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Социальная среда
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Профили групп
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Профили групп">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Группа 1: Пассажиры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Группа 2: Сотрудники вокзала
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Объектная модель
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Объектная модель">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные сущности
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые связи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Бизнес-процессы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Бизнес-процессы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные процессы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Стратегия дизайна
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Стратегия дизайна">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общая концепция
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дизайн для разных персонажей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Дизайн для разных персонажей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Анны (частый пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Владимира Ивановича (редкий пассажир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Ольги Сергеевны (кассир)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Дмитрия Александровича (администратор)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Визуальный язык
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Принципы взаимодействия
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Требования к системе
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Требования к системе">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Функциональные требования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Нефункциональные требования
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Общие выводы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Общие выводы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные результаты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые инсайты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Следующие шаги
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Приложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение А: Ссылки на документы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение Б: Использованные источники
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no1">Лабораторная работа №1</h1>
+<h2 id="_1">Исследование пользователей и предметной области</h2>
+<p><strong>Курс:</strong> Проектирование человеко-машинных интерфейсов<br />
+<strong>Факультет:</strong> Прикладной математики и информатики БГУ<br />
+<strong>Дата:</strong> 2 декабря 2025 г.</p>
+<hr />
+<h2 id="1">1. Цели и задачи лабораторной работы</h2>
+<h3 id="_2">Цель работы</h3>
+<p>Провести исследование пользователей и предметной области для системы электронных билетов ЖД-вокзала в Минске, применяя человеко-центрированный подход к проектированию.</p>
+<h3 id="_3">Задачи</h3>
+<ol>
+<li>Сформулировать задачу проектирования веб- и мобильного приложения</li>
+<li>Провести анализ конкурентов на рынке систем продажи ж/д билетов</li>
+<li>Разработать профили пользователей на основе исследования</li>
+<li>Создать детальные персонажи с контекстными сценариями</li>
+<li>Разработать объектную модель системы</li>
+<li>Описать основные бизнес-процессы</li>
+<li>Сформулировать стратегию дизайна</li>
+</ol>
+<hr />
+<h2 id="2">2. Постановка задачи</h2>
+<h3 id="_4">Описание проекта</h3>
+<p>Разработать систему электронных билетов для железнодорожного вокзала в Минске, включающую веб-приложение и мобильное приложение.</p>
+<h3 id="_5">Обязательные сценарии</h3>
+<p>Система должна поддерживать следующие сценарии:</p>
+<ol>
+<li><strong>Покупка билета</strong> - пассажир может купить билет онлайн с выбором конкретного места</li>
+<li><strong>Поиск рейса по нескольким параметрам</strong> - поиск с фильтрацией по времени, типу поезда, цене</li>
+<li><strong>Проверка свободных мест</strong> - визуализация схемы вагона с доступными местами</li>
+<li><strong>Добавление нового рейса в базу данных</strong> - администратор может добавлять рейсы</li>
+<li><strong>Вывод информации о рейсе (включая остановки)</strong> - детальная информация о маршруте</li>
+<li><strong>Просмотр и обработка заказов пассажиров</strong> - управление заказами для администраторов</li>
+<li><strong>Регистрация нового пассажира</strong> - создание учетной записи в системе</li>
+</ol>
+<h3 id="_6">Дополнительная функциональность</h3>
+<p>На основе анализа конкурентов выделены дополнительные функции:</p>
+<ul>
+<li>История поездок пользователя</li>
+<li>Сохранение данных пассажиров для быстрого оформления</li>
+<li>Электронные билеты с QR-кодами</li>
+<li>Push-уведомления о статусе заказа</li>
+<li>Календарь цен для выбора оптимальной даты</li>
+<li>Программа лояльности для частых пассажиров</li>
+<li>Возврат и обмен билетов онлайн</li>
+<li>Интеграция с различными способами оплаты (карты, ЕРИП, Apple Pay)</li>
+</ul>
+<hr />
+<h2 id="3">3. Анализ конкурентов</h2>
+<p>Подробный анализ конкурентов представлен в документе <a href="../competitor_analysis/">competitor_analysis.md</a>.</p>
+<h3 id="_7">Ключевые конкуренты</h3>
+<ol>
+<li><strong>poezd.rw.by</strong> - официальный сайт БЖД (монополист)</li>
+<li><strong>РЖД (pass.rzd.ru)</strong> - для международных маршрутов</li>
+<li><strong>Tutu.ru</strong> - агрегатор с отличным UX</li>
+<li><strong>Tickets.by</strong> - локальный белорусский агрегатор</li>
+</ol>
+<h3 id="_8">Основные выводы</h3>
+<ul>
+<li><strong>UX решает:</strong> Tutu.ru успешно конкурирует с официальными сайтами благодаря лучшему интерфейсу</li>
+<li><strong>Мобильный first:</strong> 60% пользователей используют мобильные устройства</li>
+<li><strong>Скорость критична:</strong> Пользователи покупают билеты в спешке</li>
+<li><strong>Персонализация важна:</strong> Сохранение данных значительно ускоряет повторные покупки</li>
+</ul>
+<h3 id="_9">Рекомендации</h3>
+<ol>
+<li>Современный, чистый интерфейс</li>
+<li>Быстрая загрузка и отзывчивость</li>
+<li>Календарь цен и умные фильтры</li>
+<li>Интерактивная схема вагона</li>
+<li>Персонализация и история поездок</li>
+</ol>
+<hr />
+<h2 id="4">4. Профили пользователей</h2>
+<p>Подробные профили представлены в документе <a href="../user_profiles/">user_profiles.md</a>.</p>
+<h3 id="_10">Выделенные профили</h3>
+<h4 id="41">4.1. Частый пассажир</h4>
+<ul>
+<li><strong>Характеристики:</strong> 25-45 лет, высокая технологическая грамотность</li>
+<li><strong>Частота:</strong> 2-4 раза в месяц</li>
+<li><strong>Устройство:</strong> Смартфон (основное)</li>
+<li><strong>Приоритет:</strong> Скорость оформления</li>
+<li><strong>Боли:</strong> Долгий процесс, повторный ввод данных</li>
+</ul>
+<h4 id="42">4.2. Редкий пассажир</h4>
+<ul>
+<li><strong>Характеристики:</strong> 18-65 лет, средняя технологическая грамотность</li>
+<li><strong>Частота:</strong> 1-4 раза в год</li>
+<li><strong>Устройство:</strong> Веб-сайт</li>
+<li><strong>Приоритет:</strong> Понятность интерфейса</li>
+<li><strong>Боли:</strong> Страх ошибиться, непонятные термины</li>
+</ul>
+<h4 id="43">4.3. Кассир вокзала</h4>
+<ul>
+<li><strong>Характеристики:</strong> 30-55 лет, средняя-высокая грамотность</li>
+<li><strong>Частота:</strong> Ежедневно, 8-10 часов</li>
+<li><strong>Устройство:</strong> Рабочий компьютер</li>
+<li><strong>Приоритет:</strong> Эффективность обслуживания</li>
+<li><strong>Боли:</strong> Медленная работа системы, очереди</li>
+</ul>
+<h4 id="44">4.4. Администратор вокзала</h4>
+<ul>
+<li><strong>Характеристики:</strong> 35-55 лет, высокая грамотность</li>
+<li><strong>Частота:</strong> Ежедневно</li>
+<li><strong>Устройство:</strong> Компьютер, планшет</li>
+<li><strong>Приоритет:</strong> Контроль и аналитика</li>
+<li><strong>Боли:</strong> Отсутствие инструментов аналитики</li>
+</ul>
+<h4 id="45">4.5. Системный администратор</h4>
+<ul>
+<li><strong>Характеристики:</strong> 25-45 лет, очень высокая грамотность</li>
+<li><strong>Частота:</strong> Ежедневный мониторинг</li>
+<li><strong>Устройство:</strong> Компьютер, сервер</li>
+<li><strong>Приоритет:</strong> Надежность системы</li>
+<li><strong>Боли:</strong> Отсутствие автоматизированного мониторинга</li>
+</ul>
+<hr />
+<h2 id="5">5. Персонажи и контекстные сценарии</h2>
+<p>Подробные персонажи представлены в документе <a href="../personas/">personas.md</a>.</p>
+<h3 id="_11">Основные персонажи</h3>
+<h4 id="51-32-">5.1. Анна Петрова (32 года) - Частый пассажир</h4>
+<p><strong>Профессия:</strong> Финансовый менеджер<br />
+<strong>Цель:</strong> Быстро купить билет на регулярный маршрут Минск-Гомель<br />
+<strong>Цитата:</strong> <em>"Я не хочу тратить 10 минут на покупку билета. У меня есть 2 минуты между встречами - этого должно хватить."</em></p>
+<p><strong>Ключевой сценарий:</strong> Покупка билета в обеденный перерыв за 4 минуты с использованием сохраненных данных.</p>
+<h4 id="52-58-">5.2. Владимир Иванович (58 лет) - Редкий пассажир</h4>
+<p><strong>Профессия:</strong> Инженер<br />
+<strong>Цель:</strong> Научиться покупать билеты онлайн<br />
+<strong>Цитата:</strong> <em>"Я не против нового, но объясните мне нормально, что и как делать. И чтобы шрифт был покрупнее."</em></p>
+<p><strong>Ключевой сценарий:</strong> Первая покупка билета онлайн с помощью дочери по телефону, затем самостоятельная покупка.</p>
+<h4 id="53-42-">5.3. Ольга Сергеевна (42 года) - Кассир вокзала</h4>
+<p><strong>Профессия:</strong> Кассир (стаж 15 лет)<br />
+<strong>Цель:</strong> Быстро обслужить очередь<br />
+<strong>Цитата:</strong> <em>"Мне нужно обслужить 100 человек за смену. Каждая лишняя минута - это недовольный пассажир в очереди."</em></p>
+<p><strong>Ключевой сценарий:</strong> Продажа билета за 1.5 минуты в час пик.</p>
+<h4 id="54-45-">5.4. Дмитрий Александрович (45 лет) - Администратор вокзала</h4>
+<p><strong>Профессия:</strong> Начальник службы движения<br />
+<strong>Цель:</strong> Эффективно управлять расписанием<br />
+<strong>Цитата:</strong> <em>"Мне нужно видеть полную картину: какие поезда загружены, какие нет, где нужно добавить вагоны. И все это в реальном времени."</em></p>
+<p><strong>Ключевой сценарий:</strong> Добавление нового рейса и анализ загрузки поездов.</p>
+<hr />
+<h2 id="6">6. Профили задач</h2>
+<h3 id="_12">Задачи пассажиров</h3>
+<table>
+<thead>
+<tr>
+<th>Задача</th>
+<th>Частота</th>
+<th>Приоритет</th>
+<th>Сложность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Поиск рейса</td>
+<td>Каждая покупка</td>
+<td>Высокий</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Выбор места</td>
+<td>Каждая покупка</td>
+<td>Высокий</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Оплата билета</td>
+<td>Каждая покупка</td>
+<td>Критический</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Просмотр билета</td>
+<td>После покупки</td>
+<td>Высокий</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Возврат билета</td>
+<td>Редко</td>
+<td>Средний</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">Задачи администраторов</h3>
+<table>
+<thead>
+<tr>
+<th>Задача</th>
+<th>Частота</th>
+<th>Приоритет</th>
+<th>Сложность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Добавление рейса</td>
+<td>Еженедельно</td>
+<td>Высокий</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Просмотр заказов</td>
+<td>Ежедневно</td>
+<td>Средний</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Анализ загрузки</td>
+<td>Еженедельно</td>
+<td>Высокий</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Управление ценами</td>
+<td>Ежемесячно</td>
+<td>Средний</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. Профиль среды</h2>
+<h3 id="_14">Физическая среда</h3>
+<p><strong>Для пассажиров:</strong>
+- Дома (спокойная обстановка) - 40%
+- В дороге (метро, автобус) - 30%
+- На работе (офис) - 20%
+- На вокзале (спешка, стресс) - 10%</p>
+<p><strong>Для сотрудников:</strong>
+- Касса вокзала (шум, очереди, стресс)
+- Офис администрации (спокойная обстановка)
+- Серверная (для сис. админов)</p>
+<h3 id="_15">Технологическая среда</h3>
+<p><strong>Устройства:</strong>
+- Смартфоны (iOS, Android) - 60%
+- Компьютеры (Windows, macOS, Linux) - 35%
+- Планшеты - 5%</p>
+<p><strong>Браузеры:</strong>
+- Chrome - 50%
+- Safari - 25%
+- Firefox - 15%
+- Другие - 10%</p>
+<p><strong>Интернет:</strong>
+- Wi-Fi - 60%
+- Мобильный интернет (4G/5G) - 40%</p>
+<h3 id="_16">Социальная среда</h3>
+<ul>
+<li>Индивидуальное использование - 80%</li>
+<li>С помощью родственников/друзей - 15%</li>
+<li>С помощью кассира - 5%</li>
+</ul>
+<hr />
+<h2 id="8">8. Профили групп</h2>
+<h3 id="1_1">Группа 1: Пассажиры</h3>
+<p><strong>Размер:</strong> Основная аудитория (тысячи пользователей)<br />
+<strong>Роли:</strong> Покупатель билетов<br />
+<strong>Общие цели:</strong> Купить билет быстро и удобно<br />
+<strong>Подгруппы:</strong>
+- Частые пассажиры (20%)
+- Периодические пассажиры (50%)
+- Редкие пассажиры (30%)</p>
+<h3 id="2_1">Группа 2: Сотрудники вокзала</h3>
+<p><strong>Размер:</strong> Десятки пользователей<br />
+<strong>Роли:</strong> Кассиры, администраторы<br />
+<strong>Общие цели:</strong> Эффективное обслуживание и управление<br />
+<strong>Подгруппы:</strong>
+- Кассиры
+- Администраторы вокзала
+- Системные администраторы</p>
+<hr />
+<h2 id="9">9. Объектная модель</h2>
+<p>Подробная объектная модель представлена в документе <a href="../object_model/">object_model.md</a>.</p>
+<h3 id="_17">Основные сущности</h3>
+<ol>
+<li><strong>User</strong> - пользователь системы</li>
+<li><strong>Passenger</strong> - данные пассажира для билета</li>
+<li><strong>Station</strong> - железнодорожная станция</li>
+<li><strong>Route</strong> - маршрут следования</li>
+<li><strong>IntermediateStop</strong> - промежуточная остановка</li>
+<li><strong>Train</strong> - поезд на конкретную дату</li>
+<li><strong>Carriage</strong> - вагон в составе поезда</li>
+<li><strong>Seat</strong> - место в вагоне</li>
+<li><strong>Order</strong> - заказ пользователя</li>
+<li><strong>Ticket</strong> - электронный билет</li>
+<li><strong>Payment</strong> - платеж за заказ</li>
+<li><strong>SearchQuery</strong> - поисковый запрос</li>
+</ol>
+<h3 id="_18">Ключевые связи</h3>
+<ul>
+<li>User → Passenger (1:N) - пользователь может сохранить несколько пассажиров</li>
+<li>User → Order (1:N) - пользователь создает заказы</li>
+<li>Route → Station (N:2) - маршрут связывает станции</li>
+<li>Train → Route (N:1) - поезд следует по маршруту</li>
+<li>Train → Carriage (1:N) - поезд состоит из вагонов</li>
+<li>Carriage → Seat (1:N) - вагон содержит места</li>
+<li>Order → Ticket (1:N) - заказ включает билеты</li>
+<li>Ticket → Seat (N:1) - билет резервирует место</li>
+</ul>
+<hr />
+<h2 id="10-">10. Бизнес-процессы</h2>
+<p>Подробное описание бизнес-процессов представлено в документе <a href="../business_processes/">business_processes.md</a>.</p>
+<h3 id="_19">Основные процессы</h3>
+<ol>
+<li><strong>Покупка билета пассажиром</strong></li>
+<li>Поиск рейса</li>
+<li>Выбор места</li>
+<li>Авторизация</li>
+<li>Оплата</li>
+<li>
+<p>Получение билета</p>
+</li>
+<li>
+<p><strong>Поиск рейса по параметрам</strong></p>
+</li>
+<li>Ввод базовых параметров</li>
+<li>Применение фильтров</li>
+<li>Сортировка результатов</li>
+<li>
+<p>Выбор поезда</p>
+</li>
+<li>
+<p><strong>Добавление нового рейса</strong></p>
+</li>
+<li>Ввод информации о маршруте</li>
+<li>Добавление остановок</li>
+<li>Создание поезда</li>
+<li>Добавление вагонов</li>
+<li>
+<p>Публикация</p>
+</li>
+<li>
+<p><strong>Обработка заказов</strong></p>
+</li>
+<li>Просмотр списка заказов</li>
+<li>Фильтрация</li>
+<li>Отмена/возврат</li>
+<li>
+<p>Уведомления</p>
+</li>
+<li>
+<p><strong>Регистрация пассажира</strong></p>
+</li>
+<li>Выбор способа регистрации</li>
+<li>Создание пароля</li>
+<li>Ввод личных данных</li>
+<li>
+<p>Подтверждение</p>
+</li>
+<li>
+<p><strong>Проверка свободных мест</strong></p>
+</li>
+<li>Выбор поезда и вагона</li>
+<li>Просмотр схемы</li>
+<li>Фильтрация мест</li>
+<li>Выбор места</li>
+</ol>
+<hr />
+<h2 id="11">11. Стратегия дизайна</h2>
+<h3 id="_20">Общая концепция</h3>
+<p><strong>Философия:</strong> Минимализм + функциональность<br />
+<strong>Принцип:</strong> "Меньше кликов - больше результата"<br />
+<strong>Подход:</strong> Mobile-first, адаптивный дизайн</p>
+<h3 id="_21">Дизайн для разных персонажей</h3>
+<h4 id="_22">Для Анны (частый пассажир)</h4>
+<ul>
+<li><strong>Приоритет:</strong> Скорость</li>
+<li><strong>Решение:</strong> </li>
+<li>Сохраненные маршруты на главном экране</li>
+<li>Автозаполнение данных</li>
+<li>Оплата в один клик</li>
+<li>Минимум шагов (цель: 3-4 экрана)</li>
+</ul>
+<h4 id="_23">Для Владимира Ивановича (редкий пассажир)</h4>
+<ul>
+<li><strong>Приоритет:</strong> Понятность</li>
+<li><strong>Решение:</strong></li>
+<li>Крупный шрифт (минимум 16px)</li>
+<li>Подсказки на каждом шаге</li>
+<li>Прогресс-бар оформления</li>
+<li>Возможность распечатать билет</li>
+</ul>
+<h4 id="_24">Для Ольги Сергеевны (кассир)</h4>
+<ul>
+<li><strong>Приоритет:</strong> Эффективность</li>
+<li><strong>Решение:</strong></li>
+<li>Горячие клавиши</li>
+<li>Быстрый поиск (автокомплит)</li>
+<li>Минимум кликов</li>
+<li>Четкая визуализация</li>
+</ul>
+<h4 id="_25">Для Дмитрия Александровича (администратор)</h4>
+<ul>
+<li><strong>Приоритет:</strong> Контроль</li>
+<li><strong>Решение:</strong></li>
+<li>Дашборд с аналитикой</li>
+<li>Гибкие фильтры</li>
+<li>Экспорт данных</li>
+<li>Массовые операции</li>
+</ul>
+<h3 id="_26">Визуальный язык</h3>
+<p><strong>Цветовая палитра:</strong>
+- Основной: Синий (#0066CC) - доверие, надежность
+- Акцент: Зеленый (#00AA44) - успех, доступность
+- Предупреждение: Оранжевый (#FF9900)
+- Ошибка: Красный (#DD0000)
+- Фон: Светло-серый (#F5F5F5)</p>
+<p><strong>Типографика:</strong>
+- Заголовки: Inter Bold, 24-32px
+- Основной текст: Inter Regular, 16px
+- Мелкий текст: Inter Regular, 14px</p>
+<p><strong>Компоненты:</strong>
+- Кнопки: Скругленные углы (8px), тени
+- Карточки: Белый фон, тонкая граница, тень
+- Формы: Четкие лейблы, валидация в реальном времени</p>
+<h3 id="_27">Принципы взаимодействия</h3>
+<ol>
+<li><strong>Немедленная обратная связь</strong></li>
+<li>Индикаторы загрузки</li>
+<li>Анимации переходов</li>
+<li>
+<p>Уведомления об успехе/ошибке</p>
+</li>
+<li>
+<p><strong>Предотвращение ошибок</strong></p>
+</li>
+<li>Валидация полей</li>
+<li>Подтверждение критичных действий</li>
+<li>
+<p>Автосохранение</p>
+</li>
+<li>
+<p><strong>Гибкость и эффективность</strong></p>
+</li>
+<li>Горячие клавиши для опытных</li>
+<li>Подсказки для новичков</li>
+<li>
+<p>Персонализация интерфейса</p>
+</li>
+<li>
+<p><strong>Эстетика и минимализм</strong></p>
+</li>
+<li>Только необходимая информация</li>
+<li>Визуальная иерархия</li>
+<li>Белое пространство</li>
+</ol>
+<hr />
+<h2 id="12">12. Требования к системе</h2>
+<h3 id="_28">Функциональные требования</h3>
+<p><strong>Для пассажиров:</strong>
+- FR-1: Поиск рейсов по направлению и дате
+- FR-2: Фильтрация по времени, типу поезда, цене
+- FR-3: Просмотр схемы вагона с доступными местами
+- FR-4: Выбор конкретного места
+- FR-5: Регистрация и авторизация
+- FR-6: Сохранение данных пассажиров
+- FR-7: Оплата различными способами
+- FR-8: Получение электронного билета с QR-кодом
+- FR-9: История поездок
+- FR-10: Возврат и обмен билетов</p>
+<p><strong>Для администраторов:</strong>
+- FR-11: Добавление новых рейсов
+- FR-12: Редактирование расписания
+- FR-13: Управление составом поездов
+- FR-14: Просмотр и обработка заказов
+- FR-15: Аналитика и отчеты
+- FR-16: Управление пользователями</p>
+<h3 id="_29">Нефункциональные требования</h3>
+<p><strong>Производительность:</strong>
+- NFR-1: Время загрузки страницы &lt; 2 секунд
+- NFR-2: Время поиска рейсов &lt; 1 секунды
+- NFR-3: Поддержка 1000+ одновременных пользователей</p>
+<p><strong>Надежность:</strong>
+- NFR-4: Доступность системы &gt; 99.5%
+- NFR-5: Резервное копирование каждые 6 часов
+- NFR-6: Восстановление после сбоя &lt; 1 часа</p>
+<p><strong>Безопасность:</strong>
+- NFR-7: Шифрование данных (HTTPS, TLS 1.3)
+- NFR-8: Безопасное хранение паролей (bcrypt)
+- NFR-9: Защита от SQL-инъекций и XSS
+- NFR-10: PCI DSS для обработки платежей</p>
+<p><strong>Удобство использования:</strong>
+- NFR-11: Адаптивный дизайн (мобильные, планшеты, десктоп)
+- NFR-12: Поддержка русского и белорусского языков
+- NFR-13: Доступность (WCAG 2.1 уровень AA)</p>
+<p><strong>Масштабируемость:</strong>
+- NFR-14: Горизонтальное масштабирование
+- NFR-15: Кэширование часто запрашиваемых данных
+- NFR-16: CDN для статических ресурсов</p>
+<hr />
+<h2 id="13">13. Общие выводы</h2>
+<h3 id="_30">Основные результаты</h3>
+<ol>
+<li>
+<p><strong>Проведен комплексный анализ</strong> конкурентов, выявлены сильные и слабые стороны существующих решений</p>
+</li>
+<li>
+<p><strong>Определены целевые пользователи:</strong></p>
+</li>
+<li>Частые пассажиры (приоритет: скорость)</li>
+<li>Редкие пассажиры (приоритет: понятность)</li>
+<li>
+<p>Сотрудники вокзала (приоритет: эффективность)</p>
+</li>
+<li>
+<p><strong>Созданы детальные персонажи</strong> с реалистичными контекстными сценариями использования системы</p>
+</li>
+<li>
+<p><strong>Разработана объектная модель</strong>, покрывающая все требуемые сценарии</p>
+</li>
+<li>
+<p><strong>Описаны бизнес-процессы</strong> с учетом потребностей всех групп пользователей</p>
+</li>
+<li>
+<p><strong>Сформулирована стратегия дизайна</strong>, учитывающая особенности разных персонажей</p>
+</li>
+</ol>
+<h3 id="_31">Ключевые инсайты</h3>
+<ol>
+<li>
+<p><strong>Мобильный опыт критичен</strong> - 60% пользователей используют смартфоны</p>
+</li>
+<li>
+<p><strong>Скорость решает</strong> - пользователи хотят купить билет за 2-3 минуты</p>
+</li>
+<li>
+<p><strong>Персонализация важна</strong> - сохранение данных значительно улучшает опыт</p>
+</li>
+<li>
+<p><strong>Простота для новичков</strong> - система должна быть понятна людям с низкой технологической грамотностью</p>
+</li>
+<li>
+<p><strong>Эффективность для профи</strong> - горячие клавиши и автоматизация для частых пользователей</p>
+</li>
+</ol>
+<h3 id="_32">Следующие шаги</h3>
+<p><strong>Лабораторная работа №2:</strong> Проектирование интерфейсов
+- Создание wireframes
+- Разработка прототипов
+- Пользовательское тестирование</p>
+<p><strong>Лабораторная работа №3-4:</strong> Разработка веб-приложения
+- Реализация frontend
+- Разработка backend API
+- Интеграция с базой данных</p>
+<p><strong>Лабораторная работа №5-6:</strong> Разработка мобильного приложения
+- Нативное приложение (iOS/Android)
+- Синхронизация с веб-версией</p>
+<p><strong>Лабораторная работа №7-8:</strong> Тестирование и оценка
+- Юзабилити-тестирование
+- Анализ метрик
+- Итерации на основе обратной связи</p>
+<hr />
+<h2 id="_33">Приложения</h2>
+<h3 id="_34">Приложение А: Ссылки на документы</h3>
+<ul>
+<li><a href="../competitor_analysis/">Анализ конкурентов</a></li>
+<li><a href="../user_profiles/">Профили пользователей</a></li>
+<li><a href="../personas/">Персонажи и сценарии</a></li>
+<li><a href="../object_model/">Объектная модель</a></li>
+<li><a href="../business_processes/">Бизнес-процессы</a></li>
+</ul>
+<h3 id="_35">Приложение Б: Использованные источники</h3>
+<ol>
+<li>Методические указания по выполнению лабораторной работы №1</li>
+<li>SimilarWeb - анализ трафика конкурентов</li>
+<li>Официальные сайты БЖД, РЖД, Tutu.ru</li>
+<li>Отзывы пользователей в App Store и Google Play</li>
+<li>Alan Cooper "About Face: The Essentials of Interaction Design"</li>
+<li>Steve Krug "Don't Make Me Think"</li>
+<li>Jakob Nielsen's Usability Heuristics</li>
+</ol>
+<hr />
+<p><strong>Дата выполнения:</strong> 2 декабря 2025 г.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

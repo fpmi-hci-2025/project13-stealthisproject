@@ -13,7 +13,7 @@
 
 Показывает "большую картину": кто пользуется системой и с какими внешними системами она интегрируется.
 
-```plantuml
+```puml
 @startuml
 ' C4_Custom.puml - Simplified C4 Model macros
 !define C4_PERSON_BG_COLOR #08427B
@@ -78,7 +78,7 @@ Rel(payment_gateway, ticket_system, "Подтверждает оплату")
 
 Показывает, из каких технических блоков (контейнеров) состоит система и как они общаются.
 
-```plantuml
+```puml
 @startuml
 ' C4_Custom.puml - Simplified C4 Model macros
 !define C4_PERSON_BG_COLOR #08427B
@@ -163,7 +163,7 @@ Rel(backend_api, email_system, "Send emails", "SMTP")
 
 Детализирует структуру Backend API, показывая основные контроллеры, сервисы и репозитории.
 
-```plantuml
+```puml
 @startuml
 ' C4_Custom.puml - Simplified C4 Model macros
 !define C4_CONTAINER_BG_COLOR #438DD5

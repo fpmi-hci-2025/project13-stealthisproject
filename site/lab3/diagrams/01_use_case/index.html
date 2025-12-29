@@ -1,0 +1,2299 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../specification/">
+      
+      
+        <link rel="next" href="../02_activity_purchase/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Use Case - Railway Ticket System Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#use-case-diagram" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Railway Ticket System Docs" class="md-header__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Railway Ticket System Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Use Case
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Railway Ticket System Docs" class="md-nav__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Railway Ticket System Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Analysis & Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1: Analysis & Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/lab1_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/business_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/competitor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitor Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/user_profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab1/user_survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Interaction Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 2: Interaction Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/01_problem_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/02_design_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/03_group_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/04_user_tasks_roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tasks & Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/05_object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/06_information_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/07_conceptual_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptual Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/08_navigation_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/09_cjm_impact_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CJM & Impact Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/10_interactive_storyboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Storyboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/11_design_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab2/13_execution_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: System Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 3: System Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c4_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4 Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eventmodeling_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eventstorming_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_activity_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_activity_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_class_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_object_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_seq_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_seq_buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Buy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_seq_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Login
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_seq_admin_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Admin Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_seq_payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Payment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_erd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERD Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c4_01_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c4_02_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c4_03_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../em_01_ticket_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling: Ticket Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../es_01_big_picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../es_02_process_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Process Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../es_03_software_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Software Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: REST API Modeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 4: REST API Modeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab4/01_requirements_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab4/02_database_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab4/03_api_routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Routes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab4/04_api_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 5: Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab5/01_visual_language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab5/02_prototyping_and_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 6: Testing & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab6/01_usability_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usability Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab6/02_card_sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab6/03_expectation_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expectation Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab6/04_checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lab6/05_goms_klm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOMS/KLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="use-case-diagram">Use Case Diagram</h1>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="974px" preserveAspectRatio="xMidYMid meet" style="width:758px;height:974px;background:#FFFFFF;" version="1.1" viewBox="0 0 758 974" width="758px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="cluster" data-qualified-name="....... ....... .. ......." data-source-line="7" id="ent0005"><rect fill="none" height="695" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1;" width="583.46" x="169.09" y="117.65"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="250.8447" x="172.09" y="132.6451">Система продажи ЖД билетов</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC1" data-source-line="8" id="ent0006"><ellipse cx="303.2246" cy="544.6509" fill="#F1F1F1" rx="65.1546" ry="15.4309" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93.8779" x="256.2856" y="549.2994">Регистрация</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC2" data-source-line="9" id="ent0007"><ellipse cx="641.4502" cy="203.652" fill="#F1F1F1" rx="65.8102" ry="15.562" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95.6074" x="593.6465" y="208.3005">Авторизация</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC3" data-source-line="10" id="ent0008"><ellipse cx="303.2151" cy="409.645" fill="#F1F1F1" rx="64.3251" ry="15.265" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91.6699" x="257.3802" y="414.2935">Поиск рейса</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC4" data-source-line="11" id="ent0009"><ellipse cx="303.2163" cy="618.6533" fill="#F1F1F1" rx="104.2163" ry="23.2433" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185.3086" x="210.562" y="623.3017">Просмотр деталей рейса</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC5" data-source-line="12" id="ent0010"><ellipse cx="641.4533" cy="733.6507" fill="#F1F1F1" rx="95.1033" ry="21.4207" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165.2041" x="558.8513" y="738.2991">Выбор места на схеме</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC6" data-source-line="13" id="ent0011"><ellipse cx="303.2165" cy="694.6513" fill="#F1F1F1" rx="74.9065" ry="17.3813" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118.501" x="243.966" y="699.2997">Покупка билета</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC7" data-source-line="14" id="ent0012"><ellipse cx="641.4523" cy="656.6465" fill="#F1F1F1" rx="70.6323" ry="16.5265" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.9668" x="587.4689" y="661.2949">Оплата заказа</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC8" data-source-line="15" id="ent0013"><ellipse cx="303.2164" cy="771.6453" fill="#F1F1F1" rx="111.8264" ry="24.7653" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201.8242" x="202.3043" y="776.2937">Просмотр истории поездок</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC9" data-source-line="16" id="ent0014"><ellipse cx="303.2242" cy="251.6548" fill="#F1F1F1" rx="90.4742" ry="20.4948" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.8135" x="225.8174" y="256.3033">Управление рейсами</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC10" data-source-line="17" id="ent0015"><ellipse cx="303.2213" cy="174.6543" fill="#F1F1F1" rx="97.6713" ry="21.9343" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170.9121" x="217.7653" y="179.3027">Просмотр всех заказов</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC11" data-source-line="18" id="ent0016"><ellipse cx="303.2165" cy="333.6453" fill="#F1F1F1" rx="118.1265" ry="26.0253" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215.3525" x="195.5402" y="338.2937">Продажа билета через кассу</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC12" data-source-line="19" id="ent0017"><ellipse cx="303.2153" cy="476.6531" fill="#F1F1F1" rx="73.8653" ry="17.1731" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.9648" x="245.2329" y="481.3015">Возврат билета</text></g><g class="entity" data-qualified-name="Passenger" data-source-line="3" id="ent0002"><ellipse cx="64.0489" cy="618" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.0489,626 L64.0489,653 M51.0489,634 L77.0489,634 M64.0489,653 L51.0489,668 M64.0489,653 L77.0489,668" fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73.6777" x="27.21" y="682.4951">Пассажир</text></g><g class="entity" data-qualified-name="Admin" data-source-line="4" id="ent0003"><ellipse cx="64.0474" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.0474,22 L64.0474,49 M51.0474,30 L77.0474,30 M64.0474,49 L51.0474,64 M64.0474,49 L77.0474,64" fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116.0947" x="6" y="78.4951">Администратор</text></g><g class="entity" data-qualified-name="Cashier" data-source-line="5" id="ent0004"><ellipse cx="64.0492" cy="325" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.0492,333 L64.0492,360 M51.0492,341 L77.0492,341 M64.0492,360 L51.0492,375 M64.0492,360 L77.0492,375" fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.8984" x="38.1" y="389.4951">Кассир</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0006" data-link-type="dependency" data-source-line="22" id="lnk18"><path d="M101.18,615.98 C118.33,602.4 139.71,587.45 161.09,577.65 C187.86,565.38 213.744,558.5523 240.354,553.5323" fill="none" id="Passenger-to-UC1" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="246.25,552.42,236.6645,550.1578,241.3367,553.3469,238.1475,558.0191,246.25,552.42" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0007" data-link-type="dependency" data-source-line="23" id="lnk19"><path d="M75.02,685.99 C87.68,725.92 113.79,786.37 161.09,813.65 C261.29,871.44 313.42,855.25 421.35,813.65 C474.49,793.17 487.37,776.68 516.35,727.65 C529.95,704.64 617.0429,310.2303 635.7029,225.2703" fill="none" id="Passenger-to-UC2" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="636.99,219.41,631.1524,227.3424,635.9174,224.2936,638.9662,229.0586,636.99,219.41" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0008" data-link-type="dependency" data-source-line="24" id="lnk20"><path d="M72.32,609.02 C83.22,562.15 108.42,484.14 161.09,441.65 C183,423.98 206.8099,416.496 233.3499,412.716" fill="none" id="Passenger-to-UC3" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="239.29,411.87,229.8159,409.179,234.34,412.575,230.9439,417.0991,239.29,411.87" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0009" data-link-type="dependency" data-source-line="25" id="lnk21"><path d="M101.33,643.21 C130.46,639.65 166.7143,635.2177 204.9343,630.5477" fill="none" id="Passenger-to-UC4" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="210.89,629.82,201.4713,626.9411,205.9269,630.4264,202.4416,634.882,210.89,629.82" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0010" data-link-type="dependency" data-source-line="26" id="lnk22"><path d="M67.02,685.89 C72.06,738.83 89.8,832.76 152.09,875.65 C285.43,967.47 368.94,942.59 516.35,875.65 C571.05,850.81 608.2068,793.8764 626.4968,760.6464" fill="none" id="Passenger-to-UC5" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="629.39,755.39,621.546,761.3458,626.979,759.7703,628.5545,765.2034,629.39,755.39" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0011" data-link-type="dependency" data-source-line="27" id="lnk23"><path d="M101.33,654.84 C139.61,662.42 194.5844,673.3237 239.2944,682.1837" fill="none" id="Passenger-to-UC6" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="245.18,683.35,237.1292,677.6768,240.2754,682.3781,235.5741,685.5242,245.18,683.35" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0013" data-link-type="dependency" data-source-line="28" id="lnk24"><path d="M101.1,684.75 C118.06,700.45 139.33,717.82 161.09,729.65 C179.96,739.91 195.8933,746.2249 216.5133,752.4149" fill="none" id="Passenger-to-UC8" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="222.26,754.14,214.7901,747.7212,217.4711,752.7024,212.49,755.3834,222.26,754.14" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0017" data-link-type="dependency" data-source-line="29" id="lnk25"><path d="M82.56,609.28 C98.65,578.32 125.42,536.03 161.09,511.65 C182.67,496.91 203.9765,489.5467 228.7265,484.5967" fill="none" id="Passenger-to-UC12" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="234.61,483.42,225.0003,481.2627,229.7071,484.4006,226.5692,489.1074,234.61,483.42" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0012" data-link-type="dependency" data-source-line="31" id="lnk26"><path d="M371.45,687.05 C431.34,680.28 512.3679,671.1234 571.0679,664.4934" fill="none" id="UC6-to-UC7" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="577.03,663.82,567.6379,660.8554,572.0616,664.3812,568.5358,668.8048,577.03,663.82" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="667.7169">«include»</text></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0010" data-link-type="dependency" data-source-line="32" id="lnk27"><path d="M371.05,702.4 C424.2,708.57 492.9099,716.5389 550.1699,723.1789" fill="none" id="UC6-to-UC5" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="556.13,723.87,547.6507,718.8599,551.1633,723.294,546.7291,726.8067,556.13,723.87" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="708.7169">«include»</text></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0007" data-link-type="dependency" data-source-line="33" id="lnk28"><path d="M372.99,688.02 C391.23,682.92 409.2,674.25 421.35,659.65 C460.96,612.06 423.84,438.12 451.35,382.65 C489.31,306.1 569.2324,248.248 611.1124,221.518" fill="none" id="UC6-to-UC2" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="616.17,218.29,606.4315,219.7603,611.9553,220.98,610.7356,226.5038,616.17,218.29" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="294.7169">«include»</text></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0007" data-link-type="dependency" data-source-line="35" id="lnk29"><path d="M122.41,38.8 C132.64,38.58 143.19,38.76 153.09,39.65 C316.52,54.38 366.79,38.13 516.35,105.65 C561.39,125.98 600.2433,161.8819 621.8433,183.9519" fill="none" id="Admin-to-UC2" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="626.04,188.24,622.6036,179.0101,622.5427,184.6666,616.8862,184.6057,626.04,188.24" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0014" data-link-type="dependency" data-source-line="36" id="lnk30"><path d="M76.84,81.96 C90.77,120.85 117.7,179.99 161.09,213.65 C178.94,227.49 195.62,234.8021 217.38,240.4121" fill="none" id="Admin-to-UC9" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="223.19,241.91,215.4736,235.7898,218.3483,240.6618,213.4764,243.5365,223.19,241.91" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0015" data-link-type="dependency" data-source-line="37" id="lnk31"><path d="M122.53,54.6 C132.95,57.53 143.53,61.17 153.09,65.65 C201.88,88.5 246.3645,124.3263 274.2745,148.9963" fill="none" id="Admin-to-UC10" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="278.77,152.97,274.6758,144.0125,275.0237,149.6586,269.3776,150.0065,278.77,152.97" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0007" data-link-type="dependency" data-source-line="39" id="lnk32"><path d="M69.33,316 C77.34,264.64 99.75,175.73 161.09,135.65 C309.57,38.64 533.6688,144.8739 609.7188,186.2239" fill="none" id="Cashier-to-UC2" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="614.99,189.09,608.9939,181.2768,610.5973,186.7016,605.1725,188.305,614.99,189.09" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0008" data-link-type="dependency" data-source-line="40" id="lnk33"><path d="M90.31,360.79 C109.66,365.47 137.05,372.04 161.09,377.65 C192.41,384.95 221.836,391.6347 249.296,397.8047" fill="none" id="Cashier-to-UC3" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="255.15,399.12,247.2458,393.2443,250.2716,398.0239,245.492,401.0497,255.15,399.12" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0016" data-link-type="dependency" data-source-line="41" id="lnk34"><path d="M90.43,352.4 C115.23,350.21 148.7334,347.239 186.9234,343.859" fill="none" id="Cashier-to-UC11" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="192.9,343.33,183.5824,340.139,187.9195,343.7708,184.2877,348.1079,192.9,343.33" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0017" data-link-type="dependency" data-source-line="42" id="lnk35"><path d="M90.28,384.58 C108.16,403.91 133.74,428.09 161.09,442.65 C184.68,455.2 207.0488,462.002 232.0488,467.052" fill="none" id="Cashier-to-UC12" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="237.93,468.24,229.9002,462.5372,233.029,467.25,228.3162,470.3788,237.93,468.24" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="ent0016" data-entity-2="ent0012" data-link-type="dependency" data-source-line="44" id="lnk36"><path d="M378.92,354.01 C393.75,359.95 408.65,367.41 421.35,376.65 C525.89,452.76 603.2296,586.5295 628.9096,634.5295" fill="none" id="UC11-to-UC7" style="stroke:#181818;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#181818" points="631.74,639.82,631.0214,629.9974,629.3813,635.4113,623.9674,633.7712,631.74,639.82" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="403.7169">«include»</text></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="974px" preserveAspectRatio="xMidYMid meet" style="width:758px;height:974px;background:#1B1B1B;" version="1.1" viewBox="0 0 758 974" width="758px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="#1B1B1B" height="974" style="stroke:none;stroke-width:1;" width="758" x="0" y="0"/><g class="cluster" data-qualified-name="....... ....... .. ......." data-source-line="7" id="ent0005"><rect fill="none" height="695" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:1;" width="583.46" x="169.09" y="117.65"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="250.8447" x="172.09" y="132.6451">Система продажи ЖД билетов</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC1" data-source-line="8" id="ent0006"><ellipse cx="303.2246" cy="544.6509" fill="#313139" rx="65.1546" ry="15.4309" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93.8779" x="256.2856" y="549.2994">Регистрация</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC2" data-source-line="9" id="ent0007"><ellipse cx="641.4502" cy="203.652" fill="#313139" rx="65.8102" ry="15.562" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95.6074" x="593.6465" y="208.3005">Авторизация</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC3" data-source-line="10" id="ent0008"><ellipse cx="303.2151" cy="409.645" fill="#313139" rx="64.3251" ry="15.265" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91.6699" x="257.3802" y="414.2935">Поиск рейса</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC4" data-source-line="11" id="ent0009"><ellipse cx="303.2163" cy="618.6533" fill="#313139" rx="104.2163" ry="23.2433" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185.3086" x="210.562" y="623.3017">Просмотр деталей рейса</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC5" data-source-line="12" id="ent0010"><ellipse cx="641.4533" cy="733.6507" fill="#313139" rx="95.1033" ry="21.4207" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165.2041" x="558.8513" y="738.2991">Выбор места на схеме</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC6" data-source-line="13" id="ent0011"><ellipse cx="303.2165" cy="694.6513" fill="#313139" rx="74.9065" ry="17.3813" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118.501" x="243.966" y="699.2997">Покупка билета</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC7" data-source-line="14" id="ent0012"><ellipse cx="641.4523" cy="656.6465" fill="#313139" rx="70.6323" ry="16.5265" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.9668" x="587.4689" y="661.2949">Оплата заказа</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC8" data-source-line="15" id="ent0013"><ellipse cx="303.2164" cy="771.6453" fill="#313139" rx="111.8264" ry="24.7653" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201.8242" x="202.3043" y="776.2937">Просмотр истории поездок</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC9" data-source-line="16" id="ent0014"><ellipse cx="303.2242" cy="251.6548" fill="#313139" rx="90.4742" ry="20.4948" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154.8135" x="225.8174" y="256.3033">Управление рейсами</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC10" data-source-line="17" id="ent0015"><ellipse cx="303.2213" cy="174.6543" fill="#313139" rx="97.6713" ry="21.9343" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170.9121" x="217.7653" y="179.3027">Просмотр всех заказов</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC11" data-source-line="18" id="ent0016"><ellipse cx="303.2165" cy="333.6453" fill="#313139" rx="118.1265" ry="26.0253" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215.3525" x="195.5402" y="338.2937">Продажа билета через кассу</text></g><g class="entity" data-qualified-name="....... ....... .. ........UC12" data-source-line="19" id="ent0017"><ellipse cx="303.2153" cy="476.6531" fill="#313139" rx="73.8653" ry="17.1731" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.9648" x="245.2329" y="481.3015">Возврат билета</text></g><g class="entity" data-qualified-name="Passenger" data-source-line="3" id="ent0002"><ellipse cx="64.0489" cy="618" fill="#313139" rx="8" ry="8" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M64.0489,626 L64.0489,653 M51.0489,634 L77.0489,634 M64.0489,653 L51.0489,668 M64.0489,653 L77.0489,668" fill="none" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73.6777" x="27.21" y="682.4951">Пассажир</text></g><g class="entity" data-qualified-name="Admin" data-source-line="4" id="ent0003"><ellipse cx="64.0474" cy="14" fill="#313139" rx="8" ry="8" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M64.0474,22 L64.0474,49 M51.0474,30 L77.0474,30 M64.0474,49 L51.0474,64 M64.0474,49 L77.0474,64" fill="none" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116.0947" x="6" y="78.4951">Администратор</text></g><g class="entity" data-qualified-name="Cashier" data-source-line="5" id="ent0004"><ellipse cx="64.0492" cy="325" fill="#313139" rx="8" ry="8" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M64.0492,333 L64.0492,360 M51.0492,341 L77.0492,341 M64.0492,360 L51.0492,375 M64.0492,360 L77.0492,375" fill="none" style="stroke:#E7E7E7;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.8984" x="38.1" y="389.4951">Кассир</text></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0006" data-link-type="dependency" data-source-line="22" id="lnk18"><path d="M101.18,615.98 C118.33,602.4 139.71,587.45 161.09,577.65 C187.86,565.38 213.744,558.5523 240.354,553.5323" fill="none" id="Passenger-to-UC1" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="246.25,552.42,236.6645,550.1578,241.3367,553.3469,238.1475,558.0191,246.25,552.42" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0007" data-link-type="dependency" data-source-line="23" id="lnk19"><path d="M75.02,685.99 C87.68,725.92 113.79,786.37 161.09,813.65 C261.29,871.44 313.42,855.25 421.35,813.65 C474.49,793.17 487.37,776.68 516.35,727.65 C529.95,704.64 617.0429,310.2303 635.7029,225.2703" fill="none" id="Passenger-to-UC2" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="636.99,219.41,631.1524,227.3424,635.9174,224.2936,638.9662,229.0586,636.99,219.41" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0008" data-link-type="dependency" data-source-line="24" id="lnk20"><path d="M72.32,609.02 C83.22,562.15 108.42,484.14 161.09,441.65 C183,423.98 206.8099,416.496 233.3499,412.716" fill="none" id="Passenger-to-UC3" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="239.29,411.87,229.8159,409.179,234.34,412.575,230.9439,417.0991,239.29,411.87" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0009" data-link-type="dependency" data-source-line="25" id="lnk21"><path d="M101.33,643.21 C130.46,639.65 166.7143,635.2177 204.9343,630.5477" fill="none" id="Passenger-to-UC4" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="210.89,629.82,201.4713,626.9411,205.9269,630.4264,202.4416,634.882,210.89,629.82" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0010" data-link-type="dependency" data-source-line="26" id="lnk22"><path d="M67.02,685.89 C72.06,738.83 89.8,832.76 152.09,875.65 C285.43,967.47 368.94,942.59 516.35,875.65 C571.05,850.81 608.2068,793.8764 626.4968,760.6464" fill="none" id="Passenger-to-UC5" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="629.39,755.39,621.546,761.3458,626.979,759.7703,628.5545,765.2034,629.39,755.39" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0011" data-link-type="dependency" data-source-line="27" id="lnk23"><path d="M101.33,654.84 C139.61,662.42 194.5844,673.3237 239.2944,682.1837" fill="none" id="Passenger-to-UC6" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="245.18,683.35,237.1292,677.6768,240.2754,682.3781,235.5741,685.5242,245.18,683.35" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0013" data-link-type="dependency" data-source-line="28" id="lnk24"><path d="M101.1,684.75 C118.06,700.45 139.33,717.82 161.09,729.65 C179.96,739.91 195.8933,746.2249 216.5133,752.4149" fill="none" id="Passenger-to-UC8" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="222.26,754.14,214.7901,747.7212,217.4711,752.7024,212.49,755.3834,222.26,754.14" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0002" data-entity-2="ent0017" data-link-type="dependency" data-source-line="29" id="lnk25"><path d="M82.56,609.28 C98.65,578.32 125.42,536.03 161.09,511.65 C182.67,496.91 203.9765,489.5467 228.7265,484.5967" fill="none" id="Passenger-to-UC12" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="234.61,483.42,225.0003,481.2627,229.7071,484.4006,226.5692,489.1074,234.61,483.42" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0012" data-link-type="dependency" data-source-line="31" id="lnk26"><path d="M371.45,687.05 C431.34,680.28 512.3679,671.1234 571.0679,664.4934" fill="none" id="UC6-to-UC7" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="577.03,663.82,567.6379,660.8554,572.0616,664.3812,568.5358,668.8048,577.03,663.82" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="667.7169">«include»</text></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0010" data-link-type="dependency" data-source-line="32" id="lnk27"><path d="M371.05,702.4 C424.2,708.57 492.9099,716.5389 550.1699,723.1789" fill="none" id="UC6-to-UC5" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="556.13,723.87,547.6507,718.8599,551.1633,723.294,546.7291,726.8067,556.13,723.87" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="708.7169">«include»</text></g><g class="link" data-entity-1="ent0011" data-entity-2="ent0007" data-link-type="dependency" data-source-line="33" id="lnk28"><path d="M372.99,688.02 C391.23,682.92 409.2,674.25 421.35,659.65 C460.96,612.06 423.84,438.12 451.35,382.65 C489.31,306.1 569.2324,248.248 611.1124,221.518" fill="none" id="UC6-to-UC2" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="616.17,218.29,606.4315,219.7603,611.9553,220.98,610.7356,226.5038,616.17,218.29" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="294.7169">«include»</text></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0007" data-link-type="dependency" data-source-line="35" id="lnk29"><path d="M122.41,38.8 C132.64,38.58 143.19,38.76 153.09,39.65 C316.52,54.38 366.79,38.13 516.35,105.65 C561.39,125.98 600.2433,161.8819 621.8433,183.9519" fill="none" id="Admin-to-UC2" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="626.04,188.24,622.6036,179.0101,622.5427,184.6666,616.8862,184.6057,626.04,188.24" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0014" data-link-type="dependency" data-source-line="36" id="lnk30"><path d="M76.84,81.96 C90.77,120.85 117.7,179.99 161.09,213.65 C178.94,227.49 195.62,234.8021 217.38,240.4121" fill="none" id="Admin-to-UC9" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="223.19,241.91,215.4736,235.7898,218.3483,240.6618,213.4764,243.5365,223.19,241.91" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0003" data-entity-2="ent0015" data-link-type="dependency" data-source-line="37" id="lnk31"><path d="M122.53,54.6 C132.95,57.53 143.53,61.17 153.09,65.65 C201.88,88.5 246.3645,124.3263 274.2745,148.9963" fill="none" id="Admin-to-UC10" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="278.77,152.97,274.6758,144.0125,275.0237,149.6586,269.3776,150.0065,278.77,152.97" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0007" data-link-type="dependency" data-source-line="39" id="lnk32"><path d="M69.33,316 C77.34,264.64 99.75,175.73 161.09,135.65 C309.57,38.64 533.6688,144.8739 609.7188,186.2239" fill="none" id="Cashier-to-UC2" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="614.99,189.09,608.9939,181.2768,610.5973,186.7016,605.1725,188.305,614.99,189.09" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0008" data-link-type="dependency" data-source-line="40" id="lnk33"><path d="M90.31,360.79 C109.66,365.47 137.05,372.04 161.09,377.65 C192.41,384.95 221.836,391.6347 249.296,397.8047" fill="none" id="Cashier-to-UC3" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="255.15,399.12,247.2458,393.2443,250.2716,398.0239,245.492,401.0497,255.15,399.12" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0016" data-link-type="dependency" data-source-line="41" id="lnk34"><path d="M90.43,352.4 C115.23,350.21 148.7334,347.239 186.9234,343.859" fill="none" id="Cashier-to-UC11" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="192.9,343.33,183.5824,340.139,187.9195,343.7708,184.2877,348.1079,192.9,343.33" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0004" data-entity-2="ent0017" data-link-type="dependency" data-source-line="42" id="lnk35"><path d="M90.28,384.58 C108.16,403.91 133.74,428.09 161.09,442.65 C184.68,455.2 207.0488,462.002 232.0488,467.052" fill="none" id="Cashier-to-UC12" style="stroke:#E7E7E7;stroke-width:1;"/><polygon fill="#E7E7E7" points="237.93,468.24,229.9002,462.5372,233.029,467.25,228.3162,470.3788,237.93,468.24" style="stroke:#E7E7E7;stroke-width:1;"/></g><g class="link" data-entity-1="ent0016" data-entity-2="ent0012" data-link-type="dependency" data-source-line="44" id="lnk36"><path d="M378.92,354.01 C393.75,359.95 408.65,367.41 421.35,376.65 C525.89,452.76 603.2296,586.5295 628.9096,634.5295" fill="none" id="UC11-to-UC7" style="stroke:#E7E7E7;stroke-width:1;stroke-dasharray:7,7;"/><polygon fill="#E7E7E7" points="631.74,639.82,631.0214,629.9974,629.3813,635.4113,623.9674,633.7712,631.74,639.82" style="stroke:#E7E7E7;stroke-width:1;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63.0068" x="452.35" y="403.7169">«include»</text></g></g></svg></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

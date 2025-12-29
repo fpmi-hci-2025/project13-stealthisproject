@@ -1,0 +1,3691 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../lab1_report/">
+      
+      
+        <link rel="next" href="../competitor_analysis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Business Processes - Railway Ticket System Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Railway Ticket System Docs" class="md-header__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Railway Ticket System Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Business Processes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Railway Ticket System Docs" class="md-nav__button md-logo" aria-label="Railway Ticket System Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Railway Ticket System Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Analysis & Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1: Analysis & Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Введение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Процесс покупки билета (пассажир)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Процесс покупки билета (пассажир)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пошаговое описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исключительные ситуации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Процесс поиска рейса по параметрам
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Процесс поиска рейса по параметрам">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Доступные фильтры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Варианты сортировки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Процесс добавления нового рейса (администратор)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Процесс добавления нового рейса (администратор)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Валидация данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Процесс обработки заказов (кассир/администратор)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Процесс обработки заказов (кассир/администратор)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Статусы заказов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Правила возврата
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Процесс регистрации нового пассажира
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Процесс регистрации нового пассажира">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования к паролю
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Способы регистрации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Процесс проверки свободных мест
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Процесс проверки свободных мест">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цветовая индикация мест
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Интеграции между процессами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интеграции между процессами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связь процессов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие данные
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метрики процессов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Метрики процессов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI системы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мониторинг
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выводы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competitor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Competitor Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Interaction Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 2: Interaction Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/01_problem_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/02_design_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/03_group_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/04_user_tasks_roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tasks & Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/05_object_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/06_information_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Information Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/07_conceptual_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptual Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/08_navigation_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/09_cjm_impact_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CJM & Impact Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/10_interactive_storyboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Storyboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/11_design_mockups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Mockups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab2/13_execution_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: System Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 3: System Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/c4_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4 Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/eventmodeling_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/eventstorming_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/01_use_case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/02_activity_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/03_activity_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity: Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/04_class_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/04_object_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/05_seq_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/06_seq_buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Buy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/07_seq_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Login
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/08_seq_admin_add_route/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Admin Add Route
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/09_seq_payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sequence: Payment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/10_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/11_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/12_deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/13_erd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ERD Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_01_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_02_container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/c4_03_component/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4: Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/em_01_ticket_purchase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Modeling: Ticket Purchase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_01_big_picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_02_process_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Process Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/diagrams/es_03_software_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Storming: Software Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: REST API Modeling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 4: REST API Modeling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/01_requirements_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/02_database_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/03_api_routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Routes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/04_api_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 5: Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/01_visual_language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/02_prototyping_and_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototyping & Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 6: Testing & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/01_usability_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usability Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/02_card_sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/03_expectation_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expectation Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/04_checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab6/05_goms_klm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOMS/KLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Введение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Процесс покупки билета (пассажир)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Процесс покупки билета (пассажир)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пошаговое описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исключительные ситуации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Процесс поиска рейса по параметрам
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Процесс поиска рейса по параметрам">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Доступные фильтры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Варианты сортировки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Процесс добавления нового рейса (администратор)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Процесс добавления нового рейса (администратор)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Валидация данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Процесс обработки заказов (кассир/администратор)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Процесс обработки заказов (кассир/администратор)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Статусы заказов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Правила возврата
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Процесс регистрации нового пассажира
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Процесс регистрации нового пассажира">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования к паролю
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Способы регистрации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Процесс проверки свободных мест
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Процесс проверки свободных мест">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диаграмма процесса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цветовая индикация мест
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Интеграции между процессами
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интеграции между процессами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связь процессов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие данные
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метрики процессов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Метрики процессов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI системы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мониторинг
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выводы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-">Бизнес-процессы системы</h1>
+<h2 id="_1">Введение</h2>
+<p>Документ описывает основные бизнес-процессы системы электронных билетов для ЖД-вокзала в Минске. Каждый процесс представлен в виде диаграммы и пошагового описания.</p>
+<hr />
+<h2 id="1">1. Процесс покупки билета (пассажир)</h2>
+<h3 id="_2">Описание</h3>
+<p>Основной бизнес-процесс системы - покупка билета пассажиром через веб-сайт или мобильное приложение.</p>
+<h3 id="_3">Диаграмма процесса</h3>
+<pre class="mermaid"><code>flowchart TD
+    Start([Начало]) --&gt; Search[Поиск рейса]
+    Search --&gt; EnterParams[Ввод параметров поиска:&lt;br/&gt;откуда, куда, дата]
+    EnterParams --&gt; SearchResults{Найдены&lt;br/&gt;рейсы?}
+    SearchResults --&gt;|Нет| NoResults[Показать сообщение&lt;br/&gt;'Рейсы не найдены']
+    NoResults --&gt; Search
+    SearchResults --&gt;|Да| ShowTrains[Показать список поездов]
+    ShowTrains --&gt; SelectTrain[Выбрать поезд]
+    SelectTrain --&gt; ShowCarriages[Показать типы вагонов&lt;br/&gt;и доступность мест]
+    ShowCarriages --&gt; SelectCarriage[Выбрать тип вагона]
+    SelectCarriage --&gt; ShowSeats[Показать схему вагона&lt;br/&gt;со свободными местами]
+    ShowSeats --&gt; SelectSeat[Выбрать место]
+    SelectSeat --&gt; CheckAuth{Пользователь&lt;br/&gt;авторизован?}
+    CheckAuth --&gt;|Нет| Login[Вход/Регистрация]
+    Login --&gt; EnterPassenger
+    CheckAuth --&gt;|Да| HasSavedPassenger{Есть сохраненные&lt;br/&gt;пассажиры?}
+    HasSavedPassenger --&gt;|Да| SelectPassenger[Выбрать пассажира&lt;br/&gt;из списка]
+    HasSavedPassenger --&gt;|Нет| EnterPassenger[Ввести данные пассажира]
+    SelectPassenger --&gt; ReviewOrder
+    EnterPassenger --&gt; SavePassenger{Сохранить&lt;br/&gt;пассажира?}
+    SavePassenger --&gt;|Да| SaveToProfile[Сохранить в профиль]
+    SavePassenger --&gt;|Нет| ReviewOrder
+    SaveToProfile --&gt; ReviewOrder[Проверка заказа]
+    ReviewOrder --&gt; ConfirmOrder{Подтвердить&lt;br/&gt;заказ?}
+    ConfirmOrder --&gt;|Нет| ShowSeats
+    ConfirmOrder --&gt;|Да| CreateOrder[Создать заказ&lt;br/&gt;Забронировать место]
+    CreateOrder --&gt; SelectPayment[Выбрать способ оплаты]
+    SelectPayment --&gt; ProcessPayment[Обработка платежа]
+    ProcessPayment --&gt; PaymentResult{Оплата&lt;br/&gt;успешна?}
+    PaymentResult --&gt;|Нет| PaymentFailed[Показать ошибку]
+    PaymentFailed --&gt; SelectPayment
+    PaymentResult --&gt;|Да| GenerateTicket[Сгенерировать билет&lt;br/&gt;с QR-кодом]
+    GenerateTicket --&gt; SendNotification[Отправить уведомление&lt;br/&gt;на email/SMS]
+    SendNotification --&gt; ShowTicket[Показать электронный билет]
+    ShowTicket --&gt; End([Конец])</code></pre>
+<h3 id="_4">Пошаговое описание</h3>
+<ol>
+<li><strong>Поиск рейса</strong></li>
+<li>Пользователь вводит параметры: станция отправления, станция прибытия, дата</li>
+<li>Система выполняет поиск доступных поездов</li>
+<li>
+<p>Если рейсы не найдены - показывается сообщение с предложением изменить параметры</p>
+</li>
+<li>
+<p><strong>Выбор поезда и места</strong></p>
+</li>
+<li>Система показывает список найденных поездов с информацией:<ul>
+<li>Время отправления и прибытия</li>
+<li>Длительность поездки</li>
+<li>Доступные типы вагонов и цены</li>
+<li>Количество свободных мест</li>
+</ul>
+</li>
+<li>Пользователь выбирает поезд</li>
+<li>Система показывает схему вагона со свободными местами</li>
+<li>
+<p>Пользователь выбирает конкретное место</p>
+</li>
+<li>
+<p><strong>Авторизация и данные пассажира</strong></p>
+</li>
+<li>Если пользователь не авторизован - предлагается вход или регистрация</li>
+<li>Если авторизован и есть сохраненные пассажиры - можно выбрать из списка</li>
+<li>Иначе - ввод данных паспорта вручную</li>
+<li>
+<p>Опция сохранить пассажира для будущих покупок</p>
+</li>
+<li>
+<p><strong>Подтверждение и оплата</strong></p>
+</li>
+<li>Система показывает итоговую информацию о заказе</li>
+<li>Пользователь подтверждает заказ</li>
+<li>Система бронирует место (на 15 минут)</li>
+<li>Пользователь выбирает способ оплаты (карта, ЕРИП, Apple Pay и т.д.)</li>
+<li>
+<p>Обработка платежа</p>
+</li>
+<li>
+<p><strong>Генерация билета</strong></p>
+</li>
+<li>При успешной оплате система генерирует электронный билет</li>
+<li>Создается уникальный QR-код</li>
+<li>Билет отправляется на email и доступен в приложении</li>
+<li>Отправляется SMS-уведомление</li>
+</ol>
+<h3 id="_5">Исключительные ситуации</h3>
+<ul>
+<li><strong>Места закончились во время оформления:</strong> Уведомление пользователя, предложение выбрать другое место</li>
+<li><strong>Оплата отклонена:</strong> Возможность повторить оплату другим способом, бронь сохраняется на 15 минут</li>
+<li><strong>Истекло время брони:</strong> Место освобождается, нужно начать заново</li>
+<li><strong>Технический сбой:</strong> Сохранение состояния заказа, возможность продолжить позже</li>
+</ul>
+<hr />
+<h2 id="2">2. Процесс поиска рейса по параметрам</h2>
+<h3 id="_6">Описание</h3>
+<p>Расширенный поиск рейсов с фильтрацией и сортировкой.</p>
+<h3 id="_7">Диаграмма процесса</h3>
+<pre class="mermaid"><code>flowchart TD
+    Start([Начало]) --&gt; EnterBasic[Ввод базовых параметров:&lt;br/&gt;откуда, куда, дата]
+    EnterBasic --&gt; ShowFilters{Применить&lt;br/&gt;фильтры?}
+    ShowFilters --&gt;|Да| SelectFilters[Выбор фильтров]
+    SelectFilters --&gt; FilterOptions[Опции фильтрации:&lt;br/&gt;- Время отправления&lt;br/&gt;- Тип поезда&lt;br/&gt;- Тип вагона&lt;br/&gt;- Диапазон цен&lt;br/&gt;- Прямой/с пересадками]
+    FilterOptions --&gt; ApplyFilters
+    ShowFilters --&gt;|Нет| ApplyFilters[Применить фильтры]
+    ApplyFilters --&gt; ExecuteSearch[Выполнить поиск]
+    ExecuteSearch --&gt; SortResults[Сортировка результатов]
+    SortResults --&gt; SortOptions{Сортировать по:}
+    SortOptions --&gt; SortTime[Времени отправления]
+    SortOptions --&gt; SortPrice[Цене]
+    SortOptions --&gt; SortDuration[Длительности]
+    SortTime --&gt; DisplayResults
+    SortPrice --&gt; DisplayResults
+    SortDuration --&gt; DisplayResults[Показать результаты]
+    DisplayResults --&gt; HasResults{Есть&lt;br/&gt;результаты?}
+    HasResults --&gt;|Нет| SuggestAlternatives[Предложить альтернативы:&lt;br/&gt;- Соседние даты&lt;br/&gt;- Другие маршруты&lt;br/&gt;- Сбросить фильтры]
+    SuggestAlternatives --&gt; UserChoice{Выбор&lt;br/&gt;пользователя}
+    UserChoice --&gt;|Изменить дату| EnterBasic
+    UserChoice --&gt;|Сбросить фильтры| ApplyFilters
+    UserChoice --&gt;|Другой маршрут| EnterBasic
+    HasResults --&gt;|Да| ShowTrainList[Показать список поездов&lt;br/&gt;с деталями]
+    ShowTrainList --&gt; SelectTrain{Выбрать&lt;br/&gt;поезд?}
+    SelectTrain --&gt;|Да| ProceedBooking[Перейти к бронированию]
+    SelectTrain --&gt;|Нет| ModifySearch{Изменить&lt;br/&gt;поиск?}
+    ModifySearch --&gt;|Да| EnterBasic
+    ModifySearch --&gt;|Нет| End
+    ProceedBooking --&gt; End([Конец])</code></pre>
+<h3 id="_8">Доступные фильтры</h3>
+<ol>
+<li><strong>Время отправления</strong></li>
+<li>Утро (06:00-12:00)</li>
+<li>День (12:00-18:00)</li>
+<li>Вечер (18:00-00:00)</li>
+<li>
+<p>Ночь (00:00-06:00)</p>
+</li>
+<li>
+<p><strong>Тип поезда</strong></p>
+</li>
+<li>Скорый</li>
+<li>Пассажирский</li>
+<li>Экспресс</li>
+<li>
+<p>Региональный</p>
+</li>
+<li>
+<p><strong>Тип вагона</strong></p>
+</li>
+<li>СВ (спальный вагон)</li>
+<li>Купе</li>
+<li>Плацкарт</li>
+<li>
+<p>Общий</p>
+</li>
+<li>
+<p><strong>Диапазон цен</strong></p>
+</li>
+<li>Минимальная цена</li>
+<li>
+<p>Максимальная цена</p>
+</li>
+<li>
+<p><strong>Дополнительные опции</strong></p>
+</li>
+<li>Только прямые рейсы</li>
+<li>С пересадками</li>
+<li>Наличие мест у окна</li>
+<li>Наличие нижних мест</li>
+</ol>
+<h3 id="_9">Варианты сортировки</h3>
+<ul>
+<li>По времени отправления (раньше → позже)</li>
+<li>По цене (дешевле → дороже)</li>
+<li>По длительности (быстрее → медленнее)</li>
+<li>По наличию мест (больше → меньше)</li>
+</ul>
+<hr />
+<h2 id="3">3. Процесс добавления нового рейса (администратор)</h2>
+<h3 id="_10">Описание</h3>
+<p>Администратор вокзала добавляет новый рейс в систему.</p>
+<h3 id="_11">Диаграмма процесса</h3>
+<pre class="mermaid"><code>flowchart TD
+    Start([Начало]) --&gt; Login[Вход в админ-панель]
+    Login --&gt; CheckPermissions{Есть права&lt;br/&gt;администратора?}
+    CheckPermissions --&gt;|Нет| AccessDenied[Доступ запрещен]
+    AccessDenied --&gt; End
+    CheckPermissions --&gt;|Да| SelectAction[Выбрать 'Добавить рейс']
+    SelectAction --&gt; EnterRouteInfo[Ввод информации о маршруте]
+    EnterRouteInfo --&gt; RouteDetails[Детали маршрута:&lt;br/&gt;- Номер маршрута&lt;br/&gt;- Станция отправления&lt;br/&gt;- Станция прибытия&lt;br/&gt;- Время отправления&lt;br/&gt;- Время прибытия]
+    RouteDetails --&gt; AddStops{Добавить&lt;br/&gt;остановки?}
+    AddStops --&gt;|Да| EnterStops[Ввод промежуточных остановок]
+    EnterStops --&gt; StopDetails[Для каждой остановки:&lt;br/&gt;- Станция&lt;br/&gt;- Время прибытия&lt;br/&gt;- Время отправления&lt;br/&gt;- Длительность стоянки]
+    StopDetails --&gt; MoreStops{Еще&lt;br/&gt;остановки?}
+    MoreStops --&gt;|Да| EnterStops
+    MoreStops --&gt;|Нет| ValidateRoute
+    AddStops --&gt;|Нет| ValidateRoute[Валидация маршрута]
+    ValidateRoute --&gt; RouteValid{Маршрут&lt;br/&gt;корректен?}
+    RouteValid --&gt;|Нет| ShowErrors[Показать ошибки]
+    ShowErrors --&gt; EnterRouteInfo
+    RouteValid --&gt;|Да| CreateTrain[Создать поезд на маршруте]
+    CreateTrain --&gt; EnterTrainInfo[Ввод информации о поезде:&lt;br/&gt;- Номер поезда&lt;br/&gt;- Тип поезда&lt;br/&gt;- Дата отправления]
+    EnterTrainInfo --&gt; AddCarriages[Добавление вагонов]
+    AddCarriages --&gt; CarriageDetails[Для каждого вагона:&lt;br/&gt;- Номер вагона&lt;br/&gt;- Тип вагона&lt;br/&gt;- Количество мест]
+    CarriageDetails --&gt; GenerateSeats[Автогенерация мест&lt;br/&gt;в вагоне]
+    GenerateSeats --&gt; SetPrices[Установка цен&lt;br/&gt;по типам вагонов]
+    SetPrices --&gt; MoreCarriages{Еще&lt;br/&gt;вагоны?}
+    MoreCarriages --&gt;|Да| AddCarriages
+    MoreCarriages --&gt;|Нет| ReviewAll[Проверка всей информации]
+    ReviewAll --&gt; ConfirmCreate{Подтвердить&lt;br/&gt;создание?}
+    ConfirmCreate --&gt;|Нет| SelectAction
+    ConfirmCreate --&gt;|Да| SaveToDatabase[Сохранить в БД]
+    SaveToDatabase --&gt; PublishRoute[Опубликовать рейс&lt;br/&gt;для продажи]
+    PublishRoute --&gt; SendNotifications[Уведомить систему&lt;br/&gt;о новом рейсе]
+    SendNotifications --&gt; LogAction[Записать в журнал действий]
+    LogAction --&gt; ShowSuccess[Показать сообщение&lt;br/&gt;'Рейс успешно добавлен']
+    ShowSuccess --&gt; End([Конец])</code></pre>
+<h3 id="_12">Валидация данных</h3>
+<ol>
+<li><strong>Маршрут:</strong></li>
+<li>Станция отправления ≠ станция прибытия</li>
+<li>Время прибытия &gt; время отправления</li>
+<li>
+<p>Промежуточные остановки в хронологическом порядке</p>
+</li>
+<li>
+<p><strong>Поезд:</strong></p>
+</li>
+<li>Уникальный номер поезда на эту дату</li>
+<li>Тип поезда из допустимых значений</li>
+<li>
+<p>Дата не в прошлом</p>
+</li>
+<li>
+<p><strong>Вагоны:</strong></p>
+</li>
+<li>Уникальные номера вагонов в поезде</li>
+<li>Количество мест соответствует типу вагона</li>
+<li>Цены &gt; 0</li>
+</ol>
+<hr />
+<h2 id="4">4. Процесс обработки заказов (кассир/администратор)</h2>
+<h3 id="_13">Описание</h3>
+<p>Просмотр и обработка заказов пассажиров.</p>
+<h3 id="_14">Диаграмма процесса</h3>
+<pre class="mermaid"><code>flowchart TD
+    Start([Начало]) --&gt; Login[Вход в систему]
+    Login --&gt; SelectOrders[Выбрать 'Заказы']
+    SelectOrders --&gt; ApplyFilters[Применить фильтры]
+    ApplyFilters --&gt; FilterOptions[Фильтры:&lt;br/&gt;- Статус заказа&lt;br/&gt;- Дата создания&lt;br/&gt;- Поезд/маршрут&lt;br/&gt;- Пассажир]
+    FilterOptions --&gt; ShowOrders[Показать список заказов]
+    ShowOrders --&gt; SelectOrder[Выбрать заказ]
+    SelectOrder --&gt; ShowDetails[Показать детали заказа]
+    ShowDetails --&gt; OrderInfo[Информация:&lt;br/&gt;- Пассажир&lt;br/&gt;- Поезд и место&lt;br/&gt;- Статус&lt;br/&gt;- Сумма&lt;br/&gt;- Дата создания]
+    OrderInfo --&gt; SelectAction{Выбрать действие}
+    SelectAction --&gt;|Просмотр| ViewTicket[Просмотр билета]
+    ViewTicket --&gt; ShowOrders
+    SelectAction --&gt;|Отмена| CancelOrder[Отменить заказ]
+    CancelOrder --&gt; ConfirmCancel{Подтвердить&lt;br/&gt;отмену?}
+    ConfirmCancel --&gt;|Нет| ShowDetails
+    ConfirmCancel --&gt;|Да| ProcessCancel[Обработка отмены]
+    ProcessCancel --&gt; ReleaseSeat[Освободить место]
+    ReleaseSeat --&gt; RefundPayment{Вернуть&lt;br/&gt;оплату?}
+    RefundPayment --&gt;|Да| ProcessRefund[Обработка возврата]
+    ProcessRefund --&gt; CalculateFee[Расчет комиссии]
+    CalculateFee --&gt; RefundAmount
+    RefundPayment --&gt;|Нет| UpdateStatus
+    RefundAmount[Возврат суммы] --&gt; UpdateStatus[Обновить статус заказа]
+    UpdateStatus --&gt; NotifyPassenger[Уведомить пассажира]
+    NotifyPassenger --&gt; LogAction[Записать в журнал]
+    LogAction --&gt; ShowOrders
+    SelectAction --&gt;|Возврат| RefundTicket[Возврат билета]
+    RefundTicket --&gt; CheckRefundRules{Возврат&lt;br/&gt;возможен?}
+    CheckRefundRules --&gt;|Нет| ShowRefundError[Показать причину отказа:&lt;br/&gt;- Слишком поздно&lt;br/&gt;- Билет использован]
+    ShowRefundError --&gt; ShowDetails
+    CheckRefundRules --&gt;|Да| ProcessRefund
+    SelectAction --&gt;|Экспорт| ExportOrder[Экспорт данных заказа]
+    ExportOrder --&gt; ShowOrders</code></pre>
+<h3 id="_15">Статусы заказов</h3>
+<ol>
+<li><strong>Новый</strong> - заказ создан, ожидает оплаты</li>
+<li><strong>Оплачен</strong> - оплата прошла успешно</li>
+<li><strong>Отменен</strong> - заказ отменен пользователем или системой</li>
+<li><strong>Возвращен</strong> - оплата возвращена</li>
+<li><strong>Использован</strong> - билет использован (поезд отправился)</li>
+</ol>
+<h3 id="_16">Правила возврата</h3>
+<table>
+<thead>
+<tr>
+<th>Время до отправления</th>
+<th>Комиссия</th>
+<th>Возврат возможен</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 24 часа</td>
+<td>0%</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>1-24 часа</td>
+<td>10%</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>&lt; 1 час</td>
+<td>-</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>После отправления</td>
+<td>-</td>
+<td>Нет</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. Процесс регистрации нового пассажира</h2>
+<h3 id="_17">Описание</h3>
+<p>Регистрация нового пользователя в системе.</p>
+<h3 id="_18">Диаграмма процесса</h3>
+<pre class="mermaid"><code>flowchart TD
+    Start([Начало]) --&gt; ChooseMethod{Способ&lt;br/&gt;регистрации}
+    ChooseMethod --&gt;|Email| EnterEmail[Ввод email]
+    ChooseMethod --&gt;|Телефон| EnterPhone[Ввод номера телефона]
+    ChooseMethod --&gt;|Соц. сети| SocialAuth[Авторизация через&lt;br/&gt;соц. сети]
+    EnterEmail --&gt; CheckEmailExists{Email&lt;br/&gt;занят?}
+    CheckEmailExists --&gt;|Да| ShowEmailError[Показать ошибку:&lt;br/&gt;'Email уже используется']
+    ShowEmailError --&gt; EnterEmail
+    CheckEmailExists --&gt;|Нет| EnterPassword
+    EnterPhone --&gt; SendSMS[Отправить SMS&lt;br/&gt;с кодом]
+    SendSMS --&gt; EnterCode[Ввод кода подтверждения]
+    EnterCode --&gt; ValidateCode{Код&lt;br/&gt;верный?}
+    ValidateCode --&gt;|Нет| CodeError[Показать ошибку]
+    CodeError --&gt; EnterCode
+    ValidateCode --&gt;|Да| EnterPassword
+    SocialAuth --&gt; GetSocialData[Получить данные&lt;br/&gt;из соц. сети]
+    GetSocialData --&gt; EnterPassword
+    EnterPassword[Создание пароля]
+    EnterPassword --&gt; ValidatePassword{Пароль&lt;br/&gt;надежный?}
+    ValidatePassword --&gt;|Нет| PasswordError[Показать требования:&lt;br/&gt;- Мин. 8 символов&lt;br/&gt;- Буквы и цифры&lt;br/&gt;- Спец. символы]
+    PasswordError --&gt; EnterPassword
+    ValidatePassword --&gt;|Да| EnterPersonalInfo[Ввод личных данных]
+    EnterPersonalInfo --&gt; PersonalDetails[Данные:&lt;br/&gt;- Имя&lt;br/&gt;- Фамилия&lt;br/&gt;- Дата рождения&lt;br/&gt;- Телефон]
+    PersonalDetails --&gt; AcceptTerms[Принятие условий&lt;br/&gt;использования]
+    AcceptTerms --&gt; TermsAccepted{Условия&lt;br/&gt;приняты?}
+    TermsAccepted --&gt;|Нет| ShowTerms[Показать условия]
+    ShowTerms --&gt; AcceptTerms
+    TermsAccepted --&gt;|Да| CreateAccount[Создать учетную запись]
+    CreateAccount --&gt; SendWelcomeEmail[Отправить приветственное&lt;br/&gt;письмо]
+    SendWelcomeEmail --&gt; AutoLogin[Автоматический вход]
+    AutoLogin --&gt; ShowWelcome[Показать приветствие&lt;br/&gt;и краткий гид]
+    ShowWelcome --&gt; SuggestAddPassenger{Добавить данные&lt;br/&gt;паспорта?}
+    SuggestAddPassenger --&gt;|Да| AddPassengerData[Ввод данных паспорта]
+    AddPassengerData --&gt; SavePassenger[Сохранить пассажира]
+    SavePassenger --&gt; End
+    SuggestAddPassenger --&gt;|Нет| End([Конец])</code></pre>
+<h3 id="_19">Требования к паролю</h3>
+<ul>
+<li>Минимум 8 символов</li>
+<li>Хотя бы одна заглавная буква</li>
+<li>Хотя бы одна строчная буква</li>
+<li>Хотя бы одна цифра</li>
+<li>Рекомендуется специальный символ</li>
+</ul>
+<h3 id="_20">Способы регистрации</h3>
+<ol>
+<li><strong>Email + пароль</strong> - классический способ</li>
+<li><strong>Номер телефона + SMS</strong> - быстрая регистрация</li>
+<li><strong>Социальные сети</strong> - Google, Facebook, VK</li>
+</ol>
+<hr />
+<h2 id="6">6. Процесс проверки свободных мест</h2>
+<h3 id="_21">Описание</h3>
+<p>Проверка доступности мест в поезде.</p>
+<h3 id="_22">Диаграмма процесса</h3>
+<pre class="mermaid"><code>flowchart TD
+    Start([Начало]) --&gt; SelectTrain[Выбрать поезд]
+    SelectTrain --&gt; LoadTrainData[Загрузить данные поезда]
+    LoadTrainData --&gt; ShowCarriageTypes[Показать типы вагонов]
+    ShowCarriageTypes --&gt; CarriageList[Список вагонов:&lt;br/&gt;- СВ: 2 вагона, 18 мест&lt;br/&gt;- Купе: 4 вагона, 72 места&lt;br/&gt;- Плацкарт: 6 вагонов, 180 мест]
+    CarriageList --&gt; SelectType{Выбрать&lt;br/&gt;тип вагона}
+    SelectType --&gt; LoadCarriages[Загрузить вагоны&lt;br/&gt;выбранного типа]
+    LoadCarriages --&gt; ShowCarriageList[Показать список вагонов&lt;br/&gt;с доступностью]
+    ShowCarriageList --&gt; SelectCarriage[Выбрать вагон]
+    SelectCarriage --&gt; LoadSeats[Загрузить схему мест]
+    LoadSeats --&gt; ShowSeatMap[Показать схему вагона]
+    ShowSeatMap --&gt; SeatLegend[Легенда:&lt;br/&gt;🟢 Свободно&lt;br/&gt;🔴 Занято&lt;br/&gt;🟡 Бронь]
+    SeatLegend --&gt; FilterSeats{Применить&lt;br/&gt;фильтр?}
+    FilterSeats --&gt;|Да| SelectFilter[Выбрать фильтр]
+    SelectFilter --&gt; FilterOptions[Опции:&lt;br/&gt;- Только нижние&lt;br/&gt;- Только верхние&lt;br/&gt;- У окна&lt;br/&gt;- У прохода]
+    FilterOptions --&gt; ApplyFilter[Применить фильтр]
+    ApplyFilter --&gt; UpdateMap[Обновить схему]
+    UpdateMap --&gt; ShowSeatMap
+    FilterSeats --&gt;|Нет| SelectSeat{Выбрать&lt;br/&gt;место?}
+    SelectSeat --&gt;|Да| CheckAvailability{Место&lt;br/&gt;свободно?}
+    CheckAvailability --&gt;|Нет| ShowError[Показать ошибку:&lt;br/&gt;'Место уже занято']
+    ShowError --&gt; ShowSeatMap
+    CheckAvailability --&gt;|Да| ShowSeatDetails[Показать детали места]
+    ShowSeatDetails --&gt; SeatInfo[Информация:&lt;br/&gt;- Номер места&lt;br/&gt;- Тип&lt;br/&gt;- Цена&lt;br/&gt;- Расположение]
+    SeatInfo --&gt; ConfirmSelection{Выбрать&lt;br/&gt;это место?}
+    ConfirmSelection --&gt;|Нет| ShowSeatMap
+    ConfirmSelection --&gt;|Да| ProceedBooking[Перейти к бронированию]
+    ProceedBooking --&gt; End([Конец])
+    SelectSeat --&gt;|Нет| ChangeCarriage{Выбрать другой&lt;br/&gt;вагон?}
+    ChangeCarriage --&gt;|Да| ShowCarriageList
+    ChangeCarriage --&gt;|Нет| End</code></pre>
+<h3 id="_23">Цветовая индикация мест</h3>
+<ul>
+<li>🟢 <strong>Зеленый</strong> - место свободно</li>
+<li>🔴 <strong>Красный</strong> - место занято (билет куплен)</li>
+<li>🟡 <strong>Желтый</strong> - место в брони (оформляется заказ)</li>
+<li>⚪ <strong>Серый</strong> - место недоступно (служебное)</li>
+</ul>
+<hr />
+<h2 id="_24">Интеграции между процессами</h2>
+<h3 id="_25">Связь процессов</h3>
+<ol>
+<li><strong>Покупка билета</strong> → <strong>Проверка мест</strong> → <strong>Обработка заказов</strong></li>
+<li><strong>Поиск рейса</strong> → <strong>Покупка билета</strong></li>
+<li><strong>Регистрация</strong> → <strong>Покупка билета</strong></li>
+<li><strong>Добавление рейса</strong> → <strong>Поиск рейса</strong> → <strong>Покупка билета</strong></li>
+</ol>
+<h3 id="_26">Общие данные</h3>
+<ul>
+<li><strong>База поездов</strong> - используется в поиске, покупке, проверке мест</li>
+<li><strong>База пользователей</strong> - регистрация, авторизация, покупка</li>
+<li><strong>База заказов</strong> - покупка, обработка заказов, аналитика</li>
+</ul>
+<hr />
+<h2 id="_27">Метрики процессов</h2>
+<h3 id="kpi">KPI системы</h3>
+<ol>
+<li><strong>Время покупки билета</strong> - цель &lt; 3 минуты</li>
+<li><strong>Конверсия поиск → покупка</strong> - цель &gt; 40%</li>
+<li><strong>Процент успешных платежей</strong> - цель &gt; 95%</li>
+<li><strong>Время обработки возврата</strong> - цель &lt; 5 минут</li>
+<li><strong>Доступность системы</strong> - цель &gt; 99.5%</li>
+</ol>
+<h3 id="_28">Мониторинг</h3>
+<ul>
+<li>Количество поисков в день</li>
+<li>Количество покупок в день</li>
+<li>Средний чек</li>
+<li>Популярные маршруты</li>
+<li>Пиковые часы нагрузки</li>
+</ul>
+<hr />
+<h2 id="_29">Выводы</h2>
+<p>Бизнес-процессы системы:
+1. <strong>Покрывают все требования</strong> из задания
+2. <strong>Оптимизированы для пользователей</strong> - минимум шагов, максимум удобства
+3. <strong>Учитывают исключительные ситуации</strong> - обработка ошибок, откаты
+4. <strong>Масштабируемы</strong> - легко добавить новые процессы
+5. <strong>Измеримы</strong> - определены KPI для каждого процесса</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,76 @@
+# Class Diagram
+
+```puml
+@startuml
+class User {
+  +id: Long
+  +email: String
+  +passwordHash: String
+  +role: Role
+  +login()
+  +register()
+}
+
+class Passenger {
+  +id: Long
+  +firstName: String
+  +lastName: String
+  +passportNumber: String
+}
+
+class Ticket {
+  +id: Long
+  +price: Decimal
+  +purchaseDate: DateTime
+  +status: TicketStatus
+  +generatePDF()
+}
+
+class Order {
+  +id: Long
+  +orderDate: DateTime
+  +totalAmount: Decimal
+  +status: OrderStatus
+}
+
+class Train {
+  +id: Long
+  +number: String
+  +type: TrainType
+}
+
+class Route {
+  +id: Long
+  +startStation: Station
+  +endStation: Station
+  +duration: Duration
+}
+
+class Station {
+  +id: Long
+  +name: String
+  +city: String
+}
+
+class Carriage {
+  +id: Long
+  +number: Int
+  +type: CarriageType
+}
+
+class Seat {
+  +id: Long
+  +number: Int
+  +isOccupied: Boolean
+}
+
+User "1" -- "*" Order : creates >
+Order "1" *-- "*" Ticket : contains >
+Ticket "*" -- "1" Passenger : assigned to >
+Ticket "*" -- "1" Seat : reserves >
+Seat "*" -- "1" Carriage : belongs to >
+Carriage "*" -- "1" Train : part of >
+Train "*" -- "1" Route : follows >
+Route "*" -- "2..*" Station : connects >
+@enduml
+```
