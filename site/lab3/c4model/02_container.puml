@@ -1,0 +1,37 @@
+@startuml
+!include ../includes/C4_Custom.puml
+
+title C4 Model: Container (Level 2)
+
+Person(passenger, "Пассажир", "Пользователь приложения")
+
+System_Boundary(c1, "Система ЖД Билетов") {
+    Container(web_app, "Веб-приложение", "React, TypeScript", "Интерфейс для покупки билетов через браузер")
+    Container(mobile_app, "Мобильное приложение", "Flutter", "Нативное приложение для iOS/Android")
+    
+    Container(api_gateway, "API Gateway", "Nginx / Golang", "Маршрутизация запросов, авторизация")
+    
+    Container(backend_api, "Backend API", "Golang / Gin", "Бизнес-логика: поиск, заказы, билеты")
+    
+    ContainerDb(database, "Database", "PostgreSQL", "Хранит пользователей, заказы, рейсы")
+    ContainerDb(cache, "Cache", "Redis", "Кэширует расписание и сессии")
+}
+
+System_Ext(payment_gateway, "Платежный шлюз", "Банковский API")
+System_Ext(email_system, "Email Сервис", "SMTP Provider")
+
+Rel(passenger, web_app, "Использует", "HTTPS")
+Rel(passenger, mobile_app, "Использует", "HTTPS")
+
+Rel(web_app, api_gateway, "API calls", "JSON/HTTPS")
+Rel(mobile_app, api_gateway, "API calls", "JSON/HTTPS")
+
+Rel(api_gateway, backend_api, "Proxies requests", "gRPC/HTTP")
+
+Rel(backend_api, database, "Reads/Writes", "SQL/TCP")
+Rel(backend_api, cache, "Reads/Writes", "RESP/TCP")
+
+Rel(backend_api, payment_gateway, "Process payments", "JSON/HTTPS")
+Rel(backend_api, email_system, "Send emails", "SMTP")
+@enduml
+

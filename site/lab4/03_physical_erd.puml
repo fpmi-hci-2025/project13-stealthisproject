@@ -1,0 +1,102 @@
+@startuml 03_physical_erd
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "users" as users {
+  *id : BIGSERIAL <<PK>>
+  --
+  *email : VARCHAR(255) <<UNIQUE>>
+  *password_hash : VARCHAR(255)
+  *role : VARCHAR(50)
+  created_at : TIMESTAMP WITH TIME ZONE
+}
+
+entity "passengers" as passengers {
+  *id : BIGSERIAL <<PK>>
+  --
+  *user_id : BIGINT <<FK>>
+  *first_name : VARCHAR(100)
+  *last_name : VARCHAR(100)
+  passport_data : VARCHAR(50)
+}
+
+entity "orders" as orders {
+  *id : BIGSERIAL <<PK>>
+  --
+  *user_id : BIGINT <<FK>>
+  *created_at : TIMESTAMP WITH TIME ZONE
+  *status : VARCHAR(50)
+  total_amount : DECIMAL(10, 2)
+}
+
+entity "tickets" as tickets {
+  *id : BIGSERIAL <<PK>>
+  --
+  *order_id : BIGINT <<FK>>
+  *seat_id : BIGINT <<FK>>
+  *passenger_id : BIGINT <<FK>>
+  *departure_date : DATE
+  price : DECIMAL(10, 2)
+  ticket_number : VARCHAR(50) <<UNIQUE>>
+  status : VARCHAR(50)
+}
+
+entity "trains" as trains {
+  *id : BIGSERIAL <<PK>>
+  --
+  *number : VARCHAR(20) <<UNIQUE>>
+  type : VARCHAR(50)
+}
+
+entity "carriages" as carriages {
+  *id : BIGSERIAL <<PK>>
+  --
+  *train_id : BIGINT <<FK>>
+  *number : INTEGER
+  type : VARCHAR(50)
+}
+
+entity "seats" as seats {
+  *id : BIGSERIAL <<PK>>
+  --
+  *carriage_id : BIGINT <<FK>>
+  number : INTEGER
+}
+
+entity "routes" as routes {
+  *id : BIGSERIAL <<PK>>
+  --
+  *name : VARCHAR(255)
+  train_id : BIGINT <<FK>>
+}
+
+entity "stations" as stations {
+  *id : BIGSERIAL <<PK>>
+  --
+  *name : VARCHAR(100)
+  city : VARCHAR(100)
+}
+
+entity "route_stations" as route_stations {
+  *route_id : BIGINT <<FK, PK>>
+  *station_id : BIGINT <<FK, PK>>
+  --
+  arrival_time : TIME
+  departure_time : TIME
+  stop_order : INTEGER
+}
+
+users ||..o{ orders : "makes"
+users ||..o{ passengers : "manages"
+orders ||..|{ tickets : "contains"
+passengers ||..o{ tickets : "assigned to"
+tickets }o..|| seats : "reserves"
+seats }o..|| carriages : "located in"
+carriages }o..|| trains : "composed of"
+trains ||..o{ routes : "assigned to"
+routes ||..|{ route_stations : "stops at"
+stations ||..o{ route_stations : "part of"
+
+@enduml
+
